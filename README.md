@@ -21,6 +21,9 @@ Requirements: Python 3.11 or newer. Standard library only. Nothing to install, n
 access, no cloud credentials, no container runtime. Nothing writes outside this directory.
 Pass a different interpreter with `make PYTHON=python3.11 test`.
 
+New to this? Read [docs/USER-GUIDE.md](docs/USER-GUIDE.md): what to run for each chapter, which
+files to open, how to do the Appendix C exercises, and how to run without `make`.
+
 ## Layout
 
 | Directory | Contents |

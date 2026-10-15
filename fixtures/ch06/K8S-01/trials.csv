@@ -1,0 +1,3 @@
+run_id,treatment,requested_value,replicas_before,observed_utilization,hpa_max_before,time_to_first_reconcile_s,time_to_revert_or_converge_s,ttl_seconds,ttl_cleanup_result,oscillation_count,utc
+S01A,direct_write,24,15,178,15,6.83,6.83,,n/a,1,2026-07-23T02:53:14.430465+00:00
+S01B,setpoint_override,30,15,176,15,,6.75,,n/a,1,2026-07-23T03:01:45.571066+00:00

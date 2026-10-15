@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ninety-day starter plan</title>
+  <desc id="desc">Three planning windows organize baseline and contract work, a read-only evidence path with failure testing, and shadow evaluation only if earlier gates are satisfied. Each review may continue, narrow, hold, or stop. Day ninety is a governance decision point and never a deadline for autonomous execution.</desc>
+  <defs>
+    <style>
+      .title{font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}.subtitle{font:18px Arial,Helvetica,sans-serif;fill:#455A64}
+      .window{font:700 24px Arial,Helvetica,sans-serif;fill:#FFFFFF}.head{font:700 22px Arial,Helvetica,sans-serif;fill:#17324D}
+      .body{font:17px Arial,Helvetica,sans-serif;fill:#344B58}.small{font:16px Arial,Helvetica,sans-serif;fill:#455A64}
+      .review{font:700 17px Arial,Helvetica,sans-serif;fill:#315D7D}.decision{font:700 18px Arial,Helvetica,sans-serif;fill:#FFFFFF}
+      .warning{font:700 20px Arial,Helvetica,sans-serif;fill:#8B3D2E}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="898" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">Ninety days organizes work; it does not promote authority</text>
+  <text x="50" y="82" class="subtitle">A team may finish in assessment, foundation, context enrichment, shadow, hold, or stop and still have learned what matters.</text>
+
+  <rect x="50" y="122" width="340" height="470" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="50" y="122" width="340" height="66" rx="16" fill="#315D7D"/>
+  <text x="220" y="164" text-anchor="middle" class="window">DAYS 1–30</text>
+  <text x="78" y="228" class="head">Define work and stop line</text>
+  <text x="78" y="270" class="body">• eligible population + exclusions</text>
+  <text x="78" y="302" class="body">• baseline + outcome contract</text>
+  <text x="78" y="334" class="body">• source + authority inventory</text>
+  <text x="78" y="366" class="body">• privacy + security boundaries</text>
+  <text x="78" y="398" class="body">• cost model + non-AI option</text>
+  <text x="78" y="430" class="body">• owners + stop conditions</text>
+  <rect x="75" y="486" width="290" height="72" rx="12" fill="#EAF2F7"/>
+  <text x="220" y="515" text-anchor="middle" class="review">REVIEW THE EVIDENCE</text>
+  <text x="220" y="542" text-anchor="middle" class="small">continue • narrow • hold • stop</text>
+
+  <rect x="430" y="122" width="340" height="470" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="430" y="122" width="340" height="66" rx="16" fill="#39766F"/>
+  <text x="600" y="164" text-anchor="middle" class="window">DAYS 31–60</text>
+  <text x="458" y="228" class="head">Make failure visible</text>
+  <text x="458" y="270" class="body">• selected read-only adapters</text>
+  <text x="458" y="302" class="body">• identity + purpose + audience</text>
+  <text x="458" y="334" class="body">• clocks + health + provenance</text>
+  <text x="458" y="366" class="body">• denial + stale + conflict tests</text>
+  <text x="458" y="398" class="body">• injection + retry + audit tests</text>
+  <text x="458" y="430" class="body">• correction + manual fallback</text>
+  <rect x="455" y="486" width="290" height="72" rx="12" fill="#E5F0EE"/>
+  <text x="600" y="515" text-anchor="middle" class="review">REVIEW THE EVIDENCE</text>
+  <text x="600" y="542" text-anchor="middle" class="small">continue • narrow • hold • stop</text>
+
+  <rect x="810" y="122" width="340" height="470" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="810" y="122" width="340" height="66" rx="16" fill="#8A6B2E"/>
+  <text x="980" y="164" text-anchor="middle" class="window">DAYS 61–90</text>
+  <text x="838" y="228" class="head">Shadow, only if earned</text>
+  <text x="838" y="270" class="body">• every eligible + no-answer case</text>
+  <text x="838" y="302" class="body">• separate later adjudication</text>
+  <text x="838" y="334" class="body">• omissions + corrections</text>
+  <text x="838" y="366" class="body">• uncertainty + adverse cases</text>
+  <text x="838" y="398" class="body">• version + cost + boundary review</text>
+  <text x="838" y="430" class="body">• hold + fallback + retirement</text>
+  <rect x="835" y="486" width="290" height="72" rx="12" fill="#F3E9D3"/>
+  <text x="980" y="515" text-anchor="middle" class="review">REVIEW THE EVIDENCE</text>
+  <text x="980" y="542" text-anchor="middle" class="small">continue • narrow • hold • stop</text>
+
+  <text x="600" y="638" text-anchor="middle" class="head">DAY 90 GOVERNANCE DECISION</text>
+  <text x="600" y="669" text-anchor="middle" class="small">Accountable humans own the decision, dissent, exception, residual risk, and re-entry conditions.</text>
+
+  <rect x="90" y="708" width="230" height="64" rx="13" fill="#315D7D"/>
+  <text x="205" y="748" text-anchor="middle" class="decision">CONTINUE</text>
+  <rect x="350" y="708" width="230" height="64" rx="13" fill="#39766F"/>
+  <text x="465" y="748" text-anchor="middle" class="decision">NARROW</text>
+  <rect x="620" y="708" width="230" height="64" rx="13" fill="#8A6B2E"/>
+  <text x="735" y="748" text-anchor="middle" class="decision">HOLD</text>
+  <rect x="880" y="708" width="230" height="64" rx="13" fill="#8B3D2E"/>
+  <text x="995" y="748" text-anchor="middle" class="decision">STOP</text>
+
+  <rect x="90" y="808" width="1020" height="52" rx="12" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="600" y="841" text-anchor="middle" class="warning">NO AUTOMATIC PRODUCTION OR ACTION AUTHORITY</text>
+</svg>

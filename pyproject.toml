@@ -1,0 +1,8 @@
+[project]
+name = "ai-incident-management-companion"
+version = "1.0.0"
+description = "Companion code for AI-Driven Incident Management: deterministic fixtures, calculations, figures, and labs. Standard library only."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = []

@@ -1,0 +1,24 @@
+{
+  "artifact_class": "illustrative_template",
+  "authority_effect": "none",
+  "figures": [
+    {
+      "bytes": 6099,
+      "description": "Six adoption gates progress from assessment and foundation through read-only context enrichment, shadow evaluation, bounded operation, and scaled operation. Forward movement requires every required gate to be resolved. From every stage the program may narrow, hold, demote, or stop. Calendar time does not grant action authority.",
+      "file": "figure-11-1-gated-adoption-roadmap.svg",
+      "published_path": "generated/published-figures/figure-11-1-gated-adoption-roadmap.svg",
+      "sha256": "62a50ab9f158851a502fb0d8c591d7f8f49a3fecd05bf542c2f4219a94fd3561",
+      "title": "Evidence-gated adoption roadmap"
+    },
+    {
+      "bytes": 5748,
+      "description": "Three planning windows organize baseline and contract work, a read-only evidence path with failure testing, and shadow evaluation only if earlier gates are satisfied. Each review may continue, narrow, hold, or stop. Day ninety is a governance decision point and never a deadline for autonomous execution.",
+      "file": "figure-11-2-ninety-day-starter-plan.svg",
+      "published_path": "generated/published-figures/figure-11-2-ninety-day-starter-plan.svg",
+      "sha256": "c8d5f6d84b9111885b235d3201296c8c52bbc942706675945732e15b1de3998f",
+      "title": "Ninety-day starter plan"
+    }
+  ],
+  "manifest_version": "ch11-static-figures-1",
+  "source_format": "accessible_svg"
+}

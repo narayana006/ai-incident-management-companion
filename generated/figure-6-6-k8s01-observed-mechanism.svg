@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="960" viewBox="0 0 1200 960" role="img" aria-labelledby="title desc">
+  <title id="title">K8S-01 recorded controller-ownership mechanism</title>
+  <desc id="desc">Two separate panels show one sequential direct-write run and one sequential controller-setpoint run in one disposable configuration. The direct desired-state write was overwritten by the active controller in S01A. The controller input change was followed by a changed controller decision and governed field in S01B. A third TTL treatment is explicitly marked not run. No comparison, safety, or production claim is made.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315D7D"/></marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C65D21"/></marker>
+    <style>
+      .title {font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}
+      .subtitle {font:18px Arial,Helvetica,sans-serif;fill:#455A64}
+      .panel-title {font:700 23px Arial,Helvetica,sans-serif;fill:#17324D}
+      .node-title {font:700 18px Arial,Helvetica,sans-serif;fill:#17324D}
+      .body {font:16px Arial,Helvetica,sans-serif;fill:#344B58}
+      .small {font:15px Arial,Helvetica,sans-serif;fill:#455A64}
+      .white-title {font:700 20px Arial,Helvetica,sans-serif;fill:#FFFFFF}
+      .white-body {font:16px Arial,Helvetica,sans-serif;fill:#EAF3F7}
+      .warn-title {font:700 20px Arial,Helvetica,sans-serif;fill:#7A3714}
+      .warn-body {font:16px Arial,Helvetica,sans-serif;fill:#6A4634}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="958" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">One run can expose the ownership mechanism</text>
+  <text x="50" y="83" class="subtitle">K8S-01 — n = 1 sequential run per completed treatment; one disposable configuration; mechanism evidence only.</text>
+
+  <g>
+    <rect x="50" y="120" width="1100" height="286" rx="16" fill="#FFFFFF" stroke="#A8BBC7" stroke-width="2"/>
+    <rect x="50" y="120" width="1100" height="52" rx="16" fill="#EAF2F7"/>
+    <text x="80" y="154" class="panel-title">S01A  DIRECT WRITE  •  COMPLETED  •  n = 1</text>
+    <path d="M350 277 H440 M730 277 H820" stroke="#C65D21" stroke-width="4" fill="none" marker-end="url(#arrow-orange)"/>
+    <rect x="80" y="195" width="270" height="170" rx="12" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+    <text x="100" y="226" class="node-title">Direct desired-state write</text>
+    <text x="100" y="254" class="body">Deployment/cpu-svc</text>
+    <text x="100" y="278" class="body">.spec.replicas</text>
+    <text x="100" y="306" class="body">observed: 24 at dt=0.20s</text>
+    <text x="100" y="338" class="small">Foreign write to owned field</text>
+    <rect x="440" y="195" width="290" height="170" rx="12" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+    <text x="460" y="226" class="node-title">Active controller remains at 15</text>
+    <text x="460" y="252" class="small">HorizontalPodAutoscaler/cpu-svc</text>
+    <text x="460" y="275" class="body">.spec.maxReplicas = 15</text>
+    <text x="460" y="301" class="small">HorizontalPodAutoscaler/cpu-svc</text>
+    <text x="460" y="324" class="body">.status.desiredReplicas = 15</text>
+    <text x="460" y="349" class="small">Controller stays active</text>
+    <rect x="820" y="195" width="300" height="170" rx="12" fill="#17324D"/>
+    <text x="840" y="226" class="white-title">Owned field later reads 15</text>
+    <text x="840" y="254" class="white-body">Deployment/cpu-svc</text>
+    <text x="840" y="278" class="white-body">.spec.replicas</text>
+    <text x="840" y="306" class="white-body">observed at dt=6.83s</text>
+    <text x="840" y="338" class="white-body">Overwritten in this run</text>
+    <text x="80" y="390" class="small">No typical reconcile time or oscillation frequency follows from one run.</text>
+  </g>
+
+  <g>
+    <rect x="50" y="432" width="1100" height="286" rx="16" fill="#FFFFFF" stroke="#A8BBC7" stroke-width="2"/>
+    <rect x="50" y="432" width="1100" height="52" rx="16" fill="#EAF2F7"/>
+    <text x="80" y="466" class="panel-title">S01B  CONTROLLER SETPOINT  •  COMPLETED  •  n = 1</text>
+    <path d="M350 589 H440 M730 589 H820" stroke="#315D7D" stroke-width="4" fill="none" marker-end="url(#arrow-blue)"/>
+    <rect x="80" y="505" width="270" height="170" rx="12" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+    <text x="100" y="536" class="node-title">Controller input changed</text>
+    <text x="100" y="564" class="small">HorizontalPodAutoscaler/cpu-svc</text>
+    <text x="100" y="588" class="body">.spec.maxReplicas</text>
+    <text x="100" y="616" class="body">15 before; 30 after</text>
+    <text x="100" y="648" class="small">Change enters through owner</text>
+    <rect x="440" y="505" width="290" height="170" rx="12" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+    <text x="460" y="536" class="node-title">Controller decision changed</text>
+    <text x="460" y="564" class="small">HorizontalPodAutoscaler/cpu-svc</text>
+    <text x="460" y="588" class="body">.status.desiredReplicas</text>
+    <text x="460" y="616" class="body">observed: 30 at dt=5.59s</text>
+    <text x="460" y="648" class="small">Controller decision endpoint</text>
+    <rect x="820" y="505" width="300" height="170" rx="12" fill="#17324D"/>
+    <text x="840" y="536" class="white-title">Governed field changed</text>
+    <text x="840" y="560" class="white-body">Deployment/cpu-svc</text>
+    <text x="840" y="583" class="white-body">.spec.replicas = 30</text>
+    <text x="840" y="608" class="white-body">Deployment/cpu-svc</text>
+    <text x="840" y="631" class="white-body">.status.readyReplicas = 30</text>
+    <text x="840" y="656" class="white-body">Mechanism observation in this run</text>
+    <text x="80" y="702" class="small">No superiority, stability, safety, user-outcome, or production inference is made.</text>
+  </g>
+
+  <g>
+    <rect x="50" y="744" width="1100" height="88" rx="14" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+    <text x="80" y="778" class="warn-title">TTL OVERRIDE  •  NOT RUN  •  n = 0</text>
+    <text x="80" y="807" class="warn-body">No completed TTL record exists. This evidence supports no automatic-cleanup or rollback claim.</text>
+  </g>
+
+  <g>
+    <rect x="50" y="855" width="1100" height="70" rx="14" fill="#17324D"/>
+    <text x="600" y="884" text-anchor="middle" class="white-title">SUPPORTED BOUNDARY</text>
+    <text x="600" y="910" text-anchor="middle" class="white-body">Controller ownership mechanism observed once per completed treatment; no comparative, safety, or production claim.</text>
+  </g>
+</svg>

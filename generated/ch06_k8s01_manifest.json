@@ -1,0 +1,166 @@
+{
+  "artifact_class": "single_environment_mechanism_demonstration",
+  "command": "make ch06-k8s-mechanism",
+  "default_mode": "read_only_committed_evidence",
+  "endpoint_definitions": {
+    "controller_decision": "HorizontalPodAutoscaler/cpu-svc.status.desiredReplicas",
+    "controller_input": "HorizontalPodAutoscaler/cpu-svc.spec.maxReplicas",
+    "observed_workload_state": "Deployment/cpu-svc.status.readyReplicas",
+    "owned_target_field": "Deployment/cpu-svc.spec.replicas"
+  },
+  "execution_design": "S01A then S01B sequentially; not randomized; not replicated",
+  "independent_unit": "one run in one disposable configuration",
+  "legacy_fields_not_used_for_inference": [
+    "time_to_first_reconcile_s",
+    "time_to_revert_or_converge_s",
+    "oscillation_count"
+  ],
+  "manifest_version": "ch06-k8s01-render-1",
+  "observations": [
+    {
+      "completed_runs_n": 1,
+      "controller_decision_value_observed": 15,
+      "controller_input_value_after": 15,
+      "controller_input_value_before": 15,
+      "direct_write_sample_dt_seconds": 0.2,
+      "evidence_class": "single_environment_mechanism_demonstration",
+      "execution_order": 1,
+      "later_target_sample_dt_seconds": 6.83,
+      "limits": "One sequential run; no typical timing, oscillation-rate, safety, user-outcome, or production inference.",
+      "mechanism_observation": "The active controller overwrote the direct desired-state write in this recorded run.",
+      "owned_target_field_intervention_value": 24,
+      "owned_target_field_later_value": 15,
+      "run_id": "S01A",
+      "status": "completed",
+      "treatment": "direct_write"
+    },
+    {
+      "completed_runs_n": 1,
+      "controller_decision_sample_dt_seconds": 5.59,
+      "controller_decision_value_observed": 30,
+      "controller_input_change_sample_dt_seconds": 0.13,
+      "controller_input_value_after": 30,
+      "controller_input_value_before": 15,
+      "evidence_class": "single_environment_mechanism_demonstration",
+      "execution_order": 2,
+      "limits": "One sequential run; no superiority, stability, safety, user-outcome, or production inference.",
+      "mechanism_observation": "Changing the active controller's configuration changed the governed state in this recorded run.",
+      "observed_workload_state_sample_dt_seconds": 7.86,
+      "observed_workload_state_value": 30,
+      "owned_target_field_sample_dt_seconds": 5.59,
+      "owned_target_field_value_observed": 30,
+      "run_id": "S01B",
+      "status": "completed",
+      "treatment": "setpoint_override"
+    },
+    {
+      "completed_runs_n": 0,
+      "evidence_class": "no_observation",
+      "execution_order": null,
+      "limits": "No TTL cleanup or automatic rollback claim is supported.",
+      "mechanism_observation": "No completed TTL treatment exists in the committed evidence.",
+      "run_id": "NOT-RUN",
+      "status": "not_run",
+      "treatment": "ttl_override"
+    }
+  ],
+  "source_files": [
+    {
+      "bytes": 359,
+      "path": "trials.csv",
+      "role": "recorded_trial_index",
+      "sha256": "85f920dc3c9f8929889765ff9855e1b3cb43e1bbd513d124b21f69838c7f7f7d",
+      "validation": "match"
+    },
+    {
+      "bytes": 2398,
+      "path": "environment.yaml",
+      "role": "legacy_environment_record",
+      "sha256": "f0a87e25988337c3e784fce08af2f383a9d3b58c2e36a619843b597edb00b2d7",
+      "validation": "match"
+    },
+    {
+      "bytes": 5424,
+      "path": "runner.py",
+      "role": "legacy_runner_record_not_publication_live_path",
+      "sha256": "a1b36f477cb4b8782ef705ea82a36d646563ca65496dccc64ed36a4e1ab12dd8",
+      "validation": "match"
+    },
+    {
+      "bytes": 674,
+      "path": "events/S01A/cluster.json",
+      "role": "raw_cluster_version",
+      "sha256": "23dcb6db37c1ddc2383e8b0c351cdf882ae13b685478fa43ea9fdf4ca7830764",
+      "validation": "match"
+    },
+    {
+      "bytes": 29304,
+      "path": "events/S01A/events.txt",
+      "role": "raw_events",
+      "sha256": "0aa5905e9de84573b5044ac1c6c0a3403b5ed33e5062dbc304020ccb31f3cd9a",
+      "validation": "match"
+    },
+    {
+      "bytes": 47043,
+      "path": "events/S01A/samples.json",
+      "role": "raw_samples",
+      "sha256": "6933a2d17715048c48ef6d842ebc7f45d35f88a8dc0fd66f23c70c2ac9ad3e8a",
+      "validation": "match"
+    },
+    {
+      "bytes": 674,
+      "path": "events/S01B/cluster.json",
+      "role": "raw_cluster_version",
+      "sha256": "23dcb6db37c1ddc2383e8b0c351cdf882ae13b685478fa43ea9fdf4ca7830764",
+      "validation": "match"
+    },
+    {
+      "bytes": 37798,
+      "path": "events/S01B/events.txt",
+      "role": "raw_events",
+      "sha256": "ee4688a4e6a76bb0a2d62e5614282c5745226cc9f33d742e56cef9b2340c51b3",
+      "validation": "match"
+    },
+    {
+      "bytes": 62887,
+      "path": "events/S01B/samples.json",
+      "role": "raw_samples",
+      "sha256": "6278a1f21404cdcbb75663f3b8ed6e46ae72f9e45b9c683514e0295649d0696c",
+      "validation": "match"
+    }
+  ],
+  "source_manifest_version": "k8s01-source-pins-1",
+  "supported_claim": "In S01A the active controller overwrote a direct desired-state write; in S01B changing the active controller configuration changed the governed state. Each statement is limited to its one recorded run.",
+  "treatments": [
+    {
+      "completed_runs_n": 1,
+      "execution_order": 1,
+      "run_id": "S01A",
+      "status": "completed",
+      "treatment": "direct_write"
+    },
+    {
+      "completed_runs_n": 1,
+      "execution_order": 2,
+      "run_id": "S01B",
+      "status": "completed",
+      "treatment": "setpoint_override"
+    },
+    {
+      "completed_runs_n": 0,
+      "execution_order": null,
+      "run_id": null,
+      "status": "not_run",
+      "treatment": "ttl_override"
+    }
+  ],
+  "unsupported_claims": [
+    "comparative speed",
+    "safety",
+    "general performance",
+    "oscillation frequency",
+    "production generalization",
+    "TTL cleanup",
+    "user-facing improvement"
+  ]
+}

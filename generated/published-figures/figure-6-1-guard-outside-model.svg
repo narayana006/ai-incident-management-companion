@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+  <title id="title">Deterministic guard outside the model</title>
+  <desc id="desc">A learned system may submit a structured proposal but cannot authorize itself. A separately identified deterministic guard checks an approved action class, typed evidence, controller ownership, serving headroom, canonical reliability policy, cumulative budget, and substrate limits. Failed checks demote to human review while read-only assistance continues. Passed checks create an atomic reservation for a narrow executor, followed by verification.</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315D7D"/></marker>
+    <marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C65D21"/></marker>
+    <style>
+      .title{font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}.subtitle{font:18px Arial,Helvetica,sans-serif;fill:#455A64}
+      .h{font:700 21px Arial,Helvetica,sans-serif;fill:#17324D}.b{font:17px Arial,Helvetica,sans-serif;fill:#344B58}.s{font:15px Arial,Helvetica,sans-serif;fill:#455A64}
+      .wh{font:700 21px Arial,Helvetica,sans-serif;fill:#FFF}.wb{font:17px Arial,Helvetica,sans-serif;fill:#EAF3F7}.tag{font:700 15px Arial,Helvetica,sans-serif;fill:#FFF}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="838" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">The model proposes; a separate guard admits effect</text>
+  <text x="50" y="82" class="subtitle">A missing check demotes execution. It never asks the model to relax a bound.</text>
+
+  <rect x="55" y="138" width="250" height="160" rx="14" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <rect x="55" y="138" width="250" height="38" rx="14" fill="#6C5B7B"/>
+  <text x="180" y="164" text-anchor="middle" class="tag">LEARNED RECOMMENDER</text>
+  <text x="80" y="208" class="h">Structured proposal</text>
+  <text x="80" y="238" class="b">class • target • parameters</text>
+  <text x="80" y="266" class="b">evidence refs • executor ID</text>
+  <text x="80" y="289" class="s">No guard or production credential</text>
+
+  <path d="M305 218 H382" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <rect x="390" y="118" width="420" height="390" rx="18" fill="#EAF2F7" stroke="#315D7D" stroke-width="3"/>
+  <text x="600" y="158" text-anchor="middle" class="h">DETERMINISTIC GUARD</text>
+  <text x="425" y="196" class="b">✓ exact class permit + target + parameters</text>
+  <text x="425" y="232" class="b">✓ typed source state + claim-specific freshness</text>
+  <text x="425" y="268" class="b">✓ controller owner + supported mutation surface</text>
+  <text x="425" y="304" class="b">✓ useful serving headroom, where required</text>
+  <text x="425" y="340" class="b">✓ canonical reliability-policy input</text>
+  <text x="425" y="376" class="b">✓ atomic cumulative vector-budget reservation</text>
+  <text x="425" y="412" class="b">✓ coarse substrate deny + narrow executor scope</text>
+  <rect x="415" y="444" width="370" height="42" rx="9" fill="#17324D"/>
+  <text x="600" y="471" text-anchor="middle" class="wb">admit + reservation  |  demote + reasons</text>
+
+  <path d="M810 225 H888" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <rect x="895" y="138" width="250" height="160" rx="14" fill="#17324D"/>
+  <text x="1020" y="171" text-anchor="middle" class="wh">NARROW EXECUTOR</text>
+  <text x="920" y="208" class="wb">Rechecks exact scope</text>
+  <text x="920" y="238" class="wb">Binds admitted parameters</text>
+  <text x="920" y="268" class="wb">No excluded write surface</text>
+
+  <path d="M1020 298 V378" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <rect x="895" y="386" width="250" height="122" rx="14" fill="#FFF" stroke="#7E9DB0" stroke-width="2"/>
+  <text x="1020" y="421" text-anchor="middle" class="h">VERIFY OUTCOME</text>
+  <text x="920" y="454" class="b">verified • failed</text>
+  <text x="920" y="482" class="b">indeterminate → stop class</text>
+
+  <path d="M600 508 V589" stroke="#C65D21" stroke-width="4" marker-end="url(#orange)"/>
+  <rect x="390" y="598" width="420" height="138" rx="16" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="600" y="635" text-anchor="middle" class="h">DEMOTE TO NAMED HUMAN REVIEW</text>
+  <text x="425" y="672" class="b">Show proposal, evidence, missing input, and reason codes.</text>
+  <text x="425" y="705" class="b">Read-only assembly continues; silence never becomes approval.</text>
+
+  <rect x="55" y="598" width="250" height="138" rx="16" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <text x="180" y="635" text-anchor="middle" class="h">COARSE FLOOR</text>
+  <text x="80" y="672" class="b">Excluded categories remain</text>
+  <text x="80" y="700" class="b">unreachable at the substrate.</text>
+  <path d="M305 667 H382" stroke="#315D7D" stroke-width="3" marker-end="url(#blue)"/>
+
+  <text x="50" y="790" class="subtitle">Design boundary: the guard reduces observable consequence under stated coverage, freshness, atomicity,</text>
+  <text x="50" y="816" class="subtitle">and enforcement assumptions. It does not guarantee safety.</text>
+</svg>

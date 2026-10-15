@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">Governed agent plane with separated authority</title>
+  <desc id="desc">A left-to-right architecture shows hostile evidence entering read-only assembly and non-authoritative model reasoning. Typed records move into deterministic validation and authorization, then an exact capability reaches a narrow executor. A separate no-egress drafter and audience-bound publisher handle communication. Every stage appends to an audit API whose checkpoint is held outside the action plane. Humans own policy, promotion, commitments, break glass, incident command, and outcome adjudication.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#183153"/></marker>
+    <marker id="arrowCyan" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#087E8B"/></marker>
+    <style>
+      .title{font:700 34px Arial,sans-serif;fill:#102A43}.sub{font:18px Arial,sans-serif;fill:#486581}.zone{fill:#F4F7FA;stroke:#9FB3C8;stroke-width:2}.zoneTitle{font:700 18px Arial,sans-serif;fill:#334E68;letter-spacing:1px}.box{fill:#FFFFFF;stroke:#486581;stroke-width:2}.decision{fill:#FFF8E7;stroke:#B7791F;stroke-width:3}.exec{fill:#E6FFFA;stroke:#087E8B;stroke-width:3}.human{fill:#FDECEC;stroke:#B83280;stroke-width:3}.audit{fill:#EEF2FF;stroke:#5145CD;stroke-width:3}.label{font:700 20px Arial,sans-serif;fill:#102A43}.small{font:16px Arial,sans-serif;fill:#334E68}.tiny{font:14px Arial,sans-serif;fill:#486581}.flow{fill:none;stroke:#183153;stroke-width:4;marker-end:url(#arrow)}.data{fill:none;stroke:#087E8B;stroke-width:3;stroke-dasharray:9 7;marker-end:url(#arrowCyan)}.auditLine{fill:none;stroke:#5145CD;stroke-width:2.5;stroke-dasharray:5 6}.deny{font:700 16px Arial,sans-serif;fill:#9B2C2C}.pill{fill:#E8F1FA;stroke:#627D98;stroke-width:1.5}.pillText{font:700 15px Arial,sans-serif;fill:#334E68}
+    </style>
+  </defs>
+  <rect width="1600" height="920" fill="#FFFFFF"/>
+  <text x="70" y="60" class="title">The governed agent plane separates useful reasoning from authority</text>
+  <text x="70" y="92" class="sub">Dashed teal = information · solid navy = admitted authority · purple = append-only audit path</text>
+
+  <rect x="55" y="130" width="265" height="490" rx="18" class="zone"/>
+  <text x="78" y="164" class="zoneTitle">EVIDENCE ZONE</text>
+  <rect x="80" y="195" width="215" height="105" rx="13" class="box"/>
+  <text x="105" y="232" class="label">Hostile or failed</text><text x="105" y="260" class="label">source content</text>
+  <text x="105" y="284" class="tiny">No content carries authority</text>
+  <rect x="80" y="345" width="215" height="145" rx="13" class="box"/>
+  <text x="105" y="382" class="label">Evidence assembly</text>
+  <text x="105" y="412" class="small">Read-only adapters</text><text x="105" y="437" class="small">typed source state</text><text x="105" y="462" class="small">stable subject + time</text>
+  <text x="105" y="520" class="deny">NO WRITE / NO EGRESS</text>
+
+  <rect x="350" y="130" width="270" height="490" rx="18" class="zone"/>
+  <text x="373" y="164" class="zoneTitle">MODEL ZONE</text>
+  <rect x="375" y="215" width="220" height="130" rx="13" class="box"/>
+  <text x="405" y="255" class="label">Reason + propose</text><text x="405" y="287" class="small">Hypotheses</text><text x="405" y="313" class="small">Exact action candidate</text>
+  <rect x="375" y="380" width="220" height="115" rx="13" class="box"/>
+  <text x="405" y="420" class="label">Challenge claims</text><text x="405" y="452" class="small">Independent reads where</text><text x="405" y="477" class="small">practical; no approval</text>
+  <text x="405" y="540" class="deny">NO AUTHORITY</text>
+
+  <rect x="650" y="130" width="320" height="490" rx="18" class="zone"/>
+  <text x="673" y="164" class="zoneTitle">DECISION ZONE</text>
+  <rect x="680" y="205" width="260" height="145" rx="13" class="decision"/>
+  <text x="710" y="245" class="label">Deterministic checks</text><text x="710" y="278" class="small">Policy-selected evidence</text><text x="710" y="304" class="small">freshness · scope · guard</text><text x="710" y="330" class="small">positive acknowledgement</text>
+  <rect x="680" y="390" width="260" height="120" rx="13" class="decision"/>
+  <text x="710" y="431" class="label">Authorizer</text><text x="710" y="464" class="small">Issue one exact, fresh,</text><text x="710" y="489" class="small">single-use capability</text>
+  <rect x="704" y="535" width="212" height="46" rx="23" class="pill"/><text x="730" y="565" class="pillText">HOLD · DENY · ISSUE</text>
+
+  <rect x="1000" y="130" width="250" height="490" rx="18" class="zone"/>
+  <text x="1023" y="164" class="zoneTitle">EXECUTION ZONE</text>
+  <rect x="1025" y="235" width="200" height="175" rx="13" class="exec"/>
+  <text x="1055" y="274" class="label">Narrow executor</text><text x="1055" y="307" class="small">Verify capability</text><text x="1055" y="333" class="small">Atomic nonce claim</text><text x="1055" y="359" class="small">Per-call auth</text><text x="1055" y="385" class="small">Reconcile ambiguity</text>
+  <rect x="1025" y="455" width="200" height="90" rx="13" class="box"/><text x="1055" y="493" class="label">Target adapter</text><text x="1055" y="521" class="small">One class-scoped verb</text>
+
+  <rect x="1280" y="130" width="265" height="490" rx="18" class="zone"/>
+  <text x="1303" y="164" class="zoneTitle">COMMUNICATION</text>
+  <rect x="1305" y="215" width="215" height="105" rx="13" class="box"/><text x="1332" y="254" class="label">No-egress drafter</text><text x="1332" y="286" class="small">Proposed message only</text>
+  <rect x="1305" y="365" width="215" height="130" rx="13" class="exec"/><text x="1332" y="403" class="label">Narrow publisher</text><text x="1332" y="434" class="small">Digest + audience</text><text x="1332" y="460" class="small">approval + expiry</text><text x="1332" y="483" class="tiny">Human owns commitments</text>
+  <text x="1332" y="540" class="deny">NO PRODUCTION WRITE</text>
+
+  <path d="M188 300 V345" class="data"/><path d="M295 418 H375" class="data"/><path d="M595 280 H680" class="data"/><path d="M595 438 H680" class="data"/>
+  <path d="M810 350 V390" class="flow"/><path d="M940 450 H1025" class="flow"/><path d="M1125 410 V455" class="flow"/>
+  <path d="M595 280 C930 95 1200 95 1410 215" class="data"/><path d="M1410 320 V365" class="flow"/>
+
+  <rect x="55" y="665" width="1070" height="185" rx="18" class="audit"/>
+  <text x="82" y="704" class="zoneTitle">AUDIT ZONE — RESTRICTED APPEND API</text>
+  <text x="82" y="742" class="label">Trigger → evidence → proposal → validation → authorization → execution → outcome</text>
+  <text x="82" y="778" class="small">Executor can append; it has no update/delete API. External checkpoints make some later rewriting visible.</text>
+  <text x="82" y="809" class="tiny">Conditional on capture, canonicalization, digest/key custody, retention, references, access, and independent anchors.</text>
+  <rect x="1165" y="665" width="380" height="185" rx="18" class="human"/>
+  <text x="1192" y="704" class="zoneTitle">HUMAN COMMAND</text>
+  <text x="1192" y="741" class="small">Policy + action-class promotion</text><text x="1192" y="770" class="small">Incident command + commitments</text><text x="1192" y="799" class="small">Break glass + outcome adjudication</text><text x="1192" y="829" class="tiny">Authority is accountable, not infallible.</text>
+  <path d="M188 620 V665 M485 620 V665 M810 620 V665 M1125 620 V665 M1410 620 V665" class="auditLine"/>
+</svg>

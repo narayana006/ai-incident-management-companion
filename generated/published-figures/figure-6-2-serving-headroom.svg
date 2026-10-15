@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Serving headroom uses useful-work evidence</title>
+  <desc id="desc">Control-plane probe state remains context, but capacity-removing admission counts useful serving work from an action-specific data-plane signal. Coverage, freshness, required-capacity and existing reservations enter the headroom calculation. Missing, stale, out-of-scope or insufficient evidence demotes the action.</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315D7D"/></marker>
+    <marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C65D21"/></marker>
+    <style>.title{font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}.sub{font:18px Arial,Helvetica,sans-serif;fill:#455A64}.h{font:700 21px Arial,Helvetica,sans-serif;fill:#17324D}.b{font:17px Arial,Helvetica,sans-serif;fill:#344B58}.s{font:15px Arial,Helvetica,sans-serif;fill:#455A64}.wh{font:700 20px Arial,Helvetica,sans-serif;fill:#FFF}.wb{font:17px Arial,Helvetica,sans-serif;fill:#EAF3F7}</style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="818" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">Count useful work before removing capacity</text>
+  <text x="50" y="82" class="sub">Probe success can coexist with a gray failure. The action contract names the usable serving signal.</text>
+
+  <rect x="60" y="135" width="330" height="210" rx="15" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <text x="225" y="174" text-anchor="middle" class="h">CONTROL-PLANE VIEW</text>
+  <text x="90" y="215" class="b">readiness • liveness • desired count</text>
+  <text x="90" y="252" class="b">May show a local endpoint is alive.</text>
+  <text x="90" y="289" class="b">Does not by itself prove useful work.</text>
+  <rect x="90" y="312" width="270" height="25" rx="7" fill="#FFF3EA"/>
+  <text x="225" y="330" text-anchor="middle" class="s">context only for capacity removal</text>
+
+  <rect x="60" y="405" width="330" height="240" rx="15" fill="#EAF2F7" stroke="#315D7D" stroke-width="2"/>
+  <text x="225" y="444" text-anchor="middle" class="h">USEFUL-WORK VIEW</text>
+  <text x="90" y="484" class="b">Action-specific data-plane evidence:</text>
+  <text x="90" y="518" class="b">completed requests • consumed work</text>
+  <text x="90" y="552" class="b">timely downstream output • coverage</text>
+  <text x="90" y="588" class="b">Fresh for the named claim and scope</text>
+  <text x="90" y="622" class="s">The service defines the unit; the book does not.</text>
+
+  <path d="M390 510 H488" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <path d="M390 235 C450 235 430 410 488 410" stroke="#8AA7B7" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#blue)"/>
+
+  <rect x="500" y="190" width="390" height="390" rx="18" fill="#17324D"/>
+  <text x="695" y="231" text-anchor="middle" class="wh">HEADROOM CONTRACT</text>
+  <text x="535" y="278" class="wb">C serving  = useful work under declared signal</text>
+  <text x="535" y="318" class="wb">C required = current eligible-load requirement</text>
+  <text x="535" y="358" class="wb">C reserved = in-flight actions + uncertainty</text>
+  <rect x="535" y="396" width="320" height="58" rx="10" fill="#315D7D"/>
+  <text x="695" y="431" text-anchor="middle" class="wh">H = C serving − C required − C reserved</text>
+  <text x="535" y="492" class="wb">Admit removal ρ only when H − ρ ≥ 0</text>
+  <text x="535" y="532" class="wb">and freshness + coverage checks pass.</text>
+
+  <path d="M890 310 H975" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <rect x="985" y="215" width="170" height="135" rx="14" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+  <text x="1070" y="252" text-anchor="middle" class="h">PASS</text>
+  <text x="1005" y="290" class="b">Continue to</text>
+  <text x="1005" y="320" class="b">budget reserve</text>
+
+  <path d="M890 470 H975" stroke="#C65D21" stroke-width="4" marker-end="url(#orange)"/>
+  <rect x="985" y="395" width="170" height="170" rx="14" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="1070" y="432" text-anchor="middle" class="h">DEMOTE</text>
+  <text x="1005" y="470" class="b">stale • missing</text>
+  <text x="1005" y="500" class="b">out of scope</text>
+  <text x="1005" y="530" class="b">insufficient</text>
+
+  <rect x="500" y="625" width="655" height="118" rx="15" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <text x="530" y="660" class="h">Make disagreement visible</text>
+  <text x="530" y="694" class="b">Report control-plane count, useful-serving count, and signal window.</text>
+  <text x="530" y="723" class="b">Keep coverage and uncertainty separate.</text>
+  <text x="50" y="782" class="sub">A missing serving signal is unknown headroom, not zero impact and not permission to continue.</text>
+</svg>

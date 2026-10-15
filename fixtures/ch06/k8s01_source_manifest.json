@@ -1,0 +1,90 @@
+{
+  "manifest_version": "k8s01-source-pins-1",
+  "evidence_class": "single_environment_mechanism_demonstration",
+  "source_root": "fixtures/ch06/K8S-01",
+  "declared_treatments": [
+    {
+      "treatment": "direct_write",
+      "run_id": "S01A",
+      "status": "completed",
+      "completed_runs_n": 1,
+      "execution_order": 1
+    },
+    {
+      "treatment": "setpoint_override",
+      "run_id": "S01B",
+      "status": "completed",
+      "completed_runs_n": 1,
+      "execution_order": 2
+    },
+    {
+      "treatment": "ttl_override",
+      "run_id": null,
+      "status": "not_run",
+      "completed_runs_n": 0,
+      "execution_order": null
+    }
+  ],
+  "endpoint_definitions": {
+    "controller_input": "HorizontalPodAutoscaler/cpu-svc.spec.maxReplicas",
+    "controller_decision": "HorizontalPodAutoscaler/cpu-svc.status.desiredReplicas",
+    "owned_target_field": "Deployment/cpu-svc.spec.replicas",
+    "observed_workload_state": "Deployment/cpu-svc.status.readyReplicas"
+  },
+  "files": [
+    {
+      "path": "trials.csv",
+      "bytes": 359,
+      "sha256": "85f920dc3c9f8929889765ff9855e1b3cb43e1bbd513d124b21f69838c7f7f7d",
+      "role": "recorded_trial_index"
+    },
+    {
+      "path": "environment.yaml",
+      "bytes": 2398,
+      "sha256": "f0a87e25988337c3e784fce08af2f383a9d3b58c2e36a619843b597edb00b2d7",
+      "role": "legacy_environment_record"
+    },
+    {
+      "path": "runner.py",
+      "bytes": 5424,
+      "sha256": "a1b36f477cb4b8782ef705ea82a36d646563ca65496dccc64ed36a4e1ab12dd8",
+      "role": "legacy_runner_record_not_publication_live_path"
+    },
+    {
+      "path": "events/S01A/cluster.json",
+      "bytes": 674,
+      "sha256": "23dcb6db37c1ddc2383e8b0c351cdf882ae13b685478fa43ea9fdf4ca7830764",
+      "role": "raw_cluster_version"
+    },
+    {
+      "path": "events/S01A/events.txt",
+      "bytes": 29304,
+      "sha256": "0aa5905e9de84573b5044ac1c6c0a3403b5ed33e5062dbc304020ccb31f3cd9a",
+      "role": "raw_events"
+    },
+    {
+      "path": "events/S01A/samples.json",
+      "bytes": 47043,
+      "sha256": "6933a2d17715048c48ef6d842ebc7f45d35f88a8dc0fd66f23c70c2ac9ad3e8a",
+      "role": "raw_samples"
+    },
+    {
+      "path": "events/S01B/cluster.json",
+      "bytes": 674,
+      "sha256": "23dcb6db37c1ddc2383e8b0c351cdf882ae13b685478fa43ea9fdf4ca7830764",
+      "role": "raw_cluster_version"
+    },
+    {
+      "path": "events/S01B/events.txt",
+      "bytes": 37798,
+      "sha256": "ee4688a4e6a76bb0a2d62e5614282c5745226cc9f33d742e56cef9b2340c51b3",
+      "role": "raw_events"
+    },
+    {
+      "path": "events/S01B/samples.json",
+      "bytes": 62887,
+      "sha256": "6278a1f21404cdcbb75663f3b8ed6e46ae72f9e45b9c683514e0295649d0696c",
+      "role": "raw_samples"
+    }
+  ]
+}

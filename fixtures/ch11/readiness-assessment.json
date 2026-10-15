@@ -1,0 +1,143 @@
+{
+  "schema_version": "ch11-readiness-1",
+  "artifact_class": "illustrative_template",
+  "source_label": "illustrative_phase_0_gate_ledger",
+  "assessment_id": "illustrative-read-only-pilot-001",
+  "assessment_as_of": "2026-08-18",
+  "current_gate": "assessment",
+  "scope": {
+    "eligible_population": "Illustrative pages matching one predeclared evidence-assembly signature.",
+    "explicit_exclusions": "Security events, sensitive communications, unknown topology, and every production write.",
+    "permitted_assistance": "Read-only context packet with linked evidence and visible source health.",
+    "prohibited_authority": "No recommendation, execution, incident close, commitment, exception, or people decision.",
+    "model_version": "illustrative-model-v1",
+    "prompt_version": "illustrative-prompt-v1",
+    "retrieval_version": "illustrative-retrieval-v1",
+    "policy_version": "illustrative-policy-v1",
+    "data_version": "illustrative-fixture-v1"
+  },
+  "decision_owner": "program_accountable_owner",
+  "decision_reviewer": "governance_review_chair",
+  "gate_rows": [
+    {
+      "gate_id": "G0-PROBLEM",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/pilot-contract-v1",
+      "owner": "pilot_service_owner",
+      "reviewer": "responder_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Eligible population, exclusions, or responder workflow changes.",
+      "not_applicable_reason": "",
+      "next_action": "Reconfirm the eligible population before the next governance review.",
+      "notes": "Constructed example; it demonstrates the method, not readiness or performance."
+    },
+    {
+      "gate_id": "G0-MEASUREMENT",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/baseline-contract-v1",
+      "owner": "evaluation_owner",
+      "reviewer": "measurement_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Clock, outcome, censoring, population, or analysis definition changes.",
+      "not_applicable_reason": "",
+      "next_action": "Preserve missing and indeterminate cases in the declared baseline.",
+      "notes": "No effect or production-readiness claim is attached to this template."
+    },
+    {
+      "gate_id": "G0-EVIDENCE",
+      "state": "unsatisfied",
+      "evidence_ref": "evidence://illustrative/source-access-gap-v1",
+      "owner": "evidence_source_owner",
+      "reviewer": "access_control_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Source contract, authorization, schema, health, or conflict rule changes.",
+      "not_applicable_reason": "",
+      "next_action": "Remove the unsupported source from scope or complete its denied-read and source-loss tests.",
+      "notes": "The fixed policy narrows this illustrative pilot; other satisfied rows cannot offset the gap."
+    },
+    {
+      "gate_id": "G0-AUTHORITY",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/human-authority-charter-v1",
+      "owner": "incident_authority_owner",
+      "reviewer": "governance_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Assistance, acknowledgement, stop power, or accountable role changes.",
+      "not_applicable_reason": "",
+      "next_action": "Exercise correction, manual continuation, and stop power with responders.",
+      "notes": "Human review establishes authority and accountability; it does not guarantee correctness."
+    },
+    {
+      "gate_id": "G0-SECURITY-PRIVACY",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/security-privacy-review-v1",
+      "owner": "security_privacy_owner",
+      "reviewer": "independent_boundary_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Principal, purpose, audience, retention, egress, or data category changes.",
+      "not_applicable_reason": "",
+      "next_action": "Repeat denied-read, injection, audience, and retention tests after any boundary change.",
+      "notes": "References are generic and contain no organizational or personal identifiers."
+    },
+    {
+      "gate_id": "G0-EVALUATION",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/adjudication-design-v1",
+      "owner": "adjudication_owner",
+      "reviewer": "evaluation_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Outcome contract, adjudicator pool, case population, or appeal path changes.",
+      "not_applicable_reason": "",
+      "next_action": "Retain right, wrong, indeterminate, ineligible, and unevaluable outcomes separately.",
+      "notes": "Responder agreement is not treated as correctness."
+    },
+    {
+      "gate_id": "G0-CONSEQUENCE",
+      "state": "not_applicable",
+      "evidence_ref": "evidence://illustrative/read-only-boundary-review-v1",
+      "owner": "policy_authorization_owner",
+      "reviewer": "consequence_boundary_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Any recommendation or production-write capability is proposed.",
+      "not_applicable_reason": "The declared pilot is read-only and prohibits recommendations and production writes.",
+      "next_action": "Reopen this gate before shadow recommendations or any write path is designed.",
+      "notes": "Not applicable is reviewed evidence, not a bypass."
+    },
+    {
+      "gate_id": "G0-OPERATIONS",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/manual-fallback-exercise-v1",
+      "owner": "operational_service_owner",
+      "reviewer": "responder_workflow_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Adapter, responder workflow, correction path, or on-call ownership changes.",
+      "not_applicable_reason": "",
+      "next_action": "Keep native-tool access and repeat the source-loss fallback exercise.",
+      "notes": "The assistant remains a non-blocking convenience."
+    },
+    {
+      "gate_id": "G0-ECONOMICS",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/cost-attribution-contract-v1",
+      "owner": "cost_governance_owner",
+      "reviewer": "operating_budget_reviewer",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Usage, price, integration effort, review work, or operating budget changes.",
+      "not_applicable_reason": "",
+      "next_action": "Measure units and prices separately and include transferred human work.",
+      "notes": "Cost control does not establish operational value or payback."
+    },
+    {
+      "gate_id": "G0-GOVERNANCE",
+      "state": "satisfied",
+      "evidence_ref": "evidence://illustrative/governance-operating-model-v1",
+      "owner": "program_accountable_owner",
+      "reviewer": "governance_review_chair",
+      "expires_on": "2027-06-30",
+      "recertification_trigger": "Owner, exception, promotion, demotion, correction, or retirement process changes.",
+      "not_applicable_reason": "",
+      "next_action": "Record the decision, dissent, owner, next review, and re-entry conditions.",
+      "notes": "The tool supports the review; accountable humans own the decision."
+    }
+  ]
+}

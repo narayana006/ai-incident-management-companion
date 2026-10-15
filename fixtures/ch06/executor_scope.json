@@ -1,0 +1,25 @@
+{
+  "scope_id": "ch06-executor-scope-1",
+  "version": "1",
+  "executor_id": "ch06-narrow-executor",
+  "allowed": [
+    {
+      "action_class_id": "worker_evict",
+      "operation": "evict_via_owner",
+      "surface": "orchestrator.eviction",
+      "target_kind": "Workload",
+      "namespace": "demo",
+      "name_prefix": "worker-",
+      "parameters": {"units": {"minimum": 1, "maximum": 1}}
+    },
+    {
+      "action_class_id": "replica_adjust",
+      "operation": "set_controller_limit",
+      "surface": "autoscaler.spec.max_units",
+      "target_kind": "Workload",
+      "namespace": "demo",
+      "name_prefix": "service-",
+      "parameters": {"value": {"minimum": 1, "maximum": 30}}
+    }
+  ]
+}

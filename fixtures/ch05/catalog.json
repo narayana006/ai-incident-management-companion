@@ -1,0 +1,36 @@
+{
+  "artifact_class": "illustrative_constructed",
+  "catalog_id": "ch05-standard-change-catalog",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "class_id": "standard-route-isolation-v1",
+      "action_class": "standard_route_isolation",
+      "human_accountable_owner": "platform-change-owner",
+      "approval_record_ref": "constructed-catalog-approval-1",
+      "effective_at": "2026-02-01T00:00:00Z",
+      "recertification_trigger": "target-kind-or-parameter-contract-change",
+      "allowed_in_freeze": false,
+      "eligible_target_kind": "route",
+      "eligible_subjects": [
+        "route-a"
+      ],
+      "maximum_resolved_targets": 1,
+      "allowed_operation": "replace_scoped_state",
+      "allowed_desired_state": {
+        "route_mode": [
+          "isolated"
+        ],
+        "security_boundary": [
+          "boundary-a"
+        ],
+        "owner": [
+          "service-a"
+        ]
+      },
+      "required_executor": "change-executor-v1",
+      "verification_contract": "exact-target-state",
+      "reversal_contract": "restore-reviewed-snapshot"
+    }
+  ]
+}

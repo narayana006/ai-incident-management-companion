@@ -1,0 +1,225 @@
+{
+  "fixture_class": "illustrative_constructed",
+  "replay_cutoff": "2026-01-01T00:05:00Z",
+  "analysis_scope": {
+    "primary_subject": "public-surface-a",
+    "surface": "public-surface-a",
+    "region": "region-a",
+    "route_object": "route-object-a",
+    "protection_control": "protection-control-a",
+    "window_start": "2026-01-01T00:00:00Z",
+    "window_end": "2026-01-01T00:05:00Z",
+    "affected_traffic_filter": "traffic_class=affected"
+  },
+  "freshness_policy": {
+    "policy_id": "ch01-replay-freshness",
+    "version": "1.0.0",
+    "clock": "replay_cutoff",
+    "rules": {
+      "edge_telemetry": {
+        "timestamp_field": "source_update_time",
+        "max_age_seconds": 120
+      },
+      "architecture_record": {
+        "timestamp_field": "source_update_time",
+        "max_age_seconds": 2764800
+      },
+      "routing_state": {
+        "timestamp_field": "source_update_time",
+        "max_age_seconds": 120
+      },
+      "protection_counters": {
+        "timestamp_field": "source_update_time",
+        "max_age_seconds": 120
+      },
+      "change_record": {
+        "timestamp_field": "source_update_time",
+        "max_age_seconds": 5184000
+      }
+    }
+  },
+  "system_authority": {
+    "model_credentials": "none",
+    "adapter_access": "least_privilege_read",
+    "production_write_credential": "none"
+  },
+  "required_evidence_ids": ["E-01", "E-02", "E-03", "E-04", "E-05"],
+  "evidence": [
+    {
+      "evidence_id": "E-01",
+      "parent_evidence_ids": [],
+      "subject": "public-surface-a",
+      "source_state_class": "live_state_observation",
+      "source": "edge_telemetry",
+      "adapter_id": "edge-read-v1",
+      "calling_principal": "incident-evidence-edge-reader",
+      "valid_time": "2026-01-01T00:04:30Z",
+      "source_update_time": "2026-01-01T00:04:31Z",
+      "retrieval_time": "2026-01-01T00:04:35Z",
+      "retrieval_status": "retrieved",
+      "authorization_result": "allowed",
+      "source_health": {
+        "status": "healthy",
+        "assessed_at": "2026-01-01T00:04:35Z",
+        "detail": "fixture adapter responded"
+      },
+      "coverage": {
+        "surface": "public-surface-a",
+        "region": "region-a",
+        "window_start": "2026-01-01T00:00:00Z",
+        "window_end": "2026-01-01T00:05:00Z"
+      },
+      "query_parameters": {
+        "metric": "edge_pressure_and_service_errors",
+        "surface": "public-surface-a",
+        "window_start": "2026-01-01T00:00:00Z",
+        "window_end": "2026-01-01T00:05:00Z"
+      },
+      "immutable_ref": "sha256:273098d99e7b7d2a51b0c3de8f70ed925dd4dff10ff254f803ef5da2b5cd7652",
+      "content": {
+        "edge_pressure": "elevated",
+        "multi_service_errors": true
+      }
+    },
+    {
+      "evidence_id": "E-02",
+      "parent_evidence_ids": [],
+      "subject": "public-surface-a",
+      "source_state_class": "recorded_intent",
+      "source": "architecture_record",
+      "adapter_id": "record-read-v1",
+      "calling_principal": "incident-evidence-record-reader",
+      "valid_time": "2025-12-01T00:00:00Z",
+      "source_update_time": "2025-12-01T00:00:00Z",
+      "retrieval_time": "2026-01-01T00:04:36Z",
+      "retrieval_status": "retrieved",
+      "authorization_result": "allowed",
+      "source_health": {
+        "status": "healthy",
+        "assessed_at": "2026-01-01T00:04:36Z",
+        "detail": "fixture record was retrievable"
+      },
+      "coverage": {
+        "surface": "public-surface-a",
+        "record_version": "design-v7"
+      },
+      "query_parameters": {
+        "subject": "public-surface-a",
+        "version": "design-v7"
+      },
+      "immutable_ref": "sha256:6b74f3a70b0b248e306ab4eac2f157ba55234b0ccc78af12b23ab9bd69d4a3df",
+      "content": {
+        "recorded_path": [
+          "public-surface-a",
+          "protection-control-a",
+          "service-edge-a"
+        ]
+      }
+    },
+    {
+      "evidence_id": "E-03",
+      "parent_evidence_ids": [],
+      "subject": "route-object-a",
+      "source_state_class": "live_state_observation",
+      "source": "routing_state",
+      "adapter_id": "route-read-v1",
+      "calling_principal": "incident-evidence-route-reader",
+      "valid_time": "2026-01-01T00:04:38Z",
+      "source_update_time": "2026-01-01T00:04:37Z",
+      "retrieval_time": "2026-01-01T00:04:39Z",
+      "retrieval_status": "retrieved",
+      "authorization_result": "allowed",
+      "source_health": {
+        "status": "healthy",
+        "assessed_at": "2026-01-01T00:04:39Z",
+        "detail": "fixture adapter responded"
+      },
+      "coverage": {
+        "surface": "public-surface-a",
+        "region": "region-a",
+        "route_object": "route-object-a"
+      },
+      "query_parameters": {
+        "route_object": "route-object-a",
+        "surface": "public-surface-a",
+        "include_effective_next_hops": true
+      },
+      "immutable_ref": "sha256:f45482b75f83e45e658f23e31757294ca744e7b8a9339de1a3b7ac38381741ea",
+      "content": {
+        "configured_path": ["public-surface-a", "service-edge-a"]
+      }
+    },
+    {
+      "evidence_id": "E-04",
+      "parent_evidence_ids": [],
+      "subject": "protection-control-a",
+      "source_state_class": "live_state_observation",
+      "source": "protection_counters",
+      "adapter_id": "counter-read-v1",
+      "calling_principal": "incident-evidence-counter-reader",
+      "valid_time": "2026-01-01T00:04:40Z",
+      "source_update_time": "2026-01-01T00:04:40Z",
+      "retrieval_time": "2026-01-01T00:04:41Z",
+      "retrieval_status": "retrieved",
+      "authorization_result": "allowed",
+      "source_health": {
+        "status": "healthy",
+        "assessed_at": "2026-01-01T00:04:41Z",
+        "detail": "fixture counter stream was queryable"
+      },
+      "coverage": {
+        "surface": "public-surface-a",
+        "region": "region-a",
+        "protection_control": "protection-control-a",
+        "window_start": "2026-01-01T00:00:00Z",
+        "window_end": "2026-01-01T00:05:00Z",
+        "filter": "traffic_class=affected"
+      },
+      "query_parameters": {
+        "counter": "evaluated_requests",
+        "surface": "public-surface-a",
+        "window_start": "2026-01-01T00:00:00Z",
+        "window_end": "2026-01-01T00:05:00Z",
+        "filter": "traffic_class=affected"
+      },
+      "immutable_ref": "sha256:ecb3a35a9a79a66c187e7f439f9bc09498d8e47821ee4f0c4d40c03cba50d376",
+      "content": {
+        "evaluated_requests": 0,
+        "telemetry_health": "healthy"
+      }
+    },
+    {
+      "evidence_id": "E-05",
+      "parent_evidence_ids": [],
+      "subject": "route-object-a",
+      "source_state_class": "recorded_intent",
+      "source": "change_record",
+      "adapter_id": "change-read-v1",
+      "calling_principal": "incident-evidence-change-reader",
+      "valid_time": "2025-11-15T00:00:00Z",
+      "source_update_time": "2025-11-15T00:00:00Z",
+      "retrieval_time": "2026-01-01T00:04:42Z",
+      "retrieval_status": "retrieved",
+      "authorization_result": "allowed",
+      "source_health": {
+        "status": "healthy",
+        "assessed_at": "2026-01-01T00:04:42Z",
+        "detail": "fixture change record was retrievable"
+      },
+      "coverage": {
+        "surface": "public-surface-a",
+        "route_object": "route-object-a",
+        "change_id": "change-fixture-17"
+      },
+      "query_parameters": {
+        "route_object": "route-object-a",
+        "before": "2026-01-01T00:05:00Z"
+      },
+      "immutable_ref": "sha256:a7e3d3d3345b3f02db8ecf89203d676996efee0231cb9febd4f329755d09f082",
+      "content": {
+        "change_type": "forwarding_policy_update",
+        "route_object": "route-object-a"
+      }
+    }
+  ]
+}

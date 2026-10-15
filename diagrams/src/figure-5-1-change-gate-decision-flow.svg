@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1050" viewBox="0 0 1500 1050" role="img" aria-labelledby="title desc" data-class="proposed_design">
+  <metadata>data_class=proposed_design;model_grants_authority=false;silence_executes=false;dependency_reachability_is_lower_bound=true</metadata>
+  <title id="title">Evidence-gated change decision and execution flow</title>
+  <desc id="desc">An exact proposal hash and resolved target scope enter a claim-specific evidence manifest. Typed declared and observed evidence is checked for retrieval, authorization, source health, freshness, identity, coverage, and conflict before deterministic policy routes the change to hold, named positive acknowledgement, or a pre-authorized standard class. Only an exact, unexpired authorization that passes an execution-time recheck can reach a separately credentialed executor. Verification failure, silence, timeout, missing evidence, conflict, drift, or changed scope routes to hold or reversal.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#526C7B"/></marker>
+    <marker id="green-arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2C7250"/></marker>
+    <marker id="red-arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#A43D34"/></marker>
+    <style>
+      .title { font: 700 31px Arial, Helvetica, sans-serif; fill: #17324D; }
+      .subtitle { font: 17px Arial, Helvetica, sans-serif; fill: #455A64; }
+      .head { font: 700 19px Arial, Helvetica, sans-serif; fill: #17324D; }
+      .body { font: 15px Arial, Helvetica, sans-serif; fill: #455A64; }
+      .small { font: 13px Arial, Helvetica, sans-serif; fill: #5D707B; }
+      .tag { font: 700 16px Arial, Helvetica, sans-serif; fill: #FFFFFF; }
+      .failhead { font: 700 18px Arial, Helvetica, sans-serif; fill: #842F29; }
+      .success { font: 700 17px Arial, Helvetica, sans-serif; fill: #245E43; }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1498" height="1048" rx="18" fill="#FFFFFF" stroke="#D4DDE4" stroke-width="2"/>
+  <text x="52" y="56" class="title">The change gate binds evidence before it binds authority</text>
+  <text x="52" y="88" class="subtitle">Proposed design. Deterministic checks and named authority sit outside the model.</text>
+
+  <g>
+    <rect x="45" y="130" width="280" height="150" rx="14" fill="#EAF2F7" stroke="#315D7D" stroke-width="2"/>
+    <rect x="45" y="130" width="44" height="150" rx="14" fill="#315D7D"/>
+    <text x="67" y="211" text-anchor="middle" class="tag">1</text>
+    <text x="108" y="166" class="head">EXACT PROPOSAL</text>
+    <text x="108" y="197" class="body">Content hash + target set</text>
+    <text x="108" y="223" class="body">Action class + desired state</text>
+    <text x="108" y="249" class="body">Verification + reversal</text>
+  </g>
+  <line x1="325" y1="205" x2="365" y2="205" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="375" y="118" width="345" height="174" rx="14" fill="#F7F9FA" stroke="#78909C" stroke-width="2"/>
+    <rect x="375" y="118" width="44" height="174" rx="14" fill="#526C7B"/>
+    <text x="397" y="211" text-anchor="middle" class="tag">2</text>
+    <text x="438" y="153" class="head">CLAIM-SPECIFIC EVIDENCE</text>
+    <text x="438" y="184" class="body">Declared intent + scoped live read</text>
+    <text x="438" y="210" class="body">In-flight work + canonical policy</text>
+    <text x="438" y="236" class="body">Dependency bound + signer authority</text>
+    <text x="438" y="268" class="small">Every fact keeps scope, time, health, and reference.</text>
+  </g>
+  <line x1="720" y1="205" x2="760" y2="205" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="770" y="105" width="430" height="200" rx="14" fill="#F7F9FA" stroke="#607D8B" stroke-width="2"/>
+    <rect x="770" y="105" width="44" height="200" rx="14" fill="#526C7B"/>
+    <text x="792" y="211" text-anchor="middle" class="tag">3</text>
+    <text x="833" y="140" class="head">TYPED COMPARISON + POLICY</text>
+    <text x="833" y="170" class="body">Retrieval · authorization · source health</text>
+    <text x="833" y="196" class="body">Freshness · subject join · coverage</text>
+    <text x="833" y="222" class="body">Declared/live diff · conflict preservation</text>
+    <text x="833" y="248" class="body">Freeze policy · catalog · required signer</text>
+    <text x="833" y="280" class="small">No score can override a failed required check.</text>
+  </g>
+  <line x1="1200" y1="205" x2="1240" y2="205" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <polygon points="1340,120 1445,205 1340,290 1235,205" fill="#FFF7E7" stroke="#A96B17" stroke-width="2"/>
+  <text x="1340" y="192" text-anchor="middle" class="head">POLICY ROUTE</text>
+  <text x="1340" y="218" text-anchor="middle" class="body">current evidence</text>
+  <text x="1340" y="241" text-anchor="middle" class="body">+ named authority</text>
+
+  <path d="M985 305 V334 H245 V375" fill="none" stroke="#A43D34" stroke-width="3" marker-end="url(#red-arrow)"/>
+  <text x="610" y="327" text-anchor="middle" class="small">missing · denied · partial · stale · conflicting · unjoinable · policy block</text>
+  <path d="M1295 248 V335 H760 V375" fill="none" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1385 248 V335 H1255 V375" fill="none" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="45" y="380" width="400" height="130" rx="15" fill="#FCEDEC" stroke="#A43D34" stroke-width="3"/>
+    <text x="70" y="419" class="failhead">HOLD / NAMED INVESTIGATION</text>
+    <text x="70" y="452" class="body">Keep source failure and conflict visible.</text>
+    <text x="70" y="478" class="body">Do not infer consent or repair the proposal.</text>
+  </g>
+
+  <g>
+    <rect x="540" y="380" width="440" height="130" rx="15" fill="#FFF5DF" stroke="#A96B17" stroke-width="3"/>
+    <text x="565" y="419" class="head">NAMED POSITIVE ACKNOWLEDGEMENT</text>
+    <text x="565" y="452" class="body">Exact proposal · signer role · conditions · expiry</text>
+    <text x="565" y="478" class="body">Silence, rejection, or timeout holds.</text>
+  </g>
+
+  <g>
+    <rect x="1055" y="380" width="400" height="130" rx="15" fill="#EAF6EF" stroke="#2C7250" stroke-width="3"/>
+    <text x="1080" y="419" class="head">PRE-AUTHORIZED STANDARD CLASS</text>
+    <text x="1080" y="452" class="body">Human-approved class and parameter bounds</text>
+    <text x="1080" y="478" class="body">Current eligibility must still be rechecked.</text>
+  </g>
+
+  <line x1="760" y1="510" x2="760" y2="550" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+  <polygon points="760,555 872,630 760,705 648,630" fill="#FFF7E7" stroke="#A96B17" stroke-width="2"/>
+  <text x="760" y="616" text-anchor="middle" class="head">POSITIVE ACK?</text>
+  <text x="760" y="644" text-anchor="middle" class="body">exact + authorized</text>
+  <text x="760" y="669" text-anchor="middle" class="body">+ unexpired</text>
+  <path d="M480 948 V445 H445" fill="none" stroke="#A43D34" stroke-width="3" marker-end="url(#red-arrow)"/>
+  <path d="M648 630 H480" fill="none" stroke="#A43D34" stroke-width="3"/>
+  <text x="550" y="615" text-anchor="middle" class="small">no / silence / expiry</text>
+
+  <path d="M872 630 H990 V700" fill="none" stroke="#2C7250" stroke-width="3" marker-end="url(#green-arrow)"/>
+  <text x="920" y="615" class="small">yes</text>
+  <path d="M1255 510 V650 H1110 V700" fill="none" stroke="#2C7250" stroke-width="3" marker-end="url(#green-arrow)"/>
+
+  <g>
+    <rect x="790" y="710" width="520" height="126" rx="15" fill="#EEF4F8" stroke="#315D7D" stroke-width="3"/>
+    <text x="815" y="748" class="head">EXECUTION-TIME RECHECK</text>
+    <text x="815" y="780" class="body">Artifact hash · exact targets · approval expiry · current authority</text>
+    <text x="815" y="806" class="body">Fresh volatile evidence · interacting work · canonical policy</text>
+  </g>
+  <path d="M790 772 H480" fill="none" stroke="#A43D34" stroke-width="3"/>
+  <text x="618" y="757" text-anchor="middle" class="small">any material change → hold and reroute</text>
+
+  <line x1="1050" y1="836" x2="1050" y2="872" stroke="#2C7250" stroke-width="3" marker-end="url(#green-arrow)"/>
+  <g>
+    <rect x="815" y="882" width="470" height="104" rx="14" fill="#EAF6EF" stroke="#2C7250" stroke-width="2"/>
+    <text x="840" y="920" class="success">SEPARATELY CREDENTIALED EXECUTOR</text>
+    <text x="840" y="949" class="body">Single-use permit · idempotent request · bounded scope</text>
+    <text x="840" y="974" class="body">Then verify target state; failure holds or reverses.</text>
+  </g>
+  <path d="M815 948 H480" fill="none" stroke="#A43D34" stroke-width="3"/>
+  <text x="628" y="934" text-anchor="middle" class="small">verification failure / unavailable outcome</text>
+
+  <text x="52" y="1022" class="small">AI may draft and summarize the packet. Policy, acknowledgement, execution identity, stop, and accountability remain outside the model.</text>
+</svg>

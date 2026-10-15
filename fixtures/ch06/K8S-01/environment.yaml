@@ -1,0 +1,84 @@
+# K8S-01_environment — controller-conflict experiment (package §4.3)
+# Disposable kind cluster. CPU-bound HTTP service + HPA(v2) + load generator.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k8s01
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-svc
+  namespace: k8s01
+spec:
+  replicas: 3
+  selector: { matchLabels: { app: cpu-svc } }
+  template:
+    metadata: { labels: { app: cpu-svc } }
+    spec:
+      containers:
+      - name: burner
+        image: python:3.11-alpine
+        command: ["python","-c"]
+        args:
+          - |
+            import http.server, hashlib
+            class H(http.server.BaseHTTPRequestHandler):
+                def do_GET(self):
+                    x = b"seed"
+                    for _ in range(20000):  # CPU-bound work per request
+                        x = hashlib.sha256(x).digest()
+                    self.send_response(200); self.end_headers(); self.wfile.write(x[:8].hex().encode())
+                def log_message(self, *a): pass
+            http.server.ThreadingHTTPServer(("0.0.0.0", 8080), H).serve_forever()
+        ports: [{ containerPort: 8080 }]
+        resources:
+          requests: { cpu: "100m", memory: "64Mi" }
+          limits:   { cpu: "200m", memory: "128Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cpu-svc
+  namespace: k8s01
+spec:
+  selector: { app: cpu-svc }
+  ports: [{ port: 80, targetPort: 8080 }]
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: cpu-svc
+  namespace: k8s01
+spec:
+  scaleTargetRef: { apiVersion: apps/v1, kind: Deployment, name: cpu-svc }
+  minReplicas: 3
+  maxReplicas: 15
+  metrics:
+  - type: Resource
+    resource: { name: cpu, target: { type: Utilization, averageUtilization: 60 } }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadgen
+  namespace: k8s01
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: loadgen } }
+  template:
+    metadata: { labels: { app: loadgen } }
+    spec:
+      containers:
+      - name: wgetloop
+        image: busybox:1.36
+        command: ["/bin/sh","-c"]
+        args:
+          - |
+            for i in $(seq 1 25); do
+              ( while true; do wget -q -T 5 -O /dev/null http://cpu-svc.k8s01.svc.cluster.local/ || sleep 0.2; done ) &
+            done
+            wait
+        resources:
+          requests: { cpu: "100m", memory: "32Mi" }
+          limits:   { cpu: "300m", memory: "64Mi" }

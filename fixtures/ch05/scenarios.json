@@ -1,0 +1,1109 @@
+{
+  "artifact_class": "illustrative_constructed",
+  "fixture_id": "ch05-change-gate-scenarios",
+  "fixture_version": "1.0.0",
+  "decision_time": "2026-02-10T12:00:00Z",
+  "execution_time": "2026-02-10T12:03:00Z",
+  "proposals": {
+    "freeze_exception": {
+      "proposal_id": "P-FREEZE-001",
+      "proposal_version": "1.0.0",
+      "action_class": "security_path_update",
+      "catalog_class_id": null,
+      "freeze_active": true,
+      "proposer": {
+        "principal": "ai-change-proposer",
+        "production_write_credential": "none"
+      },
+      "resolved_targets": [
+        "route-a"
+      ],
+      "artifact": {
+        "schema_version": "1.0.0",
+        "kind": "configuration_patch",
+        "operation": "replace_scoped_state",
+        "target": {
+          "kind": "route",
+          "subject_id": "route-a"
+        },
+        "desired_state": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "assertions": {
+        "justification": "A bounded exception is requested before an external deadline.",
+        "deadline_owner": "request-owner",
+        "requested_window": "constructed-window-a"
+      },
+      "stop_conditions": [
+        "target-state-mismatch",
+        "canonical-reliability-policy-block",
+        "verification-source-unavailable"
+      ],
+      "verification": {
+        "method": "exact-target-state",
+        "accountable_verifier": "change-verifier-v1"
+      },
+      "reversal": {
+        "operation": "restore-reviewed-snapshot",
+        "artifact_ref": "constructed-rollback-artifact-1",
+        "last_exercise_ref": "constructed-reversal-exercise-1"
+      }
+    },
+    "freeze_exception_amended": {
+      "proposal_id": "P-FREEZE-001",
+      "proposal_version": "1.0.1",
+      "action_class": "security_path_update",
+      "catalog_class_id": null,
+      "freeze_active": true,
+      "proposer": {
+        "principal": "ai-change-proposer",
+        "production_write_credential": "none"
+      },
+      "resolved_targets": [
+        "route-a"
+      ],
+      "artifact": {
+        "schema_version": "1.0.0",
+        "kind": "configuration_patch",
+        "operation": "replace_scoped_state",
+        "target": {
+          "kind": "route",
+          "subject_id": "route-a"
+        },
+        "desired_state": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-b",
+          "owner": "service-a"
+        }
+      },
+      "assertions": {
+        "justification": "The same exception, amended to a different security boundary after the reviewer signed.",
+        "deadline_owner": "request-owner",
+        "requested_window": "constructed-window-a"
+      },
+      "stop_conditions": [
+        "target-state-mismatch",
+        "canonical-reliability-policy-block",
+        "verification-source-unavailable"
+      ],
+      "verification": {
+        "method": "exact-target-state",
+        "accountable_verifier": "change-verifier-v1"
+      },
+      "reversal": {
+        "operation": "restore-reviewed-snapshot",
+        "artifact_ref": "constructed-rollback-artifact-1",
+        "last_exercise_ref": "constructed-reversal-exercise-1"
+      }
+    },
+    "standard_change": {
+      "proposal_id": "P-STANDARD-001",
+      "proposal_version": "1.0.0",
+      "action_class": "standard_route_isolation",
+      "catalog_class_id": "standard-route-isolation-v1",
+      "freeze_active": false,
+      "proposer": {
+        "principal": "ai-change-proposer",
+        "production_write_credential": "none"
+      },
+      "resolved_targets": [
+        "route-a"
+      ],
+      "artifact": {
+        "schema_version": "1.0.0",
+        "kind": "configuration_patch",
+        "operation": "replace_scoped_state",
+        "target": {
+          "kind": "route",
+          "subject_id": "route-a"
+        },
+        "desired_state": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "assertions": {
+        "justification": "Constructed standard-change demonstration.",
+        "deadline_owner": "request-owner",
+        "requested_window": "constructed-window-b"
+      },
+      "stop_conditions": [
+        "target-state-mismatch",
+        "canonical-reliability-policy-block",
+        "verification-source-unavailable"
+      ],
+      "verification": {
+        "method": "exact-target-state",
+        "accountable_verifier": "change-verifier-v1"
+      },
+      "reversal": {
+        "operation": "restore-reviewed-snapshot",
+        "artifact_ref": "constructed-rollback-artifact-1",
+        "last_exercise_ref": "constructed-reversal-exercise-1"
+      }
+    },
+    "gate_self_change": {
+      "proposal_id": "P-GATE-001",
+      "proposal_version": "1.0.0",
+      "action_class": "gate_policy_change",
+      "catalog_class_id": null,
+      "freeze_active": false,
+      "proposer": {
+        "principal": "ai-change-proposer",
+        "production_write_credential": "none"
+      },
+      "resolved_targets": [
+        "gate-policy"
+      ],
+      "artifact": {
+        "schema_version": "1.0.0",
+        "kind": "policy_patch",
+        "operation": "replace_policy",
+        "target": {
+          "kind": "change_gate_policy",
+          "subject_id": "gate-policy"
+        },
+        "desired_state": {
+          "version": "1.0.1"
+        }
+      },
+      "assertions": {
+        "justification": "Constructed self-change test.",
+        "deadline_owner": "request-owner",
+        "requested_window": "constructed-window-c"
+      },
+      "stop_conditions": [
+        "gate-self-authorization"
+      ],
+      "verification": {
+        "method": "separate-control-plane-review",
+        "accountable_verifier": "independent-control-owner"
+      },
+      "reversal": {
+        "operation": "restore-last-known-good-policy",
+        "artifact_ref": "constructed-policy-rollback-1",
+        "last_exercise_ref": "constructed-policy-recovery-1"
+      }
+    }
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-DECLARED-OK",
+      "claim": "declared_configuration",
+      "source_state_class": "recorded_intent",
+      "source": "governed-configuration-record",
+      "adapter_id": "declared-config-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-01T00:00:00Z",
+      "source_update_time": "2026-02-01T00:00:00Z",
+      "retrieval_time": "2026-02-10T11:59:20Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "fields": [
+          "route_mode",
+          "security_boundary",
+          "owner"
+        ]
+      },
+      "content": {
+        "subjects": {
+          "route-a": {
+            "route_mode": "shared",
+            "security_boundary": "boundary-a",
+            "owner": "service-a"
+          }
+        }
+      }
+    },
+    {
+      "evidence_id": "E-LIVE-DECISION-OK",
+      "claim": "current_configuration",
+      "source_state_class": "live_state_observation",
+      "source": "scoped-live-configuration",
+      "adapter_id": "live-config-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:59:28Z",
+      "source_update_time": "2026-02-10T11:59:30Z",
+      "retrieval_time": "2026-02-10T11:59:32Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "fields": [
+          "route_mode",
+          "security_boundary",
+          "owner"
+        ]
+      },
+      "content": {
+        "subjects": {
+          "route-a": {
+            "route_mode": "shared",
+            "security_boundary": "boundary-a",
+            "owner": "service-a"
+          }
+        }
+      }
+    },
+    {
+      "evidence_id": "E-LIVE-EXECUTION-OK",
+      "claim": "current_configuration",
+      "source_state_class": "live_state_observation",
+      "source": "scoped-live-configuration",
+      "adapter_id": "live-config-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T12:02:43Z",
+      "source_update_time": "2026-02-10T12:02:45Z",
+      "retrieval_time": "2026-02-10T12:02:47Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "fields": [
+          "route_mode",
+          "security_boundary",
+          "owner"
+        ]
+      },
+      "content": {
+        "subjects": {
+          "route-a": {
+            "route_mode": "shared",
+            "security_boundary": "boundary-a",
+            "owner": "service-a"
+          }
+        }
+      }
+    },
+    {
+      "evidence_id": "E-LIVE-STALE",
+      "claim": "current_configuration",
+      "source_state_class": "live_state_observation",
+      "source": "scoped-live-configuration",
+      "adapter_id": "live-config-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:49:58Z",
+      "source_update_time": "2026-02-10T11:50:00Z",
+      "retrieval_time": "2026-02-10T11:50:02Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ]
+      },
+      "content": {
+        "subjects": {
+          "route-a": {
+            "route_mode": "shared",
+            "security_boundary": "boundary-a",
+            "owner": "service-a"
+          }
+        }
+      }
+    },
+    {
+      "evidence_id": "E-LIVE-CONFLICT",
+      "claim": "current_configuration",
+      "source_state_class": "live_state_observation",
+      "source": "independent-live-configuration",
+      "adapter_id": "independent-live-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:59:27Z",
+      "source_update_time": "2026-02-10T11:59:29Z",
+      "retrieval_time": "2026-02-10T11:59:33Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ]
+      },
+      "content": {
+        "subjects": {
+          "route-a": {
+            "route_mode": "maintenance",
+            "security_boundary": "boundary-a",
+            "owner": "service-a"
+          }
+        }
+      }
+    },
+    {
+      "evidence_id": "E-LIVE-EXECUTION-DRIFT",
+      "claim": "current_configuration",
+      "source_state_class": "live_state_observation",
+      "source": "scoped-live-configuration",
+      "adapter_id": "live-config-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T12:02:43Z",
+      "source_update_time": "2026-02-10T12:02:45Z",
+      "retrieval_time": "2026-02-10T12:02:47Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ]
+      },
+      "content": {
+        "subjects": {
+          "route-a": {
+            "route_mode": "maintenance",
+            "security_boundary": "boundary-a",
+            "owner": "service-a"
+          }
+        }
+      }
+    },
+    {
+      "evidence_id": "E-LIVE-DENIED",
+      "claim": "current_configuration",
+      "source_state_class": "live_state_observation",
+      "source": "scoped-live-configuration",
+      "adapter_id": "live-config-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:59:28Z",
+      "source_update_time": "2026-02-10T11:59:30Z",
+      "retrieval_time": "2026-02-10T11:59:32Z",
+      "source_status": "denied",
+      "authorization_result": "denied",
+      "source_health": "unknown",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ]
+      }
+    },
+    {
+      "evidence_id": "E-INFLIGHT-DECISION-NONE",
+      "claim": "in_flight_changes",
+      "source_state_class": "live_state_observation",
+      "source": "change-activity-record",
+      "adapter_id": "change-activity-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:59:38Z",
+      "source_update_time": "2026-02-10T11:59:40Z",
+      "retrieval_time": "2026-02-10T11:59:42Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "status": "active"
+      },
+      "content": {
+        "interactions": []
+      }
+    },
+    {
+      "evidence_id": "E-INFLIGHT-EXECUTION-NONE",
+      "claim": "in_flight_changes",
+      "source_state_class": "live_state_observation",
+      "source": "change-activity-record",
+      "adapter_id": "change-activity-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T12:02:48Z",
+      "source_update_time": "2026-02-10T12:02:50Z",
+      "retrieval_time": "2026-02-10T12:02:52Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "status": "active"
+      },
+      "content": {
+        "interactions": []
+      }
+    },
+    {
+      "evidence_id": "E-INFLIGHT-EXECUTION-ACTIVE",
+      "claim": "in_flight_changes",
+      "source_state_class": "live_state_observation",
+      "source": "change-activity-record",
+      "adapter_id": "change-activity-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T12:02:48Z",
+      "source_update_time": "2026-02-10T12:02:50Z",
+      "retrieval_time": "2026-02-10T12:02:52Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "status": "active"
+      },
+      "content": {
+        "interactions": [
+          {
+            "change_id": "constructed-interaction-1",
+            "subject": "route-a"
+          }
+        ]
+      }
+    },
+    {
+      "evidence_id": "E-DEPENDENCY-DECISION-OK",
+      "claim": "dependency_coverage",
+      "source_state_class": "derived_claim",
+      "source": "bounded-dependency-analysis",
+      "adapter_id": "dependency-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:57:58Z",
+      "source_update_time": "2026-02-10T11:58:00Z",
+      "retrieval_time": "2026-02-10T11:58:05Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "window": "constructed-dependency-window-a"
+      },
+      "content": {
+        "coverage_status": "bounded_complete_for_policy",
+        "checked_classes": [
+          "synchronous",
+          "asynchronous",
+          "shared_state",
+          "recovery"
+        ],
+        "excluded_classes": [],
+        "reachable_subjects": [
+          "service-b"
+        ],
+        "interpretation": "lower_bound_with_stated_coverage",
+        "parent_evidence_ids": [
+          "constructed-dependency-source-1"
+        ],
+        "transformation_version": "dependency-bound-v1"
+      }
+    },
+    {
+      "evidence_id": "E-DEPENDENCY-EXECUTION-OK",
+      "claim": "dependency_coverage",
+      "source_state_class": "derived_claim",
+      "source": "bounded-dependency-analysis",
+      "adapter_id": "dependency-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T12:01:28Z",
+      "source_update_time": "2026-02-10T12:01:30Z",
+      "retrieval_time": "2026-02-10T12:01:35Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "window": "constructed-dependency-window-b"
+      },
+      "content": {
+        "coverage_status": "bounded_complete_for_policy",
+        "checked_classes": [
+          "synchronous",
+          "asynchronous",
+          "shared_state",
+          "recovery"
+        ],
+        "excluded_classes": [],
+        "reachable_subjects": [
+          "service-b"
+        ],
+        "interpretation": "lower_bound_with_stated_coverage",
+        "parent_evidence_ids": [
+          "constructed-dependency-source-2"
+        ],
+        "transformation_version": "dependency-bound-v1"
+      }
+    },
+    {
+      "evidence_id": "E-DEPENDENCY-PARTIAL",
+      "claim": "dependency_coverage",
+      "source_state_class": "derived_claim",
+      "source": "bounded-dependency-analysis",
+      "adapter_id": "dependency-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:57:58Z",
+      "source_update_time": "2026-02-10T11:58:00Z",
+      "retrieval_time": "2026-02-10T11:58:05Z",
+      "source_status": "partial",
+      "authorization_result": "allowed",
+      "source_health": "degraded",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ]
+      }
+    },
+    {
+      "evidence_id": "E-RELIABILITY-DECISION-GO",
+      "claim": "canonical_reliability_state",
+      "source_state_class": "live_state_observation",
+      "source": "canonical-release-policy-input",
+      "adapter_id": "reliability-state-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T11:59:43Z",
+      "source_update_time": "2026-02-10T11:59:45Z",
+      "retrieval_time": "2026-02-10T11:59:47Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "policy_input": "canonical-change-eligibility"
+      },
+      "content": {
+        "change_permitted": true,
+        "canonical_policy_input_version": "reliability-input-v3",
+        "state_label": "locally-permitted"
+      }
+    },
+    {
+      "evidence_id": "E-RELIABILITY-EXECUTION-GO",
+      "claim": "canonical_reliability_state",
+      "source_state_class": "live_state_observation",
+      "source": "canonical-release-policy-input",
+      "adapter_id": "reliability-state-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T12:02:53Z",
+      "source_update_time": "2026-02-10T12:02:55Z",
+      "retrieval_time": "2026-02-10T12:02:57Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "policy_input": "canonical-change-eligibility"
+      },
+      "content": {
+        "change_permitted": true,
+        "canonical_policy_input_version": "reliability-input-v3",
+        "state_label": "locally-permitted"
+      }
+    },
+    {
+      "evidence_id": "E-RELIABILITY-EXECUTION-STOP",
+      "claim": "canonical_reliability_state",
+      "source_state_class": "live_state_observation",
+      "source": "canonical-release-policy-input",
+      "adapter_id": "reliability-state-reader-v1",
+      "calling_principal": "change-evidence-reader",
+      "subject": "route-a",
+      "scope": "route-a",
+      "valid_time": "2026-02-10T12:02:53Z",
+      "source_update_time": "2026-02-10T12:02:55Z",
+      "retrieval_time": "2026-02-10T12:02:57Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "subjects": [
+          "route-a"
+        ],
+        "policy_input": "canonical-change-eligibility"
+      },
+      "content": {
+        "change_permitted": false,
+        "canonical_policy_input_version": "reliability-input-v3",
+        "state_label": "locally-blocked"
+      }
+    },
+    {
+      "evidence_id": "E-AUTHORITY-OK",
+      "claim": "signer_authority",
+      "source_state_class": "recorded_intent",
+      "source": "authority-registry",
+      "adapter_id": "authority-reader-v1",
+      "calling_principal": "change-policy-authorizer",
+      "subject": "route-a",
+      "scope": "security_path_update",
+      "valid_time": "2026-02-10T00:00:00Z",
+      "source_update_time": "2026-02-10T00:00:00Z",
+      "retrieval_time": "2026-02-10T11:59:50Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "role": "change-authority",
+        "action_class": "security_path_update"
+      },
+      "content": {
+        "authorized_signers": {
+          "change-authority": [
+            "reviewer-a"
+          ]
+        },
+        "executor_principal": "change-executor-v1",
+        "proposer_may_execute": false,
+        "authorizer_may_execute": false
+      }
+    },
+    {
+      "evidence_id": "E-AUTHORITY-EXECUTION-OK",
+      "claim": "signer_authority",
+      "source_state_class": "recorded_intent",
+      "source": "authority-registry",
+      "adapter_id": "authority-reader-v1",
+      "calling_principal": "change-policy-authorizer",
+      "subject": "route-a",
+      "scope": "security_path_update",
+      "valid_time": "2026-02-10T12:00:00Z",
+      "source_update_time": "2026-02-10T12:00:00Z",
+      "retrieval_time": "2026-02-10T12:02:58Z",
+      "source_status": "available",
+      "authorization_result": "allowed",
+      "source_health": "healthy",
+      "query_scope": {
+        "role": "change-authority",
+        "action_class": "security_path_update"
+      },
+      "content": {
+        "authorized_signers": {
+          "change-authority": [
+            "reviewer-a"
+          ]
+        },
+        "executor_principal": "change-executor-v1",
+        "proposer_may_execute": false,
+        "authorizer_may_execute": false
+      }
+    }
+  ],
+  "evidence_sets": {
+    "decision_complete": [
+      "E-DECLARED-OK",
+      "E-LIVE-DECISION-OK",
+      "E-INFLIGHT-DECISION-NONE",
+      "E-DEPENDENCY-DECISION-OK",
+      "E-RELIABILITY-DECISION-GO",
+      "E-AUTHORITY-OK"
+    ],
+    "decision_missing_live": [
+      "E-DECLARED-OK",
+      "E-INFLIGHT-DECISION-NONE",
+      "E-DEPENDENCY-DECISION-OK",
+      "E-RELIABILITY-DECISION-GO",
+      "E-AUTHORITY-OK"
+    ],
+    "decision_stale_live": [
+      "E-DECLARED-OK",
+      "E-LIVE-STALE",
+      "E-INFLIGHT-DECISION-NONE",
+      "E-DEPENDENCY-DECISION-OK",
+      "E-RELIABILITY-DECISION-GO",
+      "E-AUTHORITY-OK"
+    ],
+    "decision_denied_live": [
+      "E-DECLARED-OK",
+      "E-LIVE-DENIED",
+      "E-INFLIGHT-DECISION-NONE",
+      "E-DEPENDENCY-DECISION-OK",
+      "E-RELIABILITY-DECISION-GO",
+      "E-AUTHORITY-OK"
+    ],
+    "decision_partial_dependency": [
+      "E-DECLARED-OK",
+      "E-LIVE-DECISION-OK",
+      "E-INFLIGHT-DECISION-NONE",
+      "E-DEPENDENCY-PARTIAL",
+      "E-RELIABILITY-DECISION-GO",
+      "E-AUTHORITY-OK"
+    ],
+    "decision_conflicting_live": [
+      "E-DECLARED-OK",
+      "E-LIVE-DECISION-OK",
+      "E-LIVE-CONFLICT",
+      "E-INFLIGHT-DECISION-NONE",
+      "E-DEPENDENCY-DECISION-OK",
+      "E-RELIABILITY-DECISION-GO",
+      "E-AUTHORITY-OK"
+    ],
+    "execution_complete": [
+      "E-DECLARED-OK",
+      "E-LIVE-EXECUTION-OK",
+      "E-INFLIGHT-EXECUTION-NONE",
+      "E-DEPENDENCY-EXECUTION-OK",
+      "E-RELIABILITY-EXECUTION-GO",
+      "E-AUTHORITY-EXECUTION-OK"
+    ],
+    "execution_state_drift": [
+      "E-DECLARED-OK",
+      "E-LIVE-EXECUTION-DRIFT",
+      "E-INFLIGHT-EXECUTION-NONE",
+      "E-DEPENDENCY-EXECUTION-OK",
+      "E-RELIABILITY-EXECUTION-GO",
+      "E-AUTHORITY-EXECUTION-OK"
+    ],
+    "execution_interaction": [
+      "E-DECLARED-OK",
+      "E-LIVE-EXECUTION-OK",
+      "E-INFLIGHT-EXECUTION-ACTIVE",
+      "E-DEPENDENCY-EXECUTION-OK",
+      "E-RELIABILITY-EXECUTION-GO",
+      "E-AUTHORITY-EXECUTION-OK"
+    ],
+    "execution_reliability_stop": [
+      "E-DECLARED-OK",
+      "E-LIVE-EXECUTION-OK",
+      "E-INFLIGHT-EXECUTION-NONE",
+      "E-DEPENDENCY-EXECUTION-OK",
+      "E-RELIABILITY-EXECUTION-STOP",
+      "E-AUTHORITY-EXECUTION-OK"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "freeze-named-review-ready",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": false,
+      "expected_final_status": "AWAITING_POSITIVE_ACKNOWLEDGEMENT"
+    },
+    {
+      "case_id": "named-positive-ack-executes",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_complete",
+      "acknowledgement": {
+        "signer_id": "reviewer-a",
+        "role": "change-authority",
+        "decision": "approve",
+        "acknowledged_at": "2026-02-10T12:01:00Z",
+        "decision_binding_sha256": "sha256:86ce5c88f181602fffe91433aab4ca5897fcadb48dcb5dec16d481f75735b768"
+      },
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-NAMED-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "EXECUTED_AND_VERIFIED"
+    },
+    {
+      "case_id": "hold-missing-live",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_missing_live",
+      "execution_requested": false,
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-stale-live",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_stale_live",
+      "execution_requested": false,
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-denied-live",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_denied_live",
+      "execution_requested": false,
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-partial-dependency",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_partial_dependency",
+      "execution_requested": false,
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-conflicting-live",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_conflicting_live",
+      "execution_requested": false,
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-silence",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-SILENCE-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-timeout",
+      "proposal_ref": "freeze_exception",
+      "decision_evidence_set": "decision_complete",
+      "acknowledgement": {
+        "signer_id": "reviewer-a",
+        "role": "change-authority",
+        "decision": "approve",
+        "acknowledged_at": "2026-02-10T12:06:00Z",
+        "decision_binding_sha256": "sha256:86ce5c88f181602fffe91433aab4ca5897fcadb48dcb5dec16d481f75735b768"
+      },
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-TIMEOUT-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-acknowledgement-bound-to-stale-artifact",
+      "proposal_ref": "freeze_exception_amended",
+      "decision_evidence_set": "decision_complete",
+      "acknowledgement": {
+        "signer_id": "reviewer-a",
+        "role": "change-authority",
+        "decision": "approve",
+        "acknowledged_at": "2026-02-10T12:01:00Z",
+        "decision_binding_sha256": "sha256:86ce5c88f181602fffe91433aab4ca5897fcadb48dcb5dec16d481f75735b768"
+      },
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-STALE-BINDING-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-b",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "standard-executes-and-verifies",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-STANDARD-001",
+      "repeat_execution": true,
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "EXECUTED_AND_VERIFIED"
+    },
+    {
+      "case_id": "hold-artifact-changed",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-ARTIFACT-001",
+      "execution_artifact_override": {
+        "schema_version": "1.0.0",
+        "kind": "configuration_patch",
+        "operation": "replace_scoped_state",
+        "target": {
+          "kind": "route",
+          "subject_id": "route-a"
+        },
+        "desired_state": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-b",
+          "owner": "service-a"
+        }
+      },
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-b",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-target-changed",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-TARGET-001",
+      "execution_resolved_targets": [
+        "route-b"
+      ],
+      "post_state": {
+        "route-b": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-execution-state-drift",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_state_drift",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-DRIFT-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-interacting-change",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_interaction",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-INTERACTION-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-canonical-policy-stop",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_reliability_stop",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-RELIABILITY-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "hold-proposer-as-executor",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "ai-change-proposer",
+      "idempotency_key": "IK-EXECUTOR-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "isolated",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "HOLD"
+    },
+    {
+      "case_id": "verification-fails",
+      "proposal_ref": "standard_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": true,
+      "execution_evidence_set": "execution_complete",
+      "execution_principal": "change-executor-v1",
+      "idempotency_key": "IK-VERIFY-001",
+      "post_state": {
+        "route-a": {
+          "route_mode": "shared",
+          "security_boundary": "boundary-a",
+          "owner": "service-a"
+        }
+      },
+      "expected_final_status": "VERIFICATION_FAILED"
+    },
+    {
+      "case_id": "hold-gate-self-change",
+      "proposal_ref": "gate_self_change",
+      "decision_evidence_set": "decision_complete",
+      "execution_requested": false,
+      "expected_final_status": "HOLD"
+    }
+  ]
+}

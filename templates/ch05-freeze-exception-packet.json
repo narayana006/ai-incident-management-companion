@@ -1,0 +1,41 @@
+{
+  "artifact_class": "reader_template",
+  "proposal": {
+    "proposal_id": "",
+    "artifact_sha256": "",
+    "resolved_targets": [],
+    "assertions_with_owner": [],
+    "requested_authority_path": ""
+  },
+  "evidence": {
+    "decision_snapshot_sha256": "",
+    "declared_live_comparison_refs": [],
+    "source_statuses": [],
+    "dependency_bound_and_blind_spots": {},
+    "in_flight_changes": [],
+    "canonical_reliability_policy_state": {},
+    "prior_cases_with_applicability_limits": []
+  },
+  "safety_and_recovery": {
+    "preconditions": [],
+    "stop_conditions": [],
+    "verification_contract": {},
+    "reversal_contract": {},
+    "conditions_for_re_review": []
+  },
+  "authority": {
+    "policy_id": "",
+    "policy_version": "",
+    "catalog_version": "",
+    "required_signers": [],
+    "positive_acknowledgements": [],
+    "rejected_alternatives": [],
+    "expires_at": "",
+    "execution_time_recheck_required": true
+  },
+  "provenance": {
+    "input_refs": [],
+    "transformation_version": "",
+    "generated_packet_sha256": ""
+  }
+}

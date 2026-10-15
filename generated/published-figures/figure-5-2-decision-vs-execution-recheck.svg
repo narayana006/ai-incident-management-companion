@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="920" viewBox="0 0 1500 920" role="img" aria-labelledby="title desc" data-class="proposed_design">
+  <metadata>data_class=proposed_design;approval_transfers_across_time=false;material_change_holds=true</metadata>
+  <title id="title">Decision-time approval compared with the execution-time recheck</title>
+  <desc id="desc">At decision time, an approval binds an exact artifact hash, exact scope, evidence snapshot, policy and catalog versions, named authority, and expiry. Production continues to move. At execution time, the executor rechecks those bindings and refreshes volatile evidence. An unchanged, unexpired binding may reach the separate executor; any changed artifact, target, state, authority, policy, source health, interacting change, or canonical reliability state produces a hold and a new decision.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#526C7B"/></marker>
+    <marker id="green-arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2C7250"/></marker>
+    <marker id="red-arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#A43D34"/></marker>
+    <style>
+      .title { font: 700 31px Arial, Helvetica, sans-serif; fill: #17324D; }
+      .subtitle { font: 17px Arial, Helvetica, sans-serif; fill: #455A64; }
+      .head { font: 700 21px Arial, Helvetica, sans-serif; fill: #17324D; }
+      .body { font: 16px Arial, Helvetica, sans-serif; fill: #455A64; }
+      .small { font: 13px Arial, Helvetica, sans-serif; fill: #5D707B; }
+      .whitehead { font: 700 19px Arial, Helvetica, sans-serif; fill: #FFFFFF; }
+      .whitebody { font: 15px Arial, Helvetica, sans-serif; fill: #EAF3F7; }
+      .failhead { font: 700 19px Arial, Helvetica, sans-serif; fill: #842F29; }
+      .success { font: 700 19px Arial, Helvetica, sans-serif; fill: #245E43; }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1498" height="918" rx="18" fill="#FFFFFF" stroke="#D4DDE4" stroke-width="2"/>
+  <text x="52" y="56" class="title">Approval answers a time-bounded question</text>
+  <text x="52" y="88" class="subtitle">The execution boundary asks the question again with fresh volatile evidence.</text>
+
+  <line x1="185" y1="125" x2="1315" y2="125" stroke="#A8BBC7" stroke-width="4" marker-end="url(#arrow)"/>
+  <circle cx="315" cy="125" r="10" fill="#315D7D"/>
+  <circle cx="1185" cy="125" r="10" fill="#2C7250"/>
+  <text x="315" y="111" text-anchor="middle" class="small">decision time t₍d₎</text>
+  <text x="750" y="111" text-anchor="middle" class="small">the system keeps moving</text>
+  <text x="1185" y="111" text-anchor="middle" class="small">execution time t₍e₎</text>
+
+  <g>
+    <rect x="55" y="175" width="510" height="385" rx="16" fill="#F7F9FA" stroke="#315D7D" stroke-width="3"/>
+    <rect x="55" y="175" width="510" height="55" rx="16" fill="#315D7D"/>
+    <text x="80" y="211" class="whitehead">DECISION-TIME SNAPSHOT</text>
+    <text x="82" y="270" class="head">Bind the exact commitment</text>
+    <circle cx="90" cy="306" r="4" fill="#315D7D"/><text x="105" y="312" class="body">Proposal and artifact content hash</text>
+    <circle cx="90" cy="342" r="4" fill="#315D7D"/><text x="105" y="348" class="body">Resolved target set and bounded scope</text>
+    <circle cx="90" cy="378" r="4" fill="#315D7D"/><text x="105" y="384" class="body">Evidence snapshot and source limitations</text>
+    <circle cx="90" cy="414" r="4" fill="#315D7D"/><text x="105" y="420" class="body">Policy and catalog versions</text>
+    <circle cx="90" cy="450" r="4" fill="#315D7D"/><text x="105" y="456" class="body">Named signer or catalog authority</text>
+    <circle cx="90" cy="486" r="4" fill="#315D7D"/><text x="105" y="492" class="body">Expiry, verification, and reversal</text>
+    <text x="82" y="535" class="small">The record makes the decision specific and replayable.</text>
+  </g>
+
+  <g>
+    <rect x="620" y="235" width="260" height="265" rx="16" fill="#17324D"/>
+    <text x="750" y="277" text-anchor="middle" class="whitehead">BOUND APPROVAL</text>
+    <text x="750" y="317" text-anchor="middle" class="whitebody">artifact hash</text>
+    <text x="750" y="347" text-anchor="middle" class="whitebody">scope hash</text>
+    <text x="750" y="377" text-anchor="middle" class="whitebody">evidence snapshot</text>
+    <text x="750" y="407" text-anchor="middle" class="whitebody">policy + authority</text>
+    <text x="750" y="437" text-anchor="middle" class="whitebody">expiry</text>
+    <text x="750" y="477" text-anchor="middle" class="small" fill="#C9D8E2">single-use permit reference</text>
+  </g>
+  <line x1="565" y1="365" x2="615" y2="365" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="880" y1="365" x2="930" y2="365" stroke="#526C7B" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="935" y="175" width="510" height="385" rx="16" fill="#F7F9FA" stroke="#2C7250" stroke-width="3"/>
+    <rect x="935" y="175" width="510" height="55" rx="16" fill="#2C7250"/>
+    <text x="960" y="211" class="whitehead">EXECUTION-TIME RECHECK</text>
+    <text x="962" y="270" class="head">Refresh what could have moved</text>
+    <circle cx="970" cy="306" r="4" fill="#2C7250"/><text x="985" y="312" class="body">Recompute artifact hash and target set</text>
+    <circle cx="970" cy="342" r="4" fill="#2C7250"/><text x="985" y="348" class="body">Re-read current configuration</text>
+    <circle cx="970" cy="378" r="4" fill="#2C7250"/><text x="985" y="384" class="body">Refresh in-flight and dependency evidence</text>
+    <circle cx="970" cy="414" r="4" fill="#2C7250"/><text x="985" y="420" class="body">Read canonical reliability-policy state</text>
+    <circle cx="970" cy="450" r="4" fill="#2C7250"/><text x="985" y="456" class="body">Validate signer and executor authority</text>
+    <circle cx="970" cy="486" r="4" fill="#2C7250"/><text x="985" y="492" class="body">Check source health, freshness, and expiry</text>
+    <text x="962" y="535" class="small">A previous allow does not repair a failed current predicate.</text>
+  </g>
+
+  <path d="M1190 560 V590 H1145 V620" fill="none" stroke="#2C7250" stroke-width="3" marker-end="url(#green-arrow)"/>
+  <path d="M1000 560 V590 H355 V620" fill="none" stroke="#A43D34" stroke-width="3" marker-end="url(#red-arrow)"/>
+  <text x="1198" y="581" class="small">all bindings still hold</text>
+  <text x="760" y="581" text-anchor="middle" class="small">artifact · scope · state · source · authority · policy changed</text>
+
+  <g>
+    <rect x="80" y="625" width="550" height="170" rx="16" fill="#FCEDEC" stroke="#A43D34" stroke-width="3"/>
+    <text x="110" y="670" class="failhead">HOLD AND CREATE A NEW DECISION</text>
+    <text x="110" y="708" class="body">Record the failed predicate and current evidence.</text>
+    <text x="110" y="738" class="body">Do not lower scope silently or ask a model to waive drift.</text>
+    <text x="110" y="768" class="body">Authorized manual and emergency paths remain separate.</text>
+  </g>
+
+  <g>
+    <rect x="870" y="625" width="550" height="170" rx="16" fill="#EAF6EF" stroke="#2C7250" stroke-width="3"/>
+    <text x="900" y="670" class="success">SEPARATE EXECUTOR, THEN VERIFICATION</text>
+    <text x="900" y="708" class="body">Consume one exact permit; keep idempotent replay bounded.</text>
+    <text x="900" y="738" class="body">Record acceptance, target state, and operational checks separately.</text>
+    <text x="900" y="768" class="body">Verification failure holds, contains, reverses, or escalates by policy.</text>
+  </g>
+
+  <text x="52" y="857" class="small">Proposed safety invariant: artifact/state/time binding reduces time-of-check/time-of-use exposure. It does not prove dependency completeness or change safety.</text>
+  <text x="52" y="883" class="small">Constructed companion cases exercise changed artifacts, changed targets, state drift, source failure, silence, timeout, executor separation, and verification failure.</text>
+</svg>

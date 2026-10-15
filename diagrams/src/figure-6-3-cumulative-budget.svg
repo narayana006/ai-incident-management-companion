@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Atomic cumulative vector-budget admission</title>
+  <desc id="desc">Machine actors, observed controllers, and recorded human actions consume one incident-scoped vector budget. A single serialized writer checks current reservations plus the proposed worst-case impact and appends a reservation atomically. A duplicate idempotency key returns the original reservation. An exceeded dimension demotes the proposal. Indeterminate outcomes preserve the reservation.</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315D7D"/></marker>
+    <marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C65D21"/></marker>
+    <style>.title{font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}.sub{font:18px Arial,Helvetica,sans-serif;fill:#455A64}.h{font:700 21px Arial,Helvetica,sans-serif;fill:#17324D}.b{font:17px Arial,Helvetica,sans-serif;fill:#344B58}.s{font:15px Arial,Helvetica,sans-serif;fill:#455A64}.wh{font:700 20px Arial,Helvetica,sans-serif;fill:#FFF}.wb{font:17px Arial,Helvetica,sans-serif;fill:#EAF3F7}</style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="858" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">Reserve the sequence, not each action in isolation</text>
+  <text x="50" y="82" class="sub">One incident-scoped ledger spans every visible actor that consumes the same dimension.</text>
+
+  <g>
+    <rect x="55" y="130" width="260" height="92" rx="13" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+    <text x="185" y="165" text-anchor="middle" class="h">Guarded executor A</text><text x="85" y="198" class="b">proposed impact vector i(a)</text>
+    <rect x="55" y="250" width="260" height="92" rx="13" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+    <text x="185" y="285" text-anchor="middle" class="h">Guarded executor B</text><text x="85" y="318" class="b">proposed impact vector i(b)</text>
+    <rect x="55" y="370" width="260" height="92" rx="13" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+    <text x="185" y="405" text-anchor="middle" class="h">Recorded human action</text><text x="85" y="438" class="b">observed or reserved effect</text>
+    <rect x="55" y="490" width="260" height="92" rx="13" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+    <text x="185" y="525" text-anchor="middle" class="h">Observed controller</text><text x="85" y="558" class="b">external effect, where visible</text>
+  </g>
+
+  <path d="M315 176 C390 176 390 317 465 317 M315 296 H465 M315 416 C390 416 390 327 465 327 M315 536 C390 536 390 337 465 337" fill="none" stroke="#315D7D" stroke-width="3" marker-end="url(#blue)"/>
+
+  <rect x="475" y="135" width="410" height="405" rx="18" fill="#17324D"/>
+  <text x="680" y="177" text-anchor="middle" class="wh">SERIALIZED ADMISSION WRITER</text>
+  <text x="515" y="222" class="wb">1  Bind incident, class, target, retry key</text>
+  <text x="515" y="263" class="wb">2  Read every charged reservation state</text>
+  <text x="515" y="304" class="wb">3  Add proposed vector to used vector</text>
+  <rect x="515" y="334" width="330" height="56" rx="10" fill="#315D7D"/>
+  <text x="680" y="369" text-anchor="middle" class="wh">U + i(a) ≤ B max in every dimension</text>
+  <text x="515" y="430" class="wb">4  Check + append in one atomic operation</text>
+  <text x="515" y="471" class="wb">5  Retry returns the original reservation</text>
+  <text x="515" y="512" class="wb">No surplus dimension offsets an exceeded one.</text>
+
+  <path d="M885 245 H955" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <rect x="965" y="160" width="190" height="150" rx="14" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+  <text x="1060" y="198" text-anchor="middle" class="h">WITHIN BOUNDS</text>
+  <text x="990" y="238" class="b">Append reservation</text>
+  <text x="990" y="270" class="b">Return stable ID</text>
+  <text x="990" y="298" class="s">Then narrow execution</text>
+
+  <path d="M885 420 H955" stroke="#C65D21" stroke-width="4" marker-end="url(#orange)"/>
+  <rect x="965" y="350" width="190" height="150" rx="14" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="1060" y="388" text-anchor="middle" class="h">OVER A BOUND</text>
+  <text x="990" y="428" class="b">No reservation</text>
+  <text x="990" y="460" class="b">Demote + name</text>
+  <text x="990" y="488" class="s">the exceeded dimension</text>
+
+  <rect x="250" y="625" width="700" height="140" rx="17" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <text x="600" y="663" text-anchor="middle" class="h">Reservation lifecycle keeps uncertain effect charged</text>
+  <text x="300" y="704" class="b">reserved → executing → observing → released or spent</text>
+  <text x="300" y="738" class="b">indeterminate → preserve reservation, stop the affected class, notify its owner</text>
+  <path d="M680 540 V614" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <text x="50" y="820" class="sub">Implementation boundary: a process-local lock demonstrates serialization; production requires durable consistency and crash reconciliation.</text>
+</svg>

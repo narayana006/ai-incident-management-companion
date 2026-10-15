@@ -1,0 +1,365 @@
+layer_id,family,layer_name,gap_field,gap_reason
+L1,Foundation,Service topology,claim_applicability,claim applicability has not been assessed
+L1,Foundation,Service topology,claim_scope,record the supported claim scope or why the layer is not applicable
+L1,Foundation,Service topology,accountable_owner,no accountable owner is recorded
+L1,Foundation,Service topology,recertification_trigger,no recertification trigger is recorded
+L1,Foundation,Service topology,representative_source,no representative source is recorded
+L1,Foundation,Service topology,representative_adapter,no representative adapter is recorded
+L1,Foundation,Service topology,calling_principal,no calling principal is recorded
+L1,Foundation,Service topology,declared_read_purpose,no declared read purpose is recorded
+L1,Foundation,Service topology,intended_audience,no intended audience is recorded
+L1,Foundation,Service topology,source_state_class,the representative source-state class has not been assessed
+L1,Foundation,Service topology,representative_query_scope,no bounded representative query scope is recorded
+L1,Foundation,Service topology,coverage_definition,no query-coverage definition is recorded
+L1,Foundation,Service topology,stable_subject_identity,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,bounded_read_interface,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,valid_time_semantics,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,source_update_time_semantics,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,retrieval_time_semantics,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,freshness_policy,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,explicit_failure_states,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,authorized_read_test,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,denied_access_test,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,coverage_and_source_health,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,immutable_reference,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,transformation_lineage,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,sensitivity_rule,capability is absent or has not been demonstrated
+L1,Foundation,Service topology,replay_test,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,claim_applicability,claim applicability has not been assessed
+L2,Foundation,Ownership and stewardship,claim_scope,record the supported claim scope or why the layer is not applicable
+L2,Foundation,Ownership and stewardship,accountable_owner,no accountable owner is recorded
+L2,Foundation,Ownership and stewardship,recertification_trigger,no recertification trigger is recorded
+L2,Foundation,Ownership and stewardship,representative_source,no representative source is recorded
+L2,Foundation,Ownership and stewardship,representative_adapter,no representative adapter is recorded
+L2,Foundation,Ownership and stewardship,calling_principal,no calling principal is recorded
+L2,Foundation,Ownership and stewardship,declared_read_purpose,no declared read purpose is recorded
+L2,Foundation,Ownership and stewardship,intended_audience,no intended audience is recorded
+L2,Foundation,Ownership and stewardship,source_state_class,the representative source-state class has not been assessed
+L2,Foundation,Ownership and stewardship,representative_query_scope,no bounded representative query scope is recorded
+L2,Foundation,Ownership and stewardship,coverage_definition,no query-coverage definition is recorded
+L2,Foundation,Ownership and stewardship,stable_subject_identity,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,bounded_read_interface,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,valid_time_semantics,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,source_update_time_semantics,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,retrieval_time_semantics,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,freshness_policy,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,explicit_failure_states,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,authorized_read_test,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,denied_access_test,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,coverage_and_source_health,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,immutable_reference,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,transformation_lineage,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,sensitivity_rule,capability is absent or has not been demonstrated
+L2,Foundation,Ownership and stewardship,replay_test,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,claim_applicability,claim applicability has not been assessed
+L3,Foundation,Dependency structure,claim_scope,record the supported claim scope or why the layer is not applicable
+L3,Foundation,Dependency structure,accountable_owner,no accountable owner is recorded
+L3,Foundation,Dependency structure,recertification_trigger,no recertification trigger is recorded
+L3,Foundation,Dependency structure,representative_source,no representative source is recorded
+L3,Foundation,Dependency structure,representative_adapter,no representative adapter is recorded
+L3,Foundation,Dependency structure,calling_principal,no calling principal is recorded
+L3,Foundation,Dependency structure,declared_read_purpose,no declared read purpose is recorded
+L3,Foundation,Dependency structure,intended_audience,no intended audience is recorded
+L3,Foundation,Dependency structure,source_state_class,the representative source-state class has not been assessed
+L3,Foundation,Dependency structure,representative_query_scope,no bounded representative query scope is recorded
+L3,Foundation,Dependency structure,coverage_definition,no query-coverage definition is recorded
+L3,Foundation,Dependency structure,stable_subject_identity,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,bounded_read_interface,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,valid_time_semantics,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,source_update_time_semantics,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,retrieval_time_semantics,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,freshness_policy,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,explicit_failure_states,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,authorized_read_test,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,denied_access_test,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,coverage_and_source_health,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,immutable_reference,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,transformation_lineage,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,sensitivity_rule,capability is absent or has not been demonstrated
+L3,Foundation,Dependency structure,replay_test,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,claim_applicability,claim applicability has not been assessed
+L4,Dynamic,Change records,claim_scope,record the supported claim scope or why the layer is not applicable
+L4,Dynamic,Change records,accountable_owner,no accountable owner is recorded
+L4,Dynamic,Change records,recertification_trigger,no recertification trigger is recorded
+L4,Dynamic,Change records,representative_source,no representative source is recorded
+L4,Dynamic,Change records,representative_adapter,no representative adapter is recorded
+L4,Dynamic,Change records,calling_principal,no calling principal is recorded
+L4,Dynamic,Change records,declared_read_purpose,no declared read purpose is recorded
+L4,Dynamic,Change records,intended_audience,no intended audience is recorded
+L4,Dynamic,Change records,source_state_class,the representative source-state class has not been assessed
+L4,Dynamic,Change records,representative_query_scope,no bounded representative query scope is recorded
+L4,Dynamic,Change records,coverage_definition,no query-coverage definition is recorded
+L4,Dynamic,Change records,stable_subject_identity,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,bounded_read_interface,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,valid_time_semantics,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,source_update_time_semantics,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,retrieval_time_semantics,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,freshness_policy,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,explicit_failure_states,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,authorized_read_test,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,denied_access_test,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,coverage_and_source_health,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,immutable_reference,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,transformation_lineage,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,sensitivity_rule,capability is absent or has not been demonstrated
+L4,Dynamic,Change records,replay_test,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,claim_applicability,claim applicability has not been assessed
+L5,Dynamic,Deployment history,claim_scope,record the supported claim scope or why the layer is not applicable
+L5,Dynamic,Deployment history,accountable_owner,no accountable owner is recorded
+L5,Dynamic,Deployment history,recertification_trigger,no recertification trigger is recorded
+L5,Dynamic,Deployment history,representative_source,no representative source is recorded
+L5,Dynamic,Deployment history,representative_adapter,no representative adapter is recorded
+L5,Dynamic,Deployment history,calling_principal,no calling principal is recorded
+L5,Dynamic,Deployment history,declared_read_purpose,no declared read purpose is recorded
+L5,Dynamic,Deployment history,intended_audience,no intended audience is recorded
+L5,Dynamic,Deployment history,source_state_class,the representative source-state class has not been assessed
+L5,Dynamic,Deployment history,representative_query_scope,no bounded representative query scope is recorded
+L5,Dynamic,Deployment history,coverage_definition,no query-coverage definition is recorded
+L5,Dynamic,Deployment history,stable_subject_identity,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,bounded_read_interface,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,valid_time_semantics,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,source_update_time_semantics,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,retrieval_time_semantics,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,freshness_policy,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,explicit_failure_states,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,authorized_read_test,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,denied_access_test,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,coverage_and_source_health,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,immutable_reference,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,transformation_lineage,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,sensitivity_rule,capability is absent or has not been demonstrated
+L5,Dynamic,Deployment history,replay_test,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,claim_applicability,claim applicability has not been assessed
+L6,Dynamic,Configuration and policy drift,claim_scope,record the supported claim scope or why the layer is not applicable
+L6,Dynamic,Configuration and policy drift,accountable_owner,no accountable owner is recorded
+L6,Dynamic,Configuration and policy drift,recertification_trigger,no recertification trigger is recorded
+L6,Dynamic,Configuration and policy drift,representative_source,no representative source is recorded
+L6,Dynamic,Configuration and policy drift,representative_adapter,no representative adapter is recorded
+L6,Dynamic,Configuration and policy drift,calling_principal,no calling principal is recorded
+L6,Dynamic,Configuration and policy drift,declared_read_purpose,no declared read purpose is recorded
+L6,Dynamic,Configuration and policy drift,intended_audience,no intended audience is recorded
+L6,Dynamic,Configuration and policy drift,source_state_class,the representative source-state class has not been assessed
+L6,Dynamic,Configuration and policy drift,representative_query_scope,no bounded representative query scope is recorded
+L6,Dynamic,Configuration and policy drift,coverage_definition,no query-coverage definition is recorded
+L6,Dynamic,Configuration and policy drift,stable_subject_identity,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,bounded_read_interface,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,valid_time_semantics,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,source_update_time_semantics,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,retrieval_time_semantics,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,freshness_policy,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,explicit_failure_states,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,authorized_read_test,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,denied_access_test,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,coverage_and_source_health,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,immutable_reference,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,transformation_lineage,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,sensitivity_rule,capability is absent or has not been demonstrated
+L6,Dynamic,Configuration and policy drift,replay_test,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",claim_applicability,claim applicability has not been assessed
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",claim_scope,record the supported claim scope or why the layer is not applicable
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",accountable_owner,no accountable owner is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",recertification_trigger,no recertification trigger is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",representative_source,no representative source is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",representative_adapter,no representative adapter is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",calling_principal,no calling principal is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",declared_read_purpose,no declared read purpose is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",intended_audience,no intended audience is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",source_state_class,the representative source-state class has not been assessed
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",representative_query_scope,no bounded representative query scope is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",coverage_definition,no query-coverage definition is recorded
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",stable_subject_identity,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",bounded_read_interface,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",valid_time_semantics,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",source_update_time_semantics,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",retrieval_time_semantics,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",freshness_policy,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",explicit_failure_states,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",authorized_read_test,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",denied_access_test,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",coverage_and_source_health,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",immutable_reference,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",transformation_lineage,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",sensitivity_rule,capability is absent or has not been demonstrated
+L7,Observed,"Telemetry: metrics, logs, traces, events, profiles, and synthetics",replay_test,capability is absent or has not been demonstrated
+L8,Learning,Incident history,claim_applicability,claim applicability has not been assessed
+L8,Learning,Incident history,claim_scope,record the supported claim scope or why the layer is not applicable
+L8,Learning,Incident history,accountable_owner,no accountable owner is recorded
+L8,Learning,Incident history,recertification_trigger,no recertification trigger is recorded
+L8,Learning,Incident history,representative_source,no representative source is recorded
+L8,Learning,Incident history,representative_adapter,no representative adapter is recorded
+L8,Learning,Incident history,calling_principal,no calling principal is recorded
+L8,Learning,Incident history,declared_read_purpose,no declared read purpose is recorded
+L8,Learning,Incident history,intended_audience,no intended audience is recorded
+L8,Learning,Incident history,source_state_class,the representative source-state class has not been assessed
+L8,Learning,Incident history,representative_query_scope,no bounded representative query scope is recorded
+L8,Learning,Incident history,coverage_definition,no query-coverage definition is recorded
+L8,Learning,Incident history,stable_subject_identity,capability is absent or has not been demonstrated
+L8,Learning,Incident history,bounded_read_interface,capability is absent or has not been demonstrated
+L8,Learning,Incident history,valid_time_semantics,capability is absent or has not been demonstrated
+L8,Learning,Incident history,source_update_time_semantics,capability is absent or has not been demonstrated
+L8,Learning,Incident history,retrieval_time_semantics,capability is absent or has not been demonstrated
+L8,Learning,Incident history,freshness_policy,capability is absent or has not been demonstrated
+L8,Learning,Incident history,explicit_failure_states,capability is absent or has not been demonstrated
+L8,Learning,Incident history,authorized_read_test,capability is absent or has not been demonstrated
+L8,Learning,Incident history,denied_access_test,capability is absent or has not been demonstrated
+L8,Learning,Incident history,coverage_and_source_health,capability is absent or has not been demonstrated
+L8,Learning,Incident history,immutable_reference,capability is absent or has not been demonstrated
+L8,Learning,Incident history,transformation_lineage,capability is absent or has not been demonstrated
+L8,Learning,Incident history,sensitivity_rule,capability is absent or has not been demonstrated
+L8,Learning,Incident history,replay_test,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,claim_applicability,claim applicability has not been assessed
+L9,Learning,Known failure signatures and anomaly patterns,claim_scope,record the supported claim scope or why the layer is not applicable
+L9,Learning,Known failure signatures and anomaly patterns,accountable_owner,no accountable owner is recorded
+L9,Learning,Known failure signatures and anomaly patterns,recertification_trigger,no recertification trigger is recorded
+L9,Learning,Known failure signatures and anomaly patterns,representative_source,no representative source is recorded
+L9,Learning,Known failure signatures and anomaly patterns,representative_adapter,no representative adapter is recorded
+L9,Learning,Known failure signatures and anomaly patterns,calling_principal,no calling principal is recorded
+L9,Learning,Known failure signatures and anomaly patterns,declared_read_purpose,no declared read purpose is recorded
+L9,Learning,Known failure signatures and anomaly patterns,intended_audience,no intended audience is recorded
+L9,Learning,Known failure signatures and anomaly patterns,source_state_class,the representative source-state class has not been assessed
+L9,Learning,Known failure signatures and anomaly patterns,representative_query_scope,no bounded representative query scope is recorded
+L9,Learning,Known failure signatures and anomaly patterns,coverage_definition,no query-coverage definition is recorded
+L9,Learning,Known failure signatures and anomaly patterns,stable_subject_identity,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,bounded_read_interface,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,valid_time_semantics,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,source_update_time_semantics,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,retrieval_time_semantics,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,freshness_policy,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,explicit_failure_states,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,authorized_read_test,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,denied_access_test,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,coverage_and_source_health,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,immutable_reference,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,transformation_lineage,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,sensitivity_rule,capability is absent or has not been demonstrated
+L9,Learning,Known failure signatures and anomaly patterns,replay_test,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,claim_applicability,claim applicability has not been assessed
+L10,Learning,Runbooks and operational procedures,claim_scope,record the supported claim scope or why the layer is not applicable
+L10,Learning,Runbooks and operational procedures,accountable_owner,no accountable owner is recorded
+L10,Learning,Runbooks and operational procedures,recertification_trigger,no recertification trigger is recorded
+L10,Learning,Runbooks and operational procedures,representative_source,no representative source is recorded
+L10,Learning,Runbooks and operational procedures,representative_adapter,no representative adapter is recorded
+L10,Learning,Runbooks and operational procedures,calling_principal,no calling principal is recorded
+L10,Learning,Runbooks and operational procedures,declared_read_purpose,no declared read purpose is recorded
+L10,Learning,Runbooks and operational procedures,intended_audience,no intended audience is recorded
+L10,Learning,Runbooks and operational procedures,source_state_class,the representative source-state class has not been assessed
+L10,Learning,Runbooks and operational procedures,representative_query_scope,no bounded representative query scope is recorded
+L10,Learning,Runbooks and operational procedures,coverage_definition,no query-coverage definition is recorded
+L10,Learning,Runbooks and operational procedures,stable_subject_identity,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,bounded_read_interface,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,valid_time_semantics,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,source_update_time_semantics,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,retrieval_time_semantics,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,freshness_policy,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,explicit_failure_states,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,authorized_read_test,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,denied_access_test,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,coverage_and_source_health,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,immutable_reference,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,transformation_lineage,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,sensitivity_rule,capability is absent or has not been demonstrated
+L10,Learning,Runbooks and operational procedures,replay_test,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,claim_applicability,claim applicability has not been assessed
+L11,External,Supplier and ecosystem advisories,claim_scope,record the supported claim scope or why the layer is not applicable
+L11,External,Supplier and ecosystem advisories,accountable_owner,no accountable owner is recorded
+L11,External,Supplier and ecosystem advisories,recertification_trigger,no recertification trigger is recorded
+L11,External,Supplier and ecosystem advisories,representative_source,no representative source is recorded
+L11,External,Supplier and ecosystem advisories,representative_adapter,no representative adapter is recorded
+L11,External,Supplier and ecosystem advisories,calling_principal,no calling principal is recorded
+L11,External,Supplier and ecosystem advisories,declared_read_purpose,no declared read purpose is recorded
+L11,External,Supplier and ecosystem advisories,intended_audience,no intended audience is recorded
+L11,External,Supplier and ecosystem advisories,source_state_class,the representative source-state class has not been assessed
+L11,External,Supplier and ecosystem advisories,representative_query_scope,no bounded representative query scope is recorded
+L11,External,Supplier and ecosystem advisories,coverage_definition,no query-coverage definition is recorded
+L11,External,Supplier and ecosystem advisories,stable_subject_identity,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,bounded_read_interface,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,valid_time_semantics,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,source_update_time_semantics,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,retrieval_time_semantics,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,freshness_policy,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,explicit_failure_states,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,authorized_read_test,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,denied_access_test,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,coverage_and_source_health,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,immutable_reference,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,transformation_lineage,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,sensitivity_rule,capability is absent or has not been demonstrated
+L11,External,Supplier and ecosystem advisories,replay_test,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,claim_applicability,claim applicability has not been assessed
+L12,External,Threat and exposure intelligence,claim_scope,record the supported claim scope or why the layer is not applicable
+L12,External,Threat and exposure intelligence,accountable_owner,no accountable owner is recorded
+L12,External,Threat and exposure intelligence,recertification_trigger,no recertification trigger is recorded
+L12,External,Threat and exposure intelligence,representative_source,no representative source is recorded
+L12,External,Threat and exposure intelligence,representative_adapter,no representative adapter is recorded
+L12,External,Threat and exposure intelligence,calling_principal,no calling principal is recorded
+L12,External,Threat and exposure intelligence,declared_read_purpose,no declared read purpose is recorded
+L12,External,Threat and exposure intelligence,intended_audience,no intended audience is recorded
+L12,External,Threat and exposure intelligence,source_state_class,the representative source-state class has not been assessed
+L12,External,Threat and exposure intelligence,representative_query_scope,no bounded representative query scope is recorded
+L12,External,Threat and exposure intelligence,coverage_definition,no query-coverage definition is recorded
+L12,External,Threat and exposure intelligence,stable_subject_identity,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,bounded_read_interface,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,valid_time_semantics,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,source_update_time_semantics,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,retrieval_time_semantics,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,freshness_policy,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,explicit_failure_states,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,authorized_read_test,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,denied_access_test,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,coverage_and_source_health,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,immutable_reference,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,transformation_lineage,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,sensitivity_rule,capability is absent or has not been demonstrated
+L12,External,Threat and exposure intelligence,replay_test,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",claim_applicability,claim applicability has not been assessed
+L13,Human and consequence,"Response roles, availability, and delegated authority",claim_scope,record the supported claim scope or why the layer is not applicable
+L13,Human and consequence,"Response roles, availability, and delegated authority",accountable_owner,no accountable owner is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",recertification_trigger,no recertification trigger is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",representative_source,no representative source is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",representative_adapter,no representative adapter is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",calling_principal,no calling principal is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",declared_read_purpose,no declared read purpose is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",intended_audience,no intended audience is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",source_state_class,the representative source-state class has not been assessed
+L13,Human and consequence,"Response roles, availability, and delegated authority",representative_query_scope,no bounded representative query scope is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",coverage_definition,no query-coverage definition is recorded
+L13,Human and consequence,"Response roles, availability, and delegated authority",stable_subject_identity,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",bounded_read_interface,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",valid_time_semantics,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",source_update_time_semantics,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",retrieval_time_semantics,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",freshness_policy,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",explicit_failure_states,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",authorized_read_test,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",denied_access_test,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",coverage_and_source_health,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",immutable_reference,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",transformation_lineage,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",sensitivity_rule,capability is absent or has not been demonstrated
+L13,Human and consequence,"Response roles, availability, and delegated authority",replay_test,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,claim_applicability,claim applicability has not been assessed
+L14,Human and consequence,Service impact and business consequence,claim_scope,record the supported claim scope or why the layer is not applicable
+L14,Human and consequence,Service impact and business consequence,accountable_owner,no accountable owner is recorded
+L14,Human and consequence,Service impact and business consequence,recertification_trigger,no recertification trigger is recorded
+L14,Human and consequence,Service impact and business consequence,representative_source,no representative source is recorded
+L14,Human and consequence,Service impact and business consequence,representative_adapter,no representative adapter is recorded
+L14,Human and consequence,Service impact and business consequence,calling_principal,no calling principal is recorded
+L14,Human and consequence,Service impact and business consequence,declared_read_purpose,no declared read purpose is recorded
+L14,Human and consequence,Service impact and business consequence,intended_audience,no intended audience is recorded
+L14,Human and consequence,Service impact and business consequence,source_state_class,the representative source-state class has not been assessed
+L14,Human and consequence,Service impact and business consequence,representative_query_scope,no bounded representative query scope is recorded
+L14,Human and consequence,Service impact and business consequence,coverage_definition,no query-coverage definition is recorded
+L14,Human and consequence,Service impact and business consequence,stable_subject_identity,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,bounded_read_interface,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,valid_time_semantics,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,source_update_time_semantics,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,retrieval_time_semantics,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,freshness_policy,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,explicit_failure_states,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,authorized_read_test,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,denied_access_test,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,coverage_and_source_health,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,immutable_reference,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,transformation_lineage,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,sensitivity_rule,capability is absent or has not been demonstrated
+L14,Human and consequence,Service impact and business consequence,replay_test,capability is absent or has not been demonstrated

@@ -1,0 +1,84 @@
+{
+  "catalog_version": "ch06-catalog-1",
+  "policy_version": "ch06-policy-1",
+  "coordination_budget": {
+    "capacity_units_removed": 2,
+    "failure_domains_affected": 2,
+    "user_exposure_units": 30,
+    "persistent_state_writes": 0,
+    "canonical_policy_units": 2
+  },
+  "action_classes": [
+    {
+      "action_class_id": "worker_evict",
+      "version": "1",
+      "permit_id": "permit-worker-evict-1",
+      "human_pre_authorization": "review-record-ch06-01",
+      "enabled": true,
+      "target": {
+        "kind": "Workload",
+        "namespace": "demo",
+        "name_prefix": "worker-"
+      },
+      "allowed_operations": ["evict_via_owner"],
+      "allowed_surfaces": ["orchestrator.eviction"],
+      "parameter_constraints": {
+        "units": {"type": "integer", "minimum": 1, "maximum": 1}
+      },
+      "required_evidence": [
+        {"slot": "serving", "claim_type": "serving_capacity", "max_age_seconds": 30, "required_scope": "target_and_failure_domain"},
+        {"slot": "owner", "claim_type": "controller_ownership", "max_age_seconds": 60, "required_scope": "exact_target"},
+        {"slot": "reliability", "claim_type": "canonical_reliability_policy", "max_age_seconds": 120, "required_scope": "exact_target"},
+        {"slot": "inverse", "claim_type": "inverse_verification", "max_age_seconds": 86400, "required_scope": "exact_action_class"}
+      ],
+      "requires_serving_headroom": true,
+      "requires_verified_inverse": true,
+      "fixed_impact": {
+        "capacity_units_removed": 1,
+        "failure_domains_affected": 1,
+        "user_exposure_units": 10,
+        "persistent_state_writes": 0,
+        "canonical_policy_units": 1
+      },
+      "executor_id": "ch06-narrow-executor",
+      "executor_scope_id": "ch06-executor-scope-1",
+      "verification": {"outcome": "member_replaced", "observation_window": "class-owned"},
+      "demotion_owner": "incident-commander"
+    },
+    {
+      "action_class_id": "replica_adjust",
+      "version": "1",
+      "permit_id": "permit-replica-adjust-1",
+      "human_pre_authorization": "review-record-ch06-02",
+      "enabled": true,
+      "target": {
+        "kind": "Workload",
+        "namespace": "demo",
+        "name_prefix": "service-"
+      },
+      "allowed_operations": ["set_controller_limit", "direct_desired_write"],
+      "allowed_surfaces": ["autoscaler.spec.max_units", "workload.spec.desired_units"],
+      "parameter_constraints": {
+        "value": {"type": "integer", "minimum": 1, "maximum": 30}
+      },
+      "required_evidence": [
+        {"slot": "owner", "claim_type": "controller_ownership", "max_age_seconds": 60, "required_scope": "exact_target"},
+        {"slot": "reliability", "claim_type": "canonical_reliability_policy", "max_age_seconds": 120, "required_scope": "exact_target"},
+        {"slot": "inverse", "claim_type": "inverse_verification", "max_age_seconds": 86400, "required_scope": "exact_action_class"}
+      ],
+      "requires_serving_headroom": false,
+      "requires_verified_inverse": true,
+      "fixed_impact": {
+        "capacity_units_removed": 0,
+        "failure_domains_affected": 1,
+        "user_exposure_units": 5,
+        "persistent_state_writes": 0,
+        "canonical_policy_units": 1
+      },
+      "executor_id": "ch06-narrow-executor",
+      "executor_scope_id": "ch06-executor-scope-1",
+      "verification": {"outcome": "controller_accepts_limit", "observation_window": "class-owned"},
+      "demotion_owner": "incident-commander"
+    }
+  ]
+}

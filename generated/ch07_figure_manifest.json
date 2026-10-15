@@ -1,0 +1,27 @@
+{
+  "figures": [
+    {
+      "bytes": 7727,
+      "file": "figure-7-1-governed-agent-plane.svg",
+      "published_path": "generated/published-figures/figure-7-1-governed-agent-plane.svg",
+      "sha256": "5a4ee94cffae7c7594863356d02a5a698260146791ce90820bf381b143dc2214",
+      "title": "Governed agent plane with separated authority"
+    },
+    {
+      "bytes": 6831,
+      "file": "figure-7-2-trust-zone-tool-scope.svg",
+      "published_path": "generated/published-figures/figure-7-2-trust-zone-tool-scope.svg",
+      "sha256": "2f54a7d5db531d2323a97c5733f6eb8fc28b03d2769857824c19888fb4bc9eae",
+      "title": "Trust-zone and tool-scope matrix"
+    },
+    {
+      "bytes": 7416,
+      "file": "figure-7-3-provenance-chain.svg",
+      "published_path": "generated/published-figures/figure-7-3-provenance-chain.svg",
+      "sha256": "6bdc2a750734495c981b22c1a70329737fe0e89bed53fad1ff41a9a7bc615b92",
+      "title": "Seven-link decision provenance chain with external checkpoints"
+    }
+  ],
+  "fixture_class": "constructed_mechanism_demonstration",
+  "manifest_version": "ch07-figures-1"
+}

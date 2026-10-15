@@ -1,0 +1,11 @@
+query_id,case_class,answerable,abstained,raw_candidate_count,eligible_candidate_count,served_count,first_adequate_rank,hit_at_k,recall_at_k,adequate_document_count,adequate_documents_served,reciprocal_rank,miss,false_abstention,correct_no_answer_abstention,polluted,lifecycle_ineligible_candidates_blocked,scope_mismatch_candidates_blocked,access_denied_candidates_blocked,hostile_candidates_blocked,lifecycle_ineligible_candidates_served,scope_mismatch_candidates_served,access_denied_candidates_served,hostile_candidates_served,served_policy_violations
+q01-answerable-rank1,answerable,True,False,1,1,1,1,1,1.0,1,1,1.0,False,False,False,False,0,0,0,0,0,0,0,0,0
+q02-polluted-rank2,answerable_polluted,True,False,2,2,2,2,1,1.0,1,1,0.5,False,False,False,True,0,0,0,0,0,0,0,0,0
+q03-eligible-miss,miss,True,False,1,1,1,,0,0.0,1,0,0.0,True,False,False,True,0,0,0,0,0,0,0,0,0
+q04-no-document,no_answer,False,True,0,0,0,,,,0,0,,False,False,True,False,0,0,0,0,0,0,0,0,0
+q05-stale-blocked-active-rank2,stale_index,True,False,3,1,1,1,1,1.0,1,1,1.0,False,False,False,False,2,0,0,0,0,0,0,0,0
+q06-hostile-content-blocked,hostile_content,False,True,1,0,0,,,,0,0,,False,False,True,False,0,0,0,1,0,0,0,0,0
+q07-access-limited-no-answer,access_limited,False,True,1,0,0,,,,0,0,,False,False,True,False,0,0,1,0,0,0,0,0,0
+q08-scope-filter-active-rank2,scope_mismatch,True,False,2,1,1,1,1,1.0,1,1,1.0,False,False,False,False,0,1,0,0,0,0,0,0,0
+q09-false-abstention,false_abstention,True,True,1,1,0,,0,0.0,1,0,0.0,False,True,False,False,0,0,0,0,0,0,0,0,0
+q10-answerable-rank1,answerable,True,False,1,1,1,1,1,1.0,1,1,1.0,False,False,False,False,0,0,0,0,0,0,0,0,0

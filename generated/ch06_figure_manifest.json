@@ -1,0 +1,41 @@
+{
+  "figures": [
+    {
+      "bytes": 5435,
+      "file": "figure-6-1-guard-outside-model.svg",
+      "published_path": "generated/published-figures/figure-6-1-guard-outside-model.svg",
+      "sha256": "6ea7ac7df931e8af57aa1ded992c3c1099340826c84470e5bf215ee1193ba59b",
+      "title": "Deterministic guard outside the model"
+    },
+    {
+      "bytes": 5098,
+      "file": "figure-6-2-serving-headroom.svg",
+      "published_path": "generated/published-figures/figure-6-2-serving-headroom.svg",
+      "sha256": "2665f8155b9be59c526d297afed58d5f5121d11ff85b687edc811d5f89379f28",
+      "title": "Serving headroom uses useful-work evidence"
+    },
+    {
+      "bytes": 5394,
+      "file": "figure-6-3-cumulative-budget.svg",
+      "published_path": "generated/published-figures/figure-6-3-cumulative-budget.svg",
+      "sha256": "c3dd278248e5ef5e927231cec881e883ab8e6a6785fea54d102b2cfdc5d82da7",
+      "title": "Atomic cumulative vector-budget admission"
+    },
+    {
+      "bytes": 5217,
+      "file": "figure-6-4-controller-ownership.svg",
+      "published_path": "generated/published-figures/figure-6-4-controller-ownership.svg",
+      "sha256": "5b573d56c617222fdefe8997b5251f5ef111a587085e8de29230f74543050197",
+      "title": "Resolve controller ownership before choosing a write surface"
+    },
+    {
+      "bytes": 5504,
+      "file": "figure-6-5-reliability-policy-state.svg",
+      "published_path": "generated/published-figures/figure-6-5-reliability-policy-state.svg",
+      "sha256": "3aa68c01136ff3737740620b4ffe595067ed42974755a80210b0210f60229bad",
+      "title": "Canonical reliability policy constrains execution authority"
+    }
+  ],
+  "manifest_version": "ch06-static-figures-1",
+  "source_format": "accessible_svg"
+}

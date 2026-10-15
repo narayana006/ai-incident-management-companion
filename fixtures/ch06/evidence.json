@@ -1,0 +1,113 @@
+{
+  "fixture_class": "constructed_illustration",
+  "evidence": [
+    {
+      "evidence_id": "E-SERVING-FRESH",
+      "claim_type": "serving_capacity",
+      "subject": "demo/worker-a",
+      "scope": "target_and_failure_domain",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T23:59:50Z",
+      "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+      "content": {"serving_units": 5, "required_units": 3, "reserved_units": 0, "signal": "completed_work_units", "coverage": "target_and_failure_domain"}
+    },
+    {
+      "evidence_id": "E-SERVING-STALE",
+      "claim_type": "serving_capacity",
+      "subject": "demo/worker-a",
+      "scope": "target_and_failure_domain",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T23:50:00Z",
+      "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+      "content": {"serving_units": 5, "required_units": 3, "reserved_units": 0, "signal": "completed_work_units", "coverage": "target_and_failure_domain"}
+    },
+    {
+      "evidence_id": "E-SERVING-DENIED",
+      "claim_type": "serving_capacity",
+      "subject": "demo/worker-a",
+      "scope": "target_and_failure_domain",
+      "source_status": "denied",
+      "source_health": "unknown",
+      "observed_at": "2026-08-17T23:59:50Z"
+    },
+    {
+      "evidence_id": "E-OWNER-WORKER",
+      "claim_type": "controller_ownership",
+      "subject": "demo/worker-a",
+      "scope": "exact_target",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T23:59:45Z",
+      "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+      "content": {"owner_state": "one_active", "owner_id": "workload-controller", "owned_field": "workload.membership", "supported_input": "orchestrator.eviction"}
+    },
+    {
+      "evidence_id": "E-OWNER-REPLICA",
+      "claim_type": "controller_ownership",
+      "subject": "demo/service-a",
+      "scope": "exact_target",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T23:59:45Z",
+      "content_sha256": "b7c24d18841570186f0e54a03a4adffab98ca090e93ca3469bb0ad75d6a3b9f1",
+      "content": {"owner_state": "one_active", "owner_id": "autoscaler-controller", "owned_field": "workload.spec.desired_units", "supported_input": "autoscaler.spec.max_units"}
+    },
+    {
+      "evidence_id": "E-RELIABILITY-WORKER",
+      "claim_type": "canonical_reliability_policy",
+      "subject": "demo/worker-a",
+      "scope": "exact_target",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T23:59:30Z",
+      "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+      "content": {"canonical_policy_id": "service-objective-policy", "policy_version": "slo-policy-7", "execution_posture": "allow"}
+    },
+    {
+      "evidence_id": "E-RELIABILITY-REPLICA",
+      "claim_type": "canonical_reliability_policy",
+      "subject": "demo/service-a",
+      "scope": "exact_target",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T23:59:30Z",
+      "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+      "content": {"canonical_policy_id": "service-objective-policy", "policy_version": "slo-policy-7", "execution_posture": "allow"}
+    },
+    {
+      "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+      "claim_type": "inverse_verification",
+      "subject": "worker_evict@1",
+      "scope": "exact_action_class",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T12:00:00Z",
+      "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+      "content": {"verified": true, "inverse_operation": "restore_member_via_owner", "exercise_id": "EX-17", "exercise_artifact_sha256": "2f4d8b8fdd59c919a1263813d0574940949b59e7f21f3b3f011222be12ec938a"}
+    },
+    {
+      "evidence_id": "E-INVERSE-MISSING-WORKER",
+      "claim_type": "inverse_verification",
+      "subject": "worker_evict@1",
+      "scope": "exact_action_class",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T12:00:00Z",
+      "content_sha256": "b5f34255da08ad9e9c6d8b6e579831e1f7c7354fe854d3fde619a42decbb2bce",
+      "content": {"verified": false, "inverse_operation": "restore_member_via_owner", "reason": "representative exercise missing"}
+    },
+    {
+      "evidence_id": "E-INVERSE-VERIFIED-REPLICA",
+      "claim_type": "inverse_verification",
+      "subject": "replica_adjust@1",
+      "scope": "exact_action_class",
+      "source_status": "available",
+      "source_health": "healthy",
+      "observed_at": "2026-08-17T12:00:00Z",
+      "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+      "content": {"verified": true, "inverse_operation": "restore_member_via_owner", "exercise_id": "EX-17", "exercise_artifact_sha256": "2f4d8b8fdd59c919a1263813d0574940949b59e7f21f3b3f011222be12ec938a"}
+    }
+  ]
+}

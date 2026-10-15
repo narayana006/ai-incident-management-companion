@@ -1,0 +1,24 @@
+{
+  "fixture_class": "constructed_mechanism_demonstration",
+  "cases": [
+    {"case_id": "injected-retrieved-instruction", "expected_outcome": "deny", "expected_reason": "UNAPPROVED_TOOL"},
+    {"case_id": "unapproved-schema-changed-tool", "expected_outcome": "deny", "expected_reason": "CATALOG_QUARANTINE"},
+    {"case_id": "stale-required-evidence", "expected_outcome": "hold", "expected_reason": "EVIDENCE_STALE:serving"},
+    {"case_id": "silence-required-ack", "expected_outcome": "hold", "expected_reason": "POSITIVE_ACK_REQUIRED"},
+    {"case_id": "expanded-target-after-approval", "expected_outcome": "deny", "expected_reason": "ACTION_DIGEST_MISMATCH"},
+    {"case_id": "replayed-completed-capability", "expected_outcome": "stored_result", "expected_reason": "NONCE_REPLAY_SUCCEEDED"},
+    {"case_id": "shared-retry-budget", "expected_outcome": "deny", "expected_reason": "RETRY_BUDGET_EXCEEDED"},
+    {"case_id": "executor-excluded-operation", "expected_outcome": "deny", "expected_reason": "EXECUTOR_SCOPE_DENIED"},
+    {"case_id": "altered-provenance-record", "expected_outcome": "fail", "expected_reason": "CHAIN_DIGEST_MISMATCH"},
+    {"case_id": "missing-outcome", "expected_outcome": "indeterminate", "expected_reason": "OUTCOME_UNADJUDICATED"},
+    {"case_id": "concurrent-capability-presentation", "expected_outcome": "one_target_call", "expected_reason": "ATOMIC_NONCE_CLAIM"},
+    {"case_id": "crash-after-target-acceptance", "expected_outcome": "reconciled", "expected_reason": "TARGET_CONFIRMED_BY_IDEMPOTENCY_KEY"},
+    {"case_id": "tool-output-injection", "expected_outcome": "contained", "expected_reason": "UNTRUSTED_OUTPUT_NOT_AUTHORITY"},
+    {"case_id": "cross-environment-scope", "expected_outcome": "deny", "expected_reason": "CALL_ENVIRONMENT_MISMATCH"},
+    {"case_id": "poisoned-agent-message", "expected_outcome": "deny", "expected_reason": "MESSAGE_AUTHORITY_FORBIDDEN"},
+    {"case_id": "coordinator-failure", "expected_outcome": "hold", "expected_reason": "COORDINATOR_UNAVAILABLE"},
+    {"case_id": "planning-limit", "expected_outcome": "hold", "expected_reason": "PLANNING_LIMIT_REPLANS"},
+    {"case_id": "evidence-manifest-substitution", "expected_outcome": "hold", "expected_reason": "EVIDENCE_MANIFEST_DIGEST_MISMATCH"},
+    {"case_id": "indeterminate-target", "expected_outcome": "hold", "expected_reason": "TARGET_INDETERMINATE"}
+  ]
+}

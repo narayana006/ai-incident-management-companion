@@ -1,0 +1,37 @@
+{
+  "schema_version": "chapter-4-authority-flow-v1",
+  "data_class": "proposed_design",
+  "figure_id": "4.2",
+  "title": "Three visible authority states",
+  "claim_boundary": "A score may route only within the deterministic authority ceiling.",
+  "gates": [
+    "Approved action class",
+    "Current required evidence",
+    "Applicable calibration contract",
+    "Reversal readiness",
+    "Single and cumulative bounds",
+    "Current authority and system state"
+  ],
+  "states": [
+    {
+      "id": "suggest",
+      "name": "1  Suggest",
+      "detail": "Show evidence and recommendation. A human decides."
+    },
+    {
+      "id": "acknowledge",
+      "name": "2  Propose + positive acknowledgement",
+      "detail": "An authorized person approves this exact, unexpired proposal."
+    },
+    {
+      "id": "bounded_auto",
+      "name": "3  Eligible for bounded automated execution",
+      "detail": "A separately approved class may reach the executor after recheck."
+    }
+  ],
+  "hold_conditions": [
+    "Failed model-independent check",
+    "Silence, rejection, or expiry",
+    "Material proposal or evidence change"
+  ]
+}

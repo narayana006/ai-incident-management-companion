@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Resolve controller ownership before choosing a write surface</title>
+  <desc id="desc">A structured proposal enters a deterministic ownership resolver. With no active reconciliation owner, an approved direct write may proceed through other gates. With one active owner, remediation uses the supported controller input and reevaluates its full scope. Several owners or an unknown owner cause a hold. Ownership is rechecked at commitment, and verification observes both the controller and governed state.</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315D7D"/></marker>
+    <marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C65D21"/></marker>
+    <style>.title{font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}.sub{font:18px Arial,Helvetica,sans-serif;fill:#455A64}.h{font:700 21px Arial,Helvetica,sans-serif;fill:#17324D}.b{font:17px Arial,Helvetica,sans-serif;fill:#344B58}.s{font:15px Arial,Helvetica,sans-serif;fill:#455A64}.wh{font:700 20px Arial,Helvetica,sans-serif;fill:#FFF}.wb{font:17px Arial,Helvetica,sans-serif;fill:#EAF3F7}</style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="848" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">Write through the owner of desired state</text>
+  <text x="50" y="82" class="sub">Resource ownership is too broad. Resolve the writer for the exact field or behavior.</text>
+
+  <rect x="60" y="150" width="250" height="150" rx="14" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <text x="185" y="187" text-anchor="middle" class="h">PROPOSAL</text>
+  <text x="90" y="228" class="b">target + field + intent</text>
+  <text x="90" y="262" class="b">current evidence refs</text>
+  <text x="90" y="289" class="s">No write chosen yet</text>
+  <path d="M310 225 H400" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+
+  <rect x="410" y="125" width="380" height="200" rx="18" fill="#17324D"/>
+  <text x="600" y="165" text-anchor="middle" class="wh">OWNERSHIP RESOLVER</text>
+  <text x="445" y="207" class="wb">declared controller configuration</text>
+  <text x="445" y="241" class="wb">managed-field / recent-write evidence</text>
+  <text x="445" y="275" class="wb">controller health + precedence + valid time</text>
+  <text x="445" y="307" class="wb">versioned rule; ambiguity stays visible</text>
+
+  <path d="M505 325 V397 M600 325 V397 M695 325 V397" stroke="#315D7D" stroke-width="3" marker-end="url(#blue)"/>
+  <path d="M790 225 C900 225 890 397 985 397" fill="none" stroke="#C65D21" stroke-width="3" marker-end="url(#orange)"/>
+
+  <rect x="55" y="410" width="260" height="180" rx="15" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+  <text x="185" y="447" text-anchor="middle" class="h">NO ACTIVE OWNER</text>
+  <text x="85" y="486" class="b">Approved direct write may</text>
+  <text x="85" y="518" class="b">be stable, if the other guard</text>
+  <text x="85" y="550" class="b">and inverse checks pass.</text>
+
+  <rect x="340" y="410" width="350" height="180" rx="15" fill="#EAF2F7" stroke="#315D7D" stroke-width="2"/>
+  <text x="515" y="447" text-anchor="middle" class="h">ONE ACTIVE OWNER</text>
+  <text x="370" y="486" class="b">Change supported controller input:</text>
+  <text x="370" y="518" class="b">setpoint • bound • policy • override</text>
+  <text x="370" y="550" class="b">Recompute blast radius for that surface.</text>
+
+  <rect x="715" y="410" width="210" height="180" rx="15" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="820" y="447" text-anchor="middle" class="h">SEVERAL OWNERS</text>
+  <text x="745" y="486" class="b">Hold until precedence</text>
+  <text x="745" y="518" class="b">and coordination are</text>
+  <text x="745" y="550" class="b">resolved by people.</text>
+
+  <rect x="950" y="410" width="205" height="180" rx="15" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="1052" y="447" text-anchor="middle" class="h">OWNER UNKNOWN</text>
+  <text x="978" y="486" class="b">No unattended write.</text>
+  <text x="978" y="518" class="b">Demote with missing</text>
+  <text x="978" y="550" class="b">owner evidence.</text>
+
+  <path d="M515 590 V650 H600" fill="none" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <path d="M185 590 V675 H450" fill="none" stroke="#315D7D" stroke-width="3" marker-end="url(#blue)"/>
+  <rect x="460" y="615" width="450" height="145" rx="16" fill="#17324D"/>
+  <text x="685" y="662" text-anchor="middle" class="wh">RECHECK AT COMMITMENT</text>
+  <text x="495" y="696" class="wb">Owner, supported input, and scope unchanged?</text>
+  <text x="495" y="725" class="wb">Inverse and policy still usable?</text>
+  <text x="495" y="752" class="wb">Observe controller and governed state separately.</text>
+  <text x="50" y="805" class="sub">A controller accepting a parameter is not proof that targets converged or that user impact improved.</text>
+</svg>

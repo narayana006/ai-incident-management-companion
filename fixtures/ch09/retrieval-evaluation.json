@@ -1,0 +1,124 @@
+{
+  "schema_version": "ch09-retrieval-evaluation-1",
+  "artifact_class": "illustrative_constructed",
+  "source_label": "Constructed ten-query starter audit; method demonstration only.",
+  "evaluation_id": "ch09-constructed-ten-query-v1",
+  "adjudication": {
+    "review_role": "qualified_incident_reviewer",
+    "rubric_version": "retrieval-usefulness-rubric-v1",
+    "reviewed_on": "2026-02-15",
+    "disagreement_state": "none_in_constructed_fixture"
+  },
+  "bundle": {
+    "corpus_snapshot": "constructed-corpus-v1",
+    "index_version": "constructed-index-v1",
+    "chunking_version": "constructed-chunks-v1",
+    "ranker_version": "deterministic-fixture-v1",
+    "audience": "authorized_reader_role",
+    "k": 3
+  },
+  "queries": [
+    {
+      "query_id": "q01-answerable-rank1",
+      "query_text": "writes slow after reconnect",
+      "case_class": "answerable",
+      "adequate_accessible_docs": ["doc-a"],
+      "abstained": false,
+      "candidates": [
+        {"rank": 1, "doc_id": "doc-a", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false}
+      ]
+    },
+    {
+      "query_id": "q02-polluted-rank2",
+      "query_text": "worker resumes but backlog does not drain",
+      "case_class": "answerable_polluted",
+      "adequate_accessible_docs": ["doc-b"],
+      "abstained": false,
+      "candidates": [
+        {"rank": 1, "doc_id": "plausible-neighbor", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false},
+        {"rank": 2, "doc_id": "doc-b", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false}
+      ]
+    },
+    {
+      "query_id": "q03-eligible-miss",
+      "query_text": "requests fail only after credential refresh",
+      "case_class": "miss",
+      "adequate_accessible_docs": ["doc-c"],
+      "abstained": false,
+      "candidates": [
+        {"rank": 1, "doc_id": "unrelated-active", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false}
+      ]
+    },
+    {
+      "query_id": "q04-no-document",
+      "query_text": "new failure signature with no approved procedure",
+      "case_class": "no_answer",
+      "adequate_accessible_docs": [],
+      "abstained": true,
+      "candidates": []
+    },
+    {
+      "query_id": "q05-stale-blocked-active-rank2",
+      "query_text": "promotion succeeds but the writer remains fenced",
+      "case_class": "stale_index",
+      "adequate_accessible_docs": ["doc-e-current"],
+      "abstained": false,
+      "candidates": [
+        {"rank": 1, "doc_id": "doc-e-retired", "lifecycle": "retired", "scope_match": true, "access": "allowed", "hostile": false},
+        {"rank": 2, "doc_id": "doc-e-superseded", "lifecycle": "superseded", "scope_match": true, "access": "allowed", "hostile": false},
+        {"rank": 3, "doc_id": "doc-e-current", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false}
+      ]
+    },
+    {
+      "query_id": "q06-hostile-content-blocked",
+      "query_text": "procedure text requests an outbound action",
+      "case_class": "hostile_content",
+      "adequate_accessible_docs": [],
+      "abstained": true,
+      "candidates": [
+        {"rank": 1, "doc_id": "doc-hostile", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": true}
+      ]
+    },
+    {
+      "query_id": "q07-access-limited-no-answer",
+      "query_text": "restricted subsystem reports an unfamiliar alarm",
+      "case_class": "access_limited",
+      "adequate_accessible_docs": [],
+      "abstained": true,
+      "candidates": [
+        {"rank": 1, "doc_id": "doc-denied", "lifecycle": "active_verified", "scope_match": true, "access": "denied", "hostile": false}
+      ]
+    },
+    {
+      "query_id": "q08-scope-filter-active-rank2",
+      "query_text": "read replicas reject traffic after failover",
+      "case_class": "scope_mismatch",
+      "adequate_accessible_docs": ["doc-h-current-scope"],
+      "abstained": false,
+      "candidates": [
+        {"rank": 1, "doc_id": "doc-h-wrong-scope", "lifecycle": "active_verified", "scope_match": false, "access": "allowed", "hostile": false},
+        {"rank": 2, "doc_id": "doc-h-current-scope", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false}
+      ]
+    },
+    {
+      "query_id": "q09-false-abstention",
+      "query_text": "queue depth rises while consumers remain healthy",
+      "case_class": "false_abstention",
+      "adequate_accessible_docs": ["doc-i"],
+      "abstained": true,
+      "candidates": [
+        {"rank": 1, "doc_id": "doc-i", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false}
+      ]
+    },
+    {
+      "query_id": "q10-answerable-rank1",
+      "query_text": "certificate rotates but one endpoint keeps the old chain",
+      "case_class": "answerable",
+      "adequate_accessible_docs": ["doc-j"],
+      "abstained": false,
+      "candidates": [
+        {"rank": 1, "doc_id": "doc-j", "lifecycle": "active_verified", "scope_match": true, "access": "allowed", "hostile": false}
+      ]
+    }
+  ]
+}

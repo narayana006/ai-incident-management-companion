@@ -1,0 +1,544 @@
+{
+  "artifact_class": "illustrative_constructed",
+  "authority": {
+    "effect": "none",
+    "statement": "This constructed evaluation does not certify a retriever or authorize promotion, production access, or tool execution."
+  },
+  "denominator_counts": {
+    "access_denied_candidates_encountered": 1,
+    "answerable_queries": 7,
+    "hostile_candidates_encountered": 1,
+    "lifecycle_ineligible_candidates_encountered": 2,
+    "no_answer_queries": 3,
+    "raw_candidates": 13,
+    "scope_mismatch_candidates_encountered": 1,
+    "served_candidates": 7,
+    "total_queries": 10
+  },
+  "evaluation_id": "ch09-constructed-ten-query-v1",
+  "limitations": [
+    "The ten constructed queries demonstrate mechanics and are not a statistically sufficient promotion corpus.",
+    "Candidate rankings are frozen fixture inputs; this evaluator does not compare lexical, semantic, hybrid, or reranked retrieval systems.",
+    "Adequacy labels are constructed reviewer judgments, not observed production outcomes.",
+    "Blocked hostile text is never interpreted and no denied document identifier is emitted."
+  ],
+  "metrics": {
+    "access_denied_served_rate": {
+      "denominator": 1,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "corpus_answerable_coverage": {
+      "denominator": 10,
+      "numerator": 7,
+      "value": 0.7
+    },
+    "correct_no_answer_abstention_rate": {
+      "denominator": 3,
+      "numerator": 3,
+      "value": 1.0
+    },
+    "false_abstention_rate": {
+      "denominator": 7,
+      "numerator": 1,
+      "value": 0.142857
+    },
+    "hit_at_3": {
+      "denominator": 7,
+      "numerator": 5,
+      "value": 0.714286
+    },
+    "hostile_content_served_rate": {
+      "denominator": 1,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "lifecycle_ineligible_served_rate": {
+      "denominator": 2,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "mean_reciprocal_rank": {
+      "denominator": 7,
+      "numerator": 4.5,
+      "value": 0.642857
+    },
+    "no_answer_leak_rate": {
+      "denominator": 3,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "nonabstaining_miss_rate": {
+      "denominator": 7,
+      "numerator": 1,
+      "value": 0.142857
+    },
+    "overall_abstention_rate": {
+      "denominator": 10,
+      "numerator": 4,
+      "value": 0.4
+    },
+    "polluted_answerable_query_rate": {
+      "denominator": 7,
+      "numerator": 2,
+      "value": 0.285714
+    },
+    "recall_at_3": {
+      "denominator": 7,
+      "numerator": 5.0,
+      "value": 0.714286
+    },
+    "scope_mismatch_served_rate": {
+      "denominator": 1,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "served_policy_violation_rate": {
+      "denominator": 7,
+      "numerator": 0,
+      "value": 0.0
+    }
+  },
+  "per_query": [
+    {
+      "abstained": false,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 1,
+      "adequate_documents_served": 1,
+      "answerable": true,
+      "blocked_candidate_counts": {},
+      "blocked_candidates": [],
+      "case_class": "answerable",
+      "correct_no_answer_abstention": false,
+      "eligible_candidate_count": 1,
+      "false_abstention": false,
+      "first_adequate_rank": 1,
+      "hit_at_k": 1,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q01-answerable-rank1",
+      "raw_candidate_count": 1,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [
+        {
+          "doc_id": "doc-a",
+          "raw_rank": 1,
+          "served_rank": 1
+        }
+      ],
+      "served_count": 1,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": false,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 1,
+      "adequate_documents_served": 1,
+      "answerable": true,
+      "blocked_candidate_counts": {},
+      "blocked_candidates": [],
+      "case_class": "answerable_polluted",
+      "correct_no_answer_abstention": false,
+      "eligible_candidate_count": 2,
+      "false_abstention": false,
+      "first_adequate_rank": 2,
+      "hit_at_k": 1,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 1,
+      "polluted": true,
+      "query_id": "q02-polluted-rank2",
+      "raw_candidate_count": 2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.5,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [
+        {
+          "doc_id": "plausible-neighbor",
+          "raw_rank": 1,
+          "served_rank": 1
+        },
+        {
+          "doc_id": "doc-b",
+          "raw_rank": 2,
+          "served_rank": 2
+        }
+      ],
+      "served_count": 2,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": false,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 1,
+      "adequate_documents_served": 0,
+      "answerable": true,
+      "blocked_candidate_counts": {},
+      "blocked_candidates": [],
+      "case_class": "miss",
+      "correct_no_answer_abstention": false,
+      "eligible_candidate_count": 1,
+      "false_abstention": false,
+      "first_adequate_rank": null,
+      "hit_at_k": 0,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": true,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 1,
+      "polluted": true,
+      "query_id": "q03-eligible-miss",
+      "raw_candidate_count": 1,
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [
+        {
+          "doc_id": "unrelated-active",
+          "raw_rank": 1,
+          "served_rank": 1
+        }
+      ],
+      "served_count": 1,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": true,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 0,
+      "adequate_documents_served": 0,
+      "answerable": false,
+      "blocked_candidate_counts": {},
+      "blocked_candidates": [],
+      "case_class": "no_answer",
+      "correct_no_answer_abstention": true,
+      "eligible_candidate_count": 0,
+      "false_abstention": false,
+      "first_adequate_rank": null,
+      "hit_at_k": null,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q04-no-document",
+      "raw_candidate_count": 0,
+      "recall_at_k": null,
+      "reciprocal_rank": null,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [],
+      "served_count": 0,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": false,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 1,
+      "adequate_documents_served": 1,
+      "answerable": true,
+      "blocked_candidate_counts": {
+        "lifecycle_retired": 1,
+        "lifecycle_superseded": 1
+      },
+      "blocked_candidates": [
+        {
+          "document_reference": "doc-e-retired",
+          "raw_rank": 1,
+          "reasons": [
+            "lifecycle_retired"
+          ]
+        },
+        {
+          "document_reference": "doc-e-superseded",
+          "raw_rank": 2,
+          "reasons": [
+            "lifecycle_superseded"
+          ]
+        }
+      ],
+      "case_class": "stale_index",
+      "correct_no_answer_abstention": false,
+      "eligible_candidate_count": 1,
+      "false_abstention": false,
+      "first_adequate_rank": 1,
+      "hit_at_k": 1,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 2,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q05-stale-blocked-active-rank2",
+      "raw_candidate_count": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [
+        {
+          "doc_id": "doc-e-current",
+          "raw_rank": 3,
+          "served_rank": 1
+        }
+      ],
+      "served_count": 1,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": true,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 0,
+      "adequate_documents_served": 0,
+      "answerable": false,
+      "blocked_candidate_counts": {
+        "hostile_instruction_like_content": 1
+      },
+      "blocked_candidates": [
+        {
+          "document_reference": "doc-hostile",
+          "raw_rank": 1,
+          "reasons": [
+            "hostile_instruction_like_content"
+          ]
+        }
+      ],
+      "case_class": "hostile_content",
+      "correct_no_answer_abstention": true,
+      "eligible_candidate_count": 0,
+      "false_abstention": false,
+      "first_adequate_rank": null,
+      "hit_at_k": null,
+      "hostile_candidates_blocked": 1,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q06-hostile-content-blocked",
+      "raw_candidate_count": 1,
+      "recall_at_k": null,
+      "reciprocal_rank": null,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [],
+      "served_count": 0,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": true,
+      "access_denied_candidates_blocked": 1,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 0,
+      "adequate_documents_served": 0,
+      "answerable": false,
+      "blocked_candidate_counts": {
+        "access_denied": 1
+      },
+      "blocked_candidates": [
+        {
+          "document_reference": "withheld_by_access_policy",
+          "raw_rank": 1,
+          "reasons": [
+            "access_denied"
+          ]
+        }
+      ],
+      "case_class": "access_limited",
+      "correct_no_answer_abstention": true,
+      "eligible_candidate_count": 0,
+      "false_abstention": false,
+      "first_adequate_rank": null,
+      "hit_at_k": null,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q07-access-limited-no-answer",
+      "raw_candidate_count": 1,
+      "recall_at_k": null,
+      "reciprocal_rank": null,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [],
+      "served_count": 0,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": false,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 1,
+      "adequate_documents_served": 1,
+      "answerable": true,
+      "blocked_candidate_counts": {
+        "scope_mismatch": 1
+      },
+      "blocked_candidates": [
+        {
+          "document_reference": "doc-h-wrong-scope",
+          "raw_rank": 1,
+          "reasons": [
+            "scope_mismatch"
+          ]
+        }
+      ],
+      "case_class": "scope_mismatch",
+      "correct_no_answer_abstention": false,
+      "eligible_candidate_count": 1,
+      "false_abstention": false,
+      "first_adequate_rank": 1,
+      "hit_at_k": 1,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q08-scope-filter-active-rank2",
+      "raw_candidate_count": 2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "scope_mismatch_candidates_blocked": 1,
+      "scope_mismatch_candidates_served": 0,
+      "served": [
+        {
+          "doc_id": "doc-h-current-scope",
+          "raw_rank": 2,
+          "served_rank": 1
+        }
+      ],
+      "served_count": 1,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": true,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 1,
+      "adequate_documents_served": 0,
+      "answerable": true,
+      "blocked_candidate_counts": {},
+      "blocked_candidates": [],
+      "case_class": "false_abstention",
+      "correct_no_answer_abstention": false,
+      "eligible_candidate_count": 1,
+      "false_abstention": true,
+      "first_adequate_rank": null,
+      "hit_at_k": 0,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q09-false-abstention",
+      "raw_candidate_count": 1,
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [],
+      "served_count": 0,
+      "served_policy_violations": 0
+    },
+    {
+      "abstained": false,
+      "access_denied_candidates_blocked": 0,
+      "access_denied_candidates_served": 0,
+      "adequate_document_count": 1,
+      "adequate_documents_served": 1,
+      "answerable": true,
+      "blocked_candidate_counts": {},
+      "blocked_candidates": [],
+      "case_class": "answerable",
+      "correct_no_answer_abstention": false,
+      "eligible_candidate_count": 1,
+      "false_abstention": false,
+      "first_adequate_rank": 1,
+      "hit_at_k": 1,
+      "hostile_candidates_blocked": 0,
+      "hostile_candidates_served": 0,
+      "lifecycle_ineligible_candidates_blocked": 0,
+      "lifecycle_ineligible_candidates_served": 0,
+      "miss": false,
+      "no_answer_leak": false,
+      "nonadequate_served_count": 0,
+      "polluted": false,
+      "query_id": "q10-answerable-rank1",
+      "raw_candidate_count": 1,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "scope_mismatch_candidates_blocked": 0,
+      "scope_mismatch_candidates_served": 0,
+      "served": [
+        {
+          "doc_id": "doc-j",
+          "raw_rank": 1,
+          "served_rank": 1
+        }
+      ],
+      "served_count": 1,
+      "served_policy_violations": 0
+    }
+  ],
+  "provenance": {
+    "adjudication": {
+      "disagreement_state": "none_in_constructed_fixture",
+      "review_role": "qualified_incident_reviewer",
+      "reviewed_on": "2026-02-15",
+      "rubric_version": "retrieval-usefulness-rubric-v1"
+    },
+    "bundle": {
+      "audience": "authorized_reader_role",
+      "chunking_version": "constructed-chunks-v1",
+      "corpus_snapshot": "constructed-corpus-v1",
+      "index_version": "constructed-index-v1",
+      "k": 3,
+      "ranker_version": "deterministic-fixture-v1"
+    },
+    "determinism": "No clock, randomness, network, model, or external service is used.",
+    "generator_version": "ch09-retrieval-evaluator-1.0.0",
+    "input_sha256": "a025f0add42f2d3abb0d3796c9ab512b3ad2132a5448b49a5f2c455f26296c0f"
+  },
+  "schema_version": "ch09-retrieval-results-1",
+  "source_label": "Constructed ten-query starter audit; method demonstration only."
+}

@@ -1,0 +1,741 @@
+{
+  "bounded_simulated_action": {
+    "evaluation": {
+      "action_digest": "db079ecf74fdce6fad8f15e1ccb31235046955a23b64d1551304827660c362d2",
+      "reason": "DECLARED_OBSERVATION_VERIFIED",
+      "state": "verified"
+    },
+    "record": {
+      "acknowledgement": {
+        "actor": "human://fixture/incident-commander",
+        "decision_ref": "decision-01",
+        "state": "acknowledged"
+      },
+      "action_class": "bounded_simulated_setpoint",
+      "action_id": "action-01",
+      "bounded_scope": {
+        "environment": "isolated_fixture",
+        "maximum_units": 1
+      },
+      "execution_result": "complete",
+      "inverse_ref": "fixture://isolated/restore-prior-setpoint",
+      "observation_evidence_refs": [
+        "signal-primary-path",
+        "dependency-observation"
+      ],
+      "observation_result": "verified",
+      "state_events": [
+        {
+          "state": "proposed",
+          "valid_time": "sequence-04"
+        },
+        {
+          "state": "authorized",
+          "valid_time": "sequence-05"
+        },
+        {
+          "state": "reserved",
+          "valid_time": "sequence-05"
+        },
+        {
+          "state": "executing",
+          "valid_time": "sequence-05"
+        },
+        {
+          "state": "observing",
+          "valid_time": "sequence-06"
+        },
+        {
+          "state": "verified",
+          "valid_time": "sequence-07"
+        }
+      ],
+      "target": "fixture://isolated/generic-target"
+    }
+  },
+  "close_decision": {
+    "decision_id": "decision-02",
+    "decision_type": "close_with_residual_risk",
+    "evidence_refs": [
+      "signal-primary-path",
+      "dependency-observation"
+    ],
+    "owner": "human://fixture/incident-commander",
+    "reopen_condition": "primary_path_recurrence",
+    "residual_risk": "deferred_work_unobserved",
+    "residual_risk_owner": "human://fixture/technical-responder",
+    "state": "accepted",
+    "valid_time": "sequence-08"
+  },
+  "fixture_digest": "50623d777b01ff9127cdce85e7dac8351f5e6f2ca39a73e27c3ab7da877a910d",
+  "fixture_notice": "Constructed fixture; demonstrates record behavior, not production performance.",
+  "full_incident_replay": {
+    "chain_head": "bdc9af61050973d9ed1bbc1ec32418e6d5d48d0ee3f8ad8e2391c0a768b8d768",
+    "current_state": "reopened",
+    "cutoff": "sequence-09",
+    "incident_id": "incident-constructed-08",
+    "transitions": [
+      {
+        "authority": "detection_policy",
+        "authority_type": "governed_signal",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "from": null,
+        "prior_record_digest": "GENESIS",
+        "provenance_ref": "event-01",
+        "record_digest": "e7ad77ad26f1ccee71f2e94f5441cf20237aa040e0d4de56809d2fd1f0bc9db9",
+        "to": "detected",
+        "unresolved": [
+          "scope_unconfirmed"
+        ],
+        "valid_time": "sequence-01"
+      },
+      {
+        "authority": "assessment_owner",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "from": "detected",
+        "prior_record_digest": "e7ad77ad26f1ccee71f2e94f5441cf20237aa040e0d4de56809d2fd1f0bc9db9",
+        "provenance_ref": "event-02",
+        "record_digest": "3971bd7d1755e4ea52418b44e6ae9a18f00d6c629bf07c95baab5f7665e118b0",
+        "to": "acknowledged",
+        "unresolved": [
+          "cause_unknown"
+        ],
+        "valid_time": "sequence-02"
+      },
+      {
+        "authority": "assessment_owner",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path",
+          "dependency-observation"
+        ],
+        "from": "acknowledged",
+        "prior_record_digest": "3971bd7d1755e4ea52418b44e6ae9a18f00d6c629bf07c95baab5f7665e118b0",
+        "provenance_ref": "event-03",
+        "record_digest": "4e7929c9cff961c43ea04b3c2de82022577c000f58c8f6284d13ff49a8618101",
+        "to": "assessed",
+        "unresolved": [
+          "deferred_work_unobserved"
+        ],
+        "valid_time": "sequence-03"
+      },
+      {
+        "authority": "incident_commander",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "from": "assessed",
+        "prior_record_digest": "4e7929c9cff961c43ea04b3c2de82022577c000f58c8f6284d13ff49a8618101",
+        "provenance_ref": "event-04",
+        "record_digest": "b3e5bf862644dab1dac61575c3d5d66e006157861601c57e02dfc764ac3ac8f2",
+        "to": "coordinated",
+        "unresolved": [
+          "deferred_work_unobserved"
+        ],
+        "valid_time": "sequence-04"
+      },
+      {
+        "authority": "incident_commander",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path",
+          "dependency-observation"
+        ],
+        "from": "coordinated",
+        "prior_record_digest": "b3e5bf862644dab1dac61575c3d5d66e006157861601c57e02dfc764ac3ac8f2",
+        "provenance_ref": "event-05",
+        "record_digest": "17e7c5ea8f9dee144a16a76c91b7aef31b970dc56fe629647e6b6b9394b9c6d7",
+        "to": "mitigating",
+        "unresolved": [
+          "action_outcome_pending"
+        ],
+        "valid_time": "sequence-05"
+      },
+      {
+        "authority": "incident_commander",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "from": "mitigating",
+        "prior_record_digest": "17e7c5ea8f9dee144a16a76c91b7aef31b970dc56fe629647e6b6b9394b9c6d7",
+        "provenance_ref": "event-06",
+        "record_digest": "9e2e92c640e9700d342be84f2d618dfca6fc20a76c1f2a88beb5fc9b37b26660",
+        "to": "verifying_recovery",
+        "unresolved": [
+          "deferred_work_unobserved"
+        ],
+        "valid_time": "sequence-06"
+      },
+      {
+        "authority": "incident_commander",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path",
+          "dependency-observation"
+        ],
+        "from": "verifying_recovery",
+        "prior_record_digest": "9e2e92c640e9700d342be84f2d618dfca6fc20a76c1f2a88beb5fc9b37b26660",
+        "provenance_ref": "event-07",
+        "record_digest": "2d0f2706d50bfd1173ecc11af22cc613fae8c52170cdfbd53ba9616126c108f3",
+        "to": "monitoring",
+        "unresolved": [
+          "deferred_work_unobserved"
+        ],
+        "valid_time": "sequence-07"
+      },
+      {
+        "authority": "incident_commander",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path",
+          "dependency-observation"
+        ],
+        "from": "monitoring",
+        "prior_record_digest": "2d0f2706d50bfd1173ecc11af22cc613fae8c52170cdfbd53ba9616126c108f3",
+        "provenance_ref": "event-08",
+        "record_digest": "bc2e615d485a14c5802eea75b8f6c1e776df56bc1fde36f06fc3e47a836dfe36",
+        "to": "closed",
+        "unresolved": [
+          "accepted_residual_risk:deferred_work_unobserved"
+        ],
+        "valid_time": "sequence-08"
+      },
+      {
+        "authority": "incident_commander",
+        "authority_type": "human",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "from": "closed",
+        "prior_record_digest": "bc2e615d485a14c5802eea75b8f6c1e776df56bc1fde36f06fc3e47a836dfe36",
+        "provenance_ref": "event-09",
+        "record_digest": "bdc9af61050973d9ed1bbc1ec32418e6d5d48d0ee3f8ad8e2391c0a768b8d768",
+        "to": "reopened",
+        "unresolved": [
+          "prior_recovery_assumption_invalidated"
+        ],
+        "valid_time": "sequence-09"
+      }
+    ]
+  },
+  "human_authority": {
+    "close": "human_only",
+    "external_release": "human_approval_required",
+    "incident_command": "human_only",
+    "recovery_acceptance": "human_only"
+  },
+  "incident_id": "incident-constructed-08",
+  "initial_evidence_brief": {
+    "artifact_type": "late_arrival_brief",
+    "audience": "technical_responder",
+    "brief_digest": "13d4a1cb8a7eca1654d7f9e996c023507bdb3a22c756b4b5024949295c337e1c",
+    "claims": [
+      {
+        "audiences": [
+          "technical_responder",
+          "communication_owner"
+        ],
+        "claim_id": "claim-current-state",
+        "claim_state": "observed",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "source_states": {
+          "signal-primary-path": {
+            "coverage": "declared_primary_path",
+            "freshness": "current_for_cutoff",
+            "health": "healthy"
+          }
+        },
+        "support_state": "supported",
+        "text": "The constructed incident record is at the declared cutoff."
+      },
+      {
+        "audiences": [
+          "technical_responder"
+        ],
+        "claim_id": "claim-dependency",
+        "claim_state": "observed",
+        "evidence_refs": [
+          "dependency-observation"
+        ],
+        "source_states": {
+          "dependency-observation": {
+            "coverage": "declared_dependency_scope",
+            "freshness": "current_for_cutoff",
+            "health": "healthy"
+          }
+        },
+        "support_state": "supported",
+        "text": "A declared dependency observation is available for technical review."
+      },
+      {
+        "audiences": [
+          "technical_responder"
+        ],
+        "claim_id": "claim-deferred-work-gap",
+        "claim_state": "unknown",
+        "evidence_refs": [
+          "deferred-work-observation"
+        ],
+        "source_states": {
+          "deferred-work-observation": {
+            "coverage": "unobserved",
+            "freshness": "unknown",
+            "health": "missing"
+          }
+        },
+        "support_state": "indeterminate",
+        "text": "Deferred-work recovery is unobserved because its required source is missing."
+      }
+    ],
+    "current_state": "assessed",
+    "evidence_cutoff": "sequence-03",
+    "execution_authority": "none",
+    "flagged_claims": [],
+    "incident_id": "incident-constructed-08",
+    "provenance_chain_head": "4e7929c9cff961c43ea04b3c2de82022577c000f58c8f6284d13ff49a8618101",
+    "read_only": true,
+    "recommendations": [],
+    "record_version": "record-v1",
+    "requested_contributions": [
+      {
+        "approved_by": "incident_commander",
+        "requested_contribution": "Review the unresolved recovery evidence.",
+        "role": "technical_responder"
+      }
+    ]
+  },
+  "late_arrival_briefs": {
+    "communication_owner": {
+      "artifact_type": "late_arrival_brief",
+      "audience": "communication_owner",
+      "brief_digest": "4b95a70cc6e70c86cf725fbec1dc6f024f01cc6a43dfe8063000a02c50e42eb5",
+      "claims": [
+        {
+          "audiences": [
+            "technical_responder",
+            "communication_owner"
+          ],
+          "claim_id": "claim-current-state",
+          "claim_state": "observed",
+          "evidence_refs": [
+            "signal-primary-path"
+          ],
+          "source_states": {
+            "signal-primary-path": {
+              "coverage": "declared_primary_path",
+              "freshness": "current_for_cutoff",
+              "health": "healthy"
+            }
+          },
+          "support_state": "supported",
+          "text": "The constructed incident record is at the declared cutoff."
+        }
+      ],
+      "current_state": "closed",
+      "evidence_cutoff": "sequence-08",
+      "execution_authority": "none",
+      "flagged_claims": [],
+      "incident_id": "incident-constructed-08",
+      "provenance_chain_head": "bc2e615d485a14c5802eea75b8f6c1e776df56bc1fde36f06fc3e47a836dfe36",
+      "read_only": true,
+      "recommendations": [],
+      "record_version": "record-v1",
+      "requested_contributions": [
+        {
+          "approved_by": "incident_commander",
+          "requested_contribution": "Prepare a bounded internal status draft.",
+          "role": "communication_owner"
+        }
+      ]
+    },
+    "technical_responder": {
+      "artifact_type": "late_arrival_brief",
+      "audience": "technical_responder",
+      "brief_digest": "08f6b159de896960b703737859c69cd4af3cda1959238dfa966f3aa1ad779673",
+      "claims": [
+        {
+          "audiences": [
+            "technical_responder",
+            "communication_owner"
+          ],
+          "claim_id": "claim-current-state",
+          "claim_state": "observed",
+          "evidence_refs": [
+            "signal-primary-path"
+          ],
+          "source_states": {
+            "signal-primary-path": {
+              "coverage": "declared_primary_path",
+              "freshness": "current_for_cutoff",
+              "health": "healthy"
+            }
+          },
+          "support_state": "supported",
+          "text": "The constructed incident record is at the declared cutoff."
+        },
+        {
+          "audiences": [
+            "technical_responder"
+          ],
+          "claim_id": "claim-dependency",
+          "claim_state": "observed",
+          "evidence_refs": [
+            "dependency-observation"
+          ],
+          "source_states": {
+            "dependency-observation": {
+              "coverage": "declared_dependency_scope",
+              "freshness": "current_for_cutoff",
+              "health": "healthy"
+            }
+          },
+          "support_state": "supported",
+          "text": "A declared dependency observation is available for technical review."
+        },
+        {
+          "audiences": [
+            "technical_responder"
+          ],
+          "claim_id": "claim-deferred-work-gap",
+          "claim_state": "unknown",
+          "evidence_refs": [
+            "deferred-work-observation"
+          ],
+          "source_states": {
+            "deferred-work-observation": {
+              "coverage": "unobserved",
+              "freshness": "unknown",
+              "health": "missing"
+            }
+          },
+          "support_state": "indeterminate",
+          "text": "Deferred-work recovery is unobserved because its required source is missing."
+        }
+      ],
+      "current_state": "closed",
+      "evidence_cutoff": "sequence-08",
+      "execution_authority": "none",
+      "flagged_claims": [],
+      "incident_id": "incident-constructed-08",
+      "provenance_chain_head": "bc2e615d485a14c5802eea75b8f6c1e776df56bc1fde36f06fc3e47a836dfe36",
+      "read_only": true,
+      "recommendations": [],
+      "record_version": "record-v1",
+      "requested_contributions": [
+        {
+          "approved_by": "incident_commander",
+          "requested_contribution": "Review the unresolved recovery evidence.",
+          "role": "technical_responder"
+        }
+      ]
+    }
+  },
+  "negative_controls": {
+    "external_publication_on_silence": {
+      "outcome": "hold",
+      "reason": "EXTERNAL_APPROVAL_MISSING"
+    },
+    "stale_brief_delivery": {
+      "brief_cutoff": "sequence-08",
+      "current_cutoff": "sequence-09",
+      "delivery_state": "stale",
+      "reason": "RECORD_ADVANCED_AFTER_GENERATION"
+    }
+  },
+  "post_fix_sentinel": [
+    {
+      "case_id": "all-required-criteria-pass",
+      "expected": "recovery_supported",
+      "reasons": [],
+      "result": "recovery_supported"
+    },
+    {
+      "case_id": "required-criterion-fails",
+      "expected": "recovery_not_supported",
+      "reasons": [
+        "CRITERION_FAILED:dependency"
+      ],
+      "result": "recovery_not_supported"
+    },
+    {
+      "case_id": "required-source-missing",
+      "expected": "indeterminate",
+      "reasons": [
+        "COVERAGE_INCOMPLETE:deferred-work",
+        "OBSERVATION_UNKNOWN:deferred-work",
+        "SOURCE_MISSING:deferred-work",
+        "WINDOW_INCOMPLETE:deferred-work"
+      ],
+      "result": "indeterminate"
+    }
+  ],
+  "reopen_transition": {
+    "authority": "incident_commander",
+    "authority_type": "human",
+    "evidence_refs": [
+      "signal-primary-path"
+    ],
+    "from": "closed",
+    "prior_record_digest": "bc2e615d485a14c5802eea75b8f6c1e776df56bc1fde36f06fc3e47a836dfe36",
+    "provenance_ref": "event-09",
+    "record_digest": "bdc9af61050973d9ed1bbc1ec32418e6d5d48d0ee3f8ad8e2391c0a768b8d768",
+    "to": "reopened",
+    "unresolved": [
+      "prior_recovery_assumption_invalidated"
+    ],
+    "valid_time": "sequence-09"
+  },
+  "replay_digest": "57600fedfb9c296c0aa00354834bf5a738577d04b5712032dc76eb9f1c9bbccb",
+  "role_assignments": [
+    {
+      "actor": "human://fixture/incident-commander",
+      "authority": [
+        "set_priority",
+        "delegate_roles",
+        "accept_recovery",
+        "close",
+        "reopen"
+      ],
+      "role": "incident_command"
+    },
+    {
+      "actor": "human://fixture/technical-responder",
+      "authority": [
+        "investigate",
+        "propose_action",
+        "verify_technical_state"
+      ],
+      "role": "technical_response"
+    },
+    {
+      "actor": "human://fixture/communication-owner",
+      "authority": [
+        "approve_audience_bounded_release",
+        "correct_release"
+      ],
+      "role": "communication"
+    },
+    {
+      "actor": "human://fixture/record-owner",
+      "authority": [
+        "adjudicate_correction",
+        "accept_record"
+      ],
+      "role": "incident_record"
+    }
+  ],
+  "running_records": {
+    "communications": [
+      {
+        "approved_by": "human://fixture/communication-owner",
+        "audience": "internal_response",
+        "communication_id": "communication-01",
+        "evidence_cutoff": "sequence-08",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "state": "approved"
+      },
+      {
+        "approved_by": null,
+        "audience": "external",
+        "communication_id": "communication-negative-silence",
+        "evidence_cutoff": "sequence-08",
+        "evidence_refs": [
+          "signal-primary-path"
+        ],
+        "state": "draft"
+      }
+    ],
+    "decisions": [
+      {
+        "decision_id": "decision-01",
+        "decision_type": "bounded_simulated_mitigation",
+        "evidence_refs": [
+          "signal-primary-path",
+          "dependency-observation"
+        ],
+        "owner": "human://fixture/incident-commander",
+        "state": "acknowledged",
+        "valid_time": "sequence-05"
+      },
+      {
+        "decision_id": "decision-02",
+        "decision_type": "close_with_residual_risk",
+        "evidence_refs": [
+          "signal-primary-path",
+          "dependency-observation"
+        ],
+        "owner": "human://fixture/incident-commander",
+        "reopen_condition": "primary_path_recurrence",
+        "residual_risk": "deferred_work_unobserved",
+        "residual_risk_owner": "human://fixture/technical-responder",
+        "state": "accepted",
+        "valid_time": "sequence-08"
+      }
+    ],
+    "hypotheses": [
+      {
+        "contradicting_evidence_refs": [],
+        "cutoff": "sequence-03",
+        "hypothesis_id": "hypothesis-01",
+        "owner": "human://fixture/technical-responder",
+        "state": "supported",
+        "statement": "The declared dependency observation is relevant to the primary-path symptom.",
+        "supporting_evidence_refs": [
+          "dependency-observation"
+        ]
+      }
+    ],
+    "incident_at_brief_cutoff": {
+      "chain_head": "bc2e615d485a14c5802eea75b8f6c1e776df56bc1fde36f06fc3e47a836dfe36",
+      "current_state": "closed",
+      "cutoff": "sequence-08",
+      "incident_id": "incident-constructed-08",
+      "transitions": [
+        {
+          "authority": "detection_policy",
+          "authority_type": "governed_signal",
+          "evidence_refs": [
+            "signal-primary-path"
+          ],
+          "from": null,
+          "prior_record_digest": "GENESIS",
+          "provenance_ref": "event-01",
+          "record_digest": "e7ad77ad26f1ccee71f2e94f5441cf20237aa040e0d4de56809d2fd1f0bc9db9",
+          "to": "detected",
+          "unresolved": [
+            "scope_unconfirmed"
+          ],
+          "valid_time": "sequence-01"
+        },
+        {
+          "authority": "assessment_owner",
+          "authority_type": "human",
+          "evidence_refs": [
+            "signal-primary-path"
+          ],
+          "from": "detected",
+          "prior_record_digest": "e7ad77ad26f1ccee71f2e94f5441cf20237aa040e0d4de56809d2fd1f0bc9db9",
+          "provenance_ref": "event-02",
+          "record_digest": "3971bd7d1755e4ea52418b44e6ae9a18f00d6c629bf07c95baab5f7665e118b0",
+          "to": "acknowledged",
+          "unresolved": [
+            "cause_unknown"
+          ],
+          "valid_time": "sequence-02"
+        },
+        {
+          "authority": "assessment_owner",
+          "authority_type": "human",
+          "evidence_refs": [
+            "signal-primary-path",
+            "dependency-observation"
+          ],
+          "from": "acknowledged",
+          "prior_record_digest": "3971bd7d1755e4ea52418b44e6ae9a18f00d6c629bf07c95baab5f7665e118b0",
+          "provenance_ref": "event-03",
+          "record_digest": "4e7929c9cff961c43ea04b3c2de82022577c000f58c8f6284d13ff49a8618101",
+          "to": "assessed",
+          "unresolved": [
+            "deferred_work_unobserved"
+          ],
+          "valid_time": "sequence-03"
+        },
+        {
+          "authority": "incident_commander",
+          "authority_type": "human",
+          "evidence_refs": [
+            "signal-primary-path"
+          ],
+          "from": "assessed",
+          "prior_record_digest": "4e7929c9cff961c43ea04b3c2de82022577c000f58c8f6284d13ff49a8618101",
+          "provenance_ref": "event-04",
+          "record_digest": "b3e5bf862644dab1dac61575c3d5d66e006157861601c57e02dfc764ac3ac8f2",
+          "to": "coordinated",
+          "unresolved": [
+            "deferred_work_unobserved"
+          ],
+          "valid_time": "sequence-04"
+        },
+        {
+          "authority": "incident_commander",
+          "authority_type": "human",
+          "evidence_refs": [
+            "signal-primary-path",
+            "dependency-observation"
+          ],
+          "from": "coordinated",
+          "prior_record_digest": "b3e5bf862644dab1dac61575c3d5d66e006157861601c57e02dfc764ac3ac8f2",
+          "provenance_ref": "event-05",
+          "record_digest": "17e7c5ea8f9dee144a16a76c91b7aef31b970dc56fe629647e6b6b9394b9c6d7",
+          "to": "mitigating",
+          "unresolved": [
+            "action_outcome_pending"
+          ],
+          "valid_time": "sequence-05"
+        },
+        {
+          "authority": "incident_commander",
+          "authority_type": "human",
+          "evidence_refs": [
+            "signal-primary-path"
+          ],
+          "from": "mitigating",
+          "prior_record_digest": "17e7c5ea8f9dee144a16a76c91b7aef31b970dc56fe629647e6b6b9394b9c6d7",
+          "provenance_ref": "event-06",
+          "record_digest": "9e2e92c640e9700d342be84f2d618dfca6fc20a76c1f2a88beb5fc9b37b26660",
+          "to": "verifying_recovery",
+          "unresolved": [
+            "deferred_work_unobserved"
+          ],
+          "valid_time": "sequence-06"
+        },
+        {
+          "authority": "incident_commander",
+          "authority_type": "human",
+          "evidence_refs": [
+            "signal-primary-path",
+            "dependency-observation"
+          ],
+          "from": "verifying_recovery",
+          "prior_record_digest": "9e2e92c640e9700d342be84f2d618dfca6fc20a76c1f2a88beb5fc9b37b26660",
+          "provenance_ref": "event-07",
+          "record_digest": "2d0f2706d50bfd1173ecc11af22cc613fae8c52170cdfbd53ba9616126c108f3",
+          "to": "monitoring",
+          "unresolved": [
+            "deferred_work_unobserved"
+          ],
+          "valid_time": "sequence-07"
+        },
+        {
+          "authority": "incident_commander",
+          "authority_type": "human",
+          "evidence_refs": [
+            "signal-primary-path",
+            "dependency-observation"
+          ],
+          "from": "monitoring",
+          "prior_record_digest": "2d0f2706d50bfd1173ecc11af22cc613fae8c52170cdfbd53ba9616126c108f3",
+          "provenance_ref": "event-08",
+          "record_digest": "bc2e615d485a14c5802eea75b8f6c1e776df56bc1fde36f06fc3e47a836dfe36",
+          "to": "closed",
+          "unresolved": [
+            "accepted_residual_risk:deferred_work_unobserved"
+          ],
+          "valid_time": "sequence-08"
+        }
+      ]
+    }
+  },
+  "schema_version": "ch08-incident-replay-output-1"
+}

@@ -1,0 +1,44 @@
+{
+  "claim_boundary": "method_mechanics_only_no_production_validation",
+  "command": "cd companion && make calibration",
+  "contract": {
+    "boundary_transfer_allowed": false,
+    "count_minimum_used_for_certification": null,
+    "illustrative_boundaries": [
+      0.7,
+      0.9
+    ],
+    "independent_unit": "one incident_group_id/action_class pair",
+    "interval": "two-sided Wilson 95%",
+    "version_pooling_allowed": false,
+    "z": 1.959963984540054
+  },
+  "data_class": "illustrative_constructed",
+  "dependencies": {
+    "python_standard_library": "CPython 3.12.13",
+    "third_party": []
+  },
+  "diagram_sources": {
+    "diagrams/src/figure-4-2-three-state-authority-flow.json": "cf9c6cbf1910631b08bc092960a2ca69fc87e06ac28d035907a57d87d3f130fe"
+  },
+  "generator_sha256": "dd4095891311069d3aa7ba7e82f3eed810a09d0417544878971d91799df6b492",
+  "input": {
+    "adjudicated_binary": 254,
+    "eligible": 254,
+    "excluded": 0,
+    "indeterminate": 0,
+    "path": "fixtures/ch04/CAL-01/synthetic_smoke.csv",
+    "rows": 254,
+    "sha256": "b6e914b2a3482236b8356a1c7cfb52dd5815e34008351face95b047572a661fc"
+  },
+  "output_sha256": {
+    "generated/ch04_calibration_bin_summary.csv": "4981fa1d1da33ff199a4f5bc554d9a877e2af2441980f3a8f78077059914f17a",
+    "generated/ch04_calibration_interval_table.csv": "048d7aa42a0b577d241905524b43fb81ac13d1ec6142023266bc5ee1599f5391",
+    "generated/ch04_calibration_provenance.md": "908a26ca4e0bbf2b2633a8f7a25488412965a0c678ccc8dff305e56c0fc80f6c",
+    "generated/figure-4-1-calibration-reliability.svg": "72843c03c880339bae4ce49176fc49c80d44fd9f08313ec466a7eb5cc8a7e149",
+    "generated/figure-4-2-three-state-authority-flow.svg": "5a6b58d9175c073acecc286740f5c7584d342021ce72dfdbed1737c48a170ced"
+  },
+  "release_runtime": "CPython 3.12.13",
+  "runtime_contract": "CPython >=3.11; Python standard library only",
+  "schema_version": "cal-01-run-manifest-v1"
+}

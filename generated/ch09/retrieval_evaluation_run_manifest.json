@@ -1,0 +1,25 @@
+{
+  "artifact_class": "illustrative_constructed",
+  "authority_effect": "none",
+  "deterministic": true,
+  "generator_version": "ch09-retrieval-evaluator-1.0.0",
+  "input": {
+    "path": "fixtures/ch09/retrieval-evaluation.json",
+    "sha256": "a025f0add42f2d3abb0d3796c9ab512b3ad2132a5448b49a5f2c455f26296c0f"
+  },
+  "outputs": {
+    "per_query_results.csv": {
+      "bytes": 1637,
+      "sha256": "e7aa76726d4f8756c76bf749fd1e4ce17379f9764d2d8764b095a3ffe2f401bb"
+    },
+    "retrieval_evaluation_report.md": {
+      "bytes": 3938,
+      "sha256": "7cb6d3194225e5cc8bf226d2c231f913b22c008d4538d5f2133b2fdff33e5feb"
+    },
+    "retrieval_evaluation_results.json": {
+      "bytes": 16551,
+      "sha256": "1e79126810e0a0ddcf547afadae1bdd898bfead662fb7a9197055835c05edb3d"
+    }
+  },
+  "schema_version": "ch09-retrieval-run-manifest-1"
+}

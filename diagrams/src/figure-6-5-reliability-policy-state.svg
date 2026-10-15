@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+  <title id="title">Canonical reliability policy constrains execution authority</title>
+  <desc id="desc">The incident system reads an existing canonical SLI, SLO, error-budget or release-policy record with service identity, version, valid time, source health and completeness. A current permissive state allows the action class to continue through its remaining gates. A current restrictive state, or a missing, stale, incomplete or shared-fate input, demotes unattended execution. Read-only evidence assembly and suggestions remain available. Local hysteresis may prevent authority flapping but cannot override a canonical hard stop.</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315D7D"/></marker>
+    <marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C65D21"/></marker>
+    <style>.title{font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}.sub{font:18px Arial,Helvetica,sans-serif;fill:#455A64}.h{font:700 21px Arial,Helvetica,sans-serif;fill:#17324D}.b{font:17px Arial,Helvetica,sans-serif;fill:#344B58}.s{font:15px Arial,Helvetica,sans-serif;fill:#455A64}.wh{font:700 20px Arial,Helvetica,sans-serif;fill:#FFF}.wb{font:17px Arial,Helvetica,sans-serif;fill:#EAF3F7}</style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="838" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">Consume the reliability policy people already use</text>
+  <text x="50" y="82" class="sub">The incident system does not invent universal green, yellow, or red autonomy zones.</text>
+
+  <rect x="55" y="145" width="330" height="280" rx="17" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <text x="220" y="184" text-anchor="middle" class="h">CANONICAL POLICY RECORD</text>
+  <text x="85" y="227" class="b">service identity + SLI definition</text>
+  <text x="85" y="263" class="b">SLO / error-budget / release decision</text>
+  <text x="85" y="299" class="b">window + valid time + policy version</text>
+  <text x="85" y="335" class="b">source health + expected-series coverage</text>
+  <text x="85" y="371" class="b">hard stop, if one is defined</text>
+  <text x="85" y="405" class="s">Existing source of authority; read-only here</text>
+
+  <path d="M385 285 H475" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <rect x="485" y="145" width="350" height="280" rx="17" fill="#17324D"/>
+  <text x="660" y="184" text-anchor="middle" class="wh">POLICY INPUT CHECK</text>
+  <text x="520" y="230" class="wb">Correct service and action class?</text>
+  <text x="520" y="270" class="wb">Fresh for this claim and window?</text>
+  <text x="520" y="310" class="wb">Complete under the expected-series registry?</text>
+  <text x="520" y="350" class="wb">Source healthy and independent enough?</text>
+  <text x="520" y="390" class="wb">Canonical hard stop present?</text>
+
+  <path d="M835 220 H930" stroke="#315D7D" stroke-width="4" marker-end="url(#blue)"/>
+  <rect x="940" y="145" width="215" height="145" rx="14" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+  <text x="1047" y="183" text-anchor="middle" class="h">PERMITTED</text>
+  <text x="970" y="224" class="b">Continue through</text>
+  <text x="970" y="256" class="b">remaining guard gates</text>
+
+  <path d="M835 350 H930" stroke="#C65D21" stroke-width="4" marker-end="url(#orange)"/>
+  <rect x="940" y="320" width="215" height="175" rx="14" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="1047" y="358" text-anchor="middle" class="h">DEMOTE</text>
+  <text x="970" y="400" class="b">restrictive • missing</text>
+  <text x="970" y="432" class="b">stale • incomplete</text>
+  <text x="970" y="464" class="b">shared-fate failure</text>
+
+  <rect x="165" y="535" width="420" height="145" rx="16" fill="#EAF2F7" stroke="#7E9DB0" stroke-width="2"/>
+  <text x="375" y="575" text-anchor="middle" class="h">LOCAL AUTHORITY HYSTERESIS</text>
+  <text x="200" y="610" class="b">Separate enter / exit conditions may</text>
+  <text x="200" y="640" class="b">prevent flapping. Derive them locally.</text>
+  <text x="200" y="670" class="b">Never smooth away a canonical hard stop.</text>
+  <path d="M660 425 V505 H475 V526" fill="none" stroke="#315D7D" stroke-width="3" marker-end="url(#blue)"/>
+
+  <rect x="625" y="535" width="420" height="145" rx="16" fill="#17324D"/>
+  <text x="835" y="575" text-anchor="middle" class="wh">READ-ONLY ASSISTANCE CONTINUES</text>
+  <text x="660" y="610" class="wb">Evidence assembly • proposal • reason codes</text>
+  <text x="660" y="640" class="wb">Humans receive the source failure.</text>
+  <text x="660" y="670" class="wb">People retain command.</text>
+  <path d="M1047 495 V526" stroke="#C65D21" stroke-width="3" marker-end="url(#orange)"/>
+
+  <rect x="165" y="710" width="880" height="80" rx="14" fill="#FFF" stroke="#A8BBC7" stroke-width="2"/>
+  <text x="195" y="742" class="b">Measure demotions, source failures, and responder work.</text>
+  <text x="195" y="772" class="b">Withdrawing execution can move toil onto people during the worst period.</text>
+  <text x="50" y="815" class="sub">No policy input, no unattended execution. Historical state remains context but cannot silently become current permission.</text>
+</svg>

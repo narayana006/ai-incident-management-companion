@@ -1,0 +1,7 @@
+data_class,input_sha256,bin_lower_inclusive,bin_upper,upper_endpoint,independent_n,right_k,observed_right_rate,wilson_95_lower,wilson_95_upper,count_interpretation
+illustrative_constructed,b6e914b2a3482236b8356a1c7cfb52dd5815e34008351face95b047572a661fc,0.50,0.60,exclusive,40,24,0.6000,0.4460,0.7365,shown_without_universal_minimum
+illustrative_constructed,b6e914b2a3482236b8356a1c7cfb52dd5815e34008351face95b047572a661fc,0.60,0.70,exclusive,55,33,0.6000,0.4681,0.7188,shown_without_universal_minimum
+illustrative_constructed,b6e914b2a3482236b8356a1c7cfb52dd5815e34008351face95b047572a661fc,0.70,0.80,exclusive,80,53,0.6625,0.5536,0.7565,shown_without_universal_minimum
+illustrative_constructed,b6e914b2a3482236b8356a1c7cfb52dd5815e34008351face95b047572a661fc,0.80,0.90,exclusive,62,53,0.8548,0.7466,0.9217,shown_without_universal_minimum
+illustrative_constructed,b6e914b2a3482236b8356a1c7cfb52dd5815e34008351face95b047572a661fc,0.90,0.95,exclusive,10,10,1.0000,0.7225,1.0000,shown_without_universal_minimum
+illustrative_constructed,b6e914b2a3482236b8356a1c7cfb52dd5815e34008351face95b047572a661fc,0.95,1.00,inclusive,7,7,1.0000,0.6457,1.0000,shown_without_universal_minimum

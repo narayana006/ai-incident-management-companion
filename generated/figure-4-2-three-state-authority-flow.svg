@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc" data-class="proposed_design">
+<metadata>data_class=proposed_design;source_sha256=cf9c6cbf1910631b08bc092960a2ca69fc87e06ac28d035907a57d87d3f130fe;model_score_grants_authority=false;silence_executes=false</metadata>
+<title id="title">Three visible authority states behind deterministic policy checks</title>
+<desc id="desc">A candidate recommendation enters deterministic model-independent ceiling checks. Policy routes it to Suggest, Propose and await positive acknowledgement, or Eligible for bounded automated execution. A failed check holds execution. In the acknowledgement branch, silence, rejection, expiry, or a material change holds and demotes the proposal. The automated branch reaches a separately credentialed executor only after an execution-time recheck.</desc>
+<defs><marker id="arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#536B7A"/></marker><marker id="red-arrow" markerWidth="11" markerHeight="8" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#A43D34"/></marker></defs>
+<rect x="1" y="1" width="1498" height="898" rx="18" fill="#FFFFFF" stroke="#D4DDE4" stroke-width="2"/>
+<text x="54" y="58" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#17324D">Three visible authority states</text>
+<text x="54" y="92" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#455A64">A score may route only within the deterministic authority ceiling.</text>
+<rect x="45" y="140" width="290" height="120" rx="14" fill="#EEF4F8" stroke="#315D7D" stroke-width="2"/>
+<text x="68" y="176" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#17324D">Candidate recommendation</text>
+<text x="68" y="211" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#455A64">Evidence + named score</text>
+<text x="68" y="239" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#455A64">Action class + exact target</text>
+<line x1="335" y1="200" x2="380" y2="200" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="385" y="115" width="515" height="200" rx="14" fill="#F7F9FA" stroke="#607D8B" stroke-width="2"/>
+<text x="410" y="150" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#17324D">Deterministic authority-ceiling checks</text>
+<text x="410" y="178" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6C7D88">Outside the model; one failed required check holds execution</text>
+<circle cx="410" cy="209" r="4" fill="#315D7D"/>
+<text x="422" y="214" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">Approved action class</text>
+<circle cx="410" cy="245" r="4" fill="#315D7D"/>
+<text x="422" y="250" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">Current required evidence</text>
+<circle cx="410" cy="281" r="4" fill="#315D7D"/>
+<text x="422" y="286" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">Applicable calibration</text>
+<text x="422" y="303" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">contract</text>
+<circle cx="665" cy="209" r="4" fill="#315D7D"/>
+<text x="677" y="214" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">Reversal readiness</text>
+<circle cx="665" cy="245" r="4" fill="#315D7D"/>
+<text x="677" y="250" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">Single and cumulative bounds</text>
+<circle cx="665" cy="281" r="4" fill="#315D7D"/>
+<text x="677" y="286" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">Current authority and system</text>
+<text x="677" y="303" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#455A64">state</text>
+<line x1="900" y1="200" x2="950" y2="200" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<polygon points="1050,120 1155,200 1050,280 945,200" fill="#FFF7E7" stroke="#A96B17" stroke-width="2"/>
+<text x="1050" y="185" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#6E4915">Policy-selected</text>
+<text x="1050" y="212" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#6E4915">maximum state</text>
+<text x="1050" y="238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6E4915">not confidence alone</text>
+<path d="M642 315 L642 328 L150 328 L150 375" fill="none" stroke="#A43D34" stroke-width="3" marker-end="url(#red-arrow)"/>
+<text x="410" y="320" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#A43D34">failed required check → hold execution</text>
+<path d="M1005 263 L1005 350 L350 350 L350 375" fill="none" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1050 280 L1050 350 L750 350 L750 375" fill="none" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1095 263 L1095 350 L1250 350 L1250 375" fill="none" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="40" y="380" width="420" height="145" rx="15" fill="#EAF3F8" stroke="#315D7D" stroke-width="3"/>
+<text x="62" y="418" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#17324D">1  Suggest</text>
+<text x="62" y="475" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#455A64">Show evidence and recommendation. A human</text>
+<text x="62" y="497" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#455A64">decides.</text>
+<rect x="540" y="380" width="420" height="145" rx="15" fill="#FFF5DF" stroke="#A96B17" stroke-width="3"/>
+<text x="562" y="418" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#17324D">2  Propose + positive</text>
+<text x="562" y="440" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#17324D">acknowledgement</text>
+<text x="562" y="475" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#455A64">An authorized person approves this exact,</text>
+<text x="562" y="497" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#455A64">unexpired proposal.</text>
+<rect x="1040" y="380" width="420" height="145" rx="15" fill="#EAF6EF" stroke="#2C7250" stroke-width="3"/>
+<text x="1062" y="418" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#17324D">3  Eligible for bounded automated</text>
+<text x="1062" y="440" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#17324D">execution</text>
+<text x="1062" y="475" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#455A64">A separately approved class may reach the</text>
+<text x="1062" y="497" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#455A64">executor after recheck.</text>
+<line x1="250" y1="525" x2="250" y2="585" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="95" y="590" width="310" height="84" rx="12" fill="#F7F9FA" stroke="#607D8B" stroke-width="2"/>
+<text x="250" y="625" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17324D">Human decides</text>
+<text x="250" y="652" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#455A64">accept, reject, modify, or ignore</text>
+<line x1="750" y1="525" x2="750" y2="563" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<polygon points="750,568 848,632 750,696 652,632" fill="#FFF7E7" stroke="#A96B17" stroke-width="2"/>
+<text x="750" y="622" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#6E4915">Authorized positive</text>
+<text x="750" y="646" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#6E4915">acknowledgement?</text>
+<path d="M652 632 L565 632 L565 718" fill="none" stroke="#A43D34" stroke-width="3" marker-end="url(#red-arrow)"/>
+<text x="640" y="617" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#A43D34">no / silence / expiry</text>
+<rect x="395" y="723" width="340" height="94" rx="12" fill="#FCEDEC" stroke="#A43D34" stroke-width="2"/>
+<text x="565" y="758" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#842F29">HOLD — demote to Suggest</text>
+<text x="565" y="786" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6E3B36">material change also invalidates approval</text>
+<path d="M848 632 L935 632 L935 718" fill="none" stroke="#2C7250" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="875" y="617" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2C7250">yes</text>
+<rect x="760" y="723" width="315" height="94" rx="12" fill="#EAF6EF" stroke="#2C7250" stroke-width="2"/>
+<text x="918" y="758" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#245E43">Exact approved request</text>
+<text x="918" y="786" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#376D56">immutable target, scope, and expiry</text>
+<line x1="1250" y1="525" x2="1250" y2="585" stroke="#536B7A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1080" y="590" width="340" height="112" rx="12" fill="#F7F9FA" stroke="#607D8B" stroke-width="2"/>
+<text x="1250" y="626" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17324D">Execution-time recheck</text>
+<text x="1250" y="654" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#455A64">separate identity · current state</text>
+<text x="1250" y="680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#455A64">bounded request · auditable result</text>
+<line x1="1250" y1="702" x2="1250" y2="738" stroke="#A43D34" stroke-width="3" marker-end="url(#red-arrow)"/>
+<rect x="1100" y="743" width="320" height="74" rx="12" fill="#FCEDEC" stroke="#A43D34" stroke-width="2"/>
+<text x="1250" y="775" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#842F29">Any changed check → HOLD</text>
+<text x="1250" y="800" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6E3B36">eligibility is not a standing credential</text>
+<text x="54" y="864" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6C7D88">Proposed design. Confidence is one policy input; it cannot override evidence, reversibility, bounds, authority, or current system state.</text>
+<text x="1445" y="864" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6C7D88">source sha256 cf9c6cbf1910…</text>
+</svg>

@@ -1,0 +1,952 @@
+{
+  "artifact_class": "constructed_mechanism_demonstration",
+  "claim_boundary": "Demonstrates deterministic checks and serialized in-process reservation only; does not establish production safety, performance, or distributed durability.",
+  "reservations": [
+    {
+      "action_class_id": "external-record",
+      "action_class_version": "recorded",
+      "actor_id": "responder-1",
+      "actor_type": "recorded_human_action",
+      "idempotency_key": null,
+      "impact": {
+        "canonical_policy_units": 0,
+        "capacity_units_removed": 0,
+        "failure_domains_affected": 0,
+        "persistent_state_writes": 0,
+        "user_exposure_units": 5
+      },
+      "incident_id": "INC-DEMO",
+      "reservation_id": "external-human-1",
+      "state": "spent"
+    },
+    {
+      "action_class_id": "worker_evict",
+      "action_class_version": "1",
+      "actor_id": "ch06-narrow-executor",
+      "actor_type": "guarded_executor",
+      "idempotency_key": "IK-001",
+      "impact": {
+        "canonical_policy_units": 1,
+        "capacity_units_removed": 1,
+        "failure_domains_affected": 1,
+        "persistent_state_writes": 0,
+        "user_exposure_units": 10
+      },
+      "incident_id": "INC-DEMO",
+      "reservation_id": "RSV-bac428a56e862f88",
+      "state": "reserved"
+    },
+    {
+      "action_class_id": "worker_evict",
+      "action_class_version": "1",
+      "actor_id": "ch06-narrow-executor",
+      "actor_type": "guarded_executor",
+      "idempotency_key": "IK-007",
+      "impact": {
+        "canonical_policy_units": 1,
+        "capacity_units_removed": 1,
+        "failure_domains_affected": 1,
+        "persistent_state_writes": 0,
+        "user_exposure_units": 10
+      },
+      "incident_id": "INC-DEMO",
+      "reservation_id": "RSV-144a1c8df2208c5a",
+      "state": "reserved"
+    }
+  ],
+  "results": [
+    {
+      "case_id": "valid-first",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 0,
+          "capacity_units_removed": 0,
+          "failure_domains_affected": 0,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 5
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-6de4598571b38e8d",
+        "demotion_owner": null,
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          },
+          "serving_headroom": {
+            "headroom_before_action": 2,
+            "required_units": 3,
+            "reserved_units": 0,
+            "serving_units": 5,
+            "worst_case_removed": 1
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 10.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+            "evidence_id": "E-SERVING-FRESH",
+            "observed_at": "2026-08-17T23:59:50Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "admit",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "da2815a641371b9ba899b7af8d4616be9eaaa1fc9268a4988a651b9b7fdd9d2b",
+        "reason_codes": [],
+        "request_id": "R-001",
+        "reservation_id": "RSV-bac428a56e862f88"
+      },
+      "execution": {
+        "execution": "simulated",
+        "executor_scope_id": "ch06-executor-scope-1",
+        "external_write_performed": false,
+        "idempotent_replay": false,
+        "operation": "evict_via_owner",
+        "reservation_id": "RSV-bac428a56e862f88",
+        "target": {
+          "kind": "Workload",
+          "name": "worker-a",
+          "namespace": "demo"
+        }
+      }
+    },
+    {
+      "case_id": "idempotent-retry",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 0,
+          "capacity_units_removed": 0,
+          "failure_domains_affected": 0,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 5
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-6de4598571b38e8d",
+        "demotion_owner": null,
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          },
+          "serving_headroom": {
+            "headroom_before_action": 2,
+            "required_units": 3,
+            "reserved_units": 0,
+            "serving_units": 5,
+            "worst_case_removed": 1
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 10.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+            "evidence_id": "E-SERVING-FRESH",
+            "observed_at": "2026-08-17T23:59:50Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": true,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "admit",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "da2815a641371b9ba899b7af8d4616be9eaaa1fc9268a4988a651b9b7fdd9d2b",
+        "reason_codes": [],
+        "request_id": "R-001",
+        "reservation_id": "RSV-bac428a56e862f88"
+      },
+      "execution": {
+        "execution": "simulated",
+        "executor_scope_id": "ch06-executor-scope-1",
+        "external_write_performed": false,
+        "idempotent_replay": true,
+        "operation": "evict_via_owner",
+        "reservation_id": "RSV-bac428a56e862f88",
+        "target": {
+          "kind": "Workload",
+          "name": "worker-a",
+          "namespace": "demo"
+        }
+      }
+    },
+    {
+      "case_id": "stale-serving-evidence",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 15
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-fe6754056ee52539",
+        "demotion_owner": "incident-commander",
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 600.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+            "evidence_id": "E-SERVING-STALE",
+            "observed_at": "2026-08-17T23:50:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "demote",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "da2815a641371b9ba899b7af8d4616be9eaaa1fc9268a4988a651b9b7fdd9d2b",
+        "reason_codes": [
+          "EVIDENCE_STALE:serving"
+        ],
+        "request_id": "R-002",
+        "reservation_id": null
+      },
+      "execution": null
+    },
+    {
+      "case_id": "denied-serving-source",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 15
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-21afebf12774759f",
+        "demotion_owner": "incident-commander",
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 10.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": null,
+            "evidence_id": "E-SERVING-DENIED",
+            "observed_at": "2026-08-17T23:59:50Z",
+            "source_health": "unknown",
+            "source_status": "denied"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "demote",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "da2815a641371b9ba899b7af8d4616be9eaaa1fc9268a4988a651b9b7fdd9d2b",
+        "reason_codes": [
+          "EVIDENCE_DENIED:serving"
+        ],
+        "request_id": "R-003",
+        "reservation_id": null
+      },
+      "execution": null
+    },
+    {
+      "case_id": "direct-write-against-owner",
+      "decision": {
+        "action_class_id": "replica_adjust",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 15
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-50411ee8b5d09778",
+        "demotion_owner": "incident-commander",
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.spec.desired_units",
+            "owner_id": "autoscaler-controller",
+            "owner_state": "one_active",
+            "supported_input": "autoscaler.spec.max_units"
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-REPLICA",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "b7c24d18841570186f0e54a03a4adffab98ca090e93ca3469bb0ad75d6a3b9f1",
+            "evidence_id": "E-OWNER-REPLICA",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-REPLICA",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 0,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 5
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "demote",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "cd81ad91561d40ccaee4335f6c91595c98f84400c3aed934e5605055cc0d9220",
+        "reason_codes": [
+          "CONTROLLER_SURFACE_MISMATCH",
+          "EXECUTOR_SCOPE_DENIED"
+        ],
+        "request_id": "R-004",
+        "reservation_id": null
+      },
+      "execution": null
+    },
+    {
+      "case_id": "executor-scope-denied",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 15
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-217c59955a11c3b2",
+        "demotion_owner": "incident-commander",
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          },
+          "serving_headroom": {
+            "headroom_before_action": 2,
+            "required_units": 3,
+            "reserved_units": 0,
+            "serving_units": 5,
+            "worst_case_removed": 1
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 10.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+            "evidence_id": "E-SERVING-FRESH",
+            "observed_at": "2026-08-17T23:59:50Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "demote",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "0c2982c84cd05a8621ef0dba3082606b6760752180c4980ac50a0b80de5c9f91",
+        "reason_codes": [
+          "TARGET_OUT_OF_CLASS_SCOPE",
+          "EVIDENCE_SUBJECT_MISMATCH:serving",
+          "EVIDENCE_SUBJECT_MISMATCH:owner",
+          "EVIDENCE_SUBJECT_MISMATCH:reliability",
+          "EXECUTOR_SCOPE_DENIED"
+        ],
+        "request_id": "R-005",
+        "reservation_id": null
+      },
+      "execution": null
+    },
+    {
+      "case_id": "inverse-not-verified",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 15
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-2537f0c06df48e02",
+        "demotion_owner": "incident-commander",
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          },
+          "serving_headroom": {
+            "headroom_before_action": 2,
+            "required_units": 3,
+            "reserved_units": 0,
+            "serving_units": 5,
+            "worst_case_removed": 1
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "b5f34255da08ad9e9c6d8b6e579831e1f7c7354fe854d3fde619a42decbb2bce",
+            "evidence_id": "E-INVERSE-MISSING-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 10.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+            "evidence_id": "E-SERVING-FRESH",
+            "observed_at": "2026-08-17T23:59:50Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "demote",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "da2815a641371b9ba899b7af8d4616be9eaaa1fc9268a4988a651b9b7fdd9d2b",
+        "reason_codes": [
+          "INVERSE_NOT_VERIFIED"
+        ],
+        "request_id": "R-006",
+        "reservation_id": null
+      },
+      "execution": null
+    },
+    {
+      "case_id": "valid-second",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 15
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-1fd8e56ba95abbf3",
+        "demotion_owner": null,
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          },
+          "serving_headroom": {
+            "headroom_before_action": 2,
+            "required_units": 3,
+            "reserved_units": 0,
+            "serving_units": 5,
+            "worst_case_removed": 1
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 10.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+            "evidence_id": "E-SERVING-FRESH",
+            "observed_at": "2026-08-17T23:59:50Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "admit",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "da2815a641371b9ba899b7af8d4616be9eaaa1fc9268a4988a651b9b7fdd9d2b",
+        "reason_codes": [],
+        "request_id": "R-007",
+        "reservation_id": "RSV-144a1c8df2208c5a"
+      },
+      "execution": {
+        "execution": "simulated",
+        "executor_scope_id": "ch06-executor-scope-1",
+        "external_write_performed": false,
+        "idempotent_replay": false,
+        "operation": "evict_via_owner",
+        "reservation_id": "RSV-144a1c8df2208c5a",
+        "target": {
+          "kind": "Workload",
+          "name": "worker-a",
+          "namespace": "demo"
+        }
+      }
+    },
+    {
+      "case_id": "cumulative-budget-exceeded",
+      "decision": {
+        "action_class_id": "worker_evict",
+        "action_class_version": "1",
+        "budget_before": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 25
+        },
+        "budget_limit": {
+          "canonical_policy_units": 2,
+          "capacity_units_removed": 2,
+          "failure_domains_affected": 2,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 30
+        },
+        "catalog_version": "ch06-catalog-1",
+        "decision_id": "DEC-421a15b4b95d26da",
+        "demotion_owner": "incident-commander",
+        "details": {
+          "controller_owner_result": {
+            "owned_field": "workload.membership",
+            "owner_id": "workload-controller",
+            "owner_state": "one_active",
+            "supported_input": "orchestrator.eviction"
+          },
+          "exceeded_dimensions": [
+            "capacity_units_removed",
+            "failure_domains_affected",
+            "user_exposure_units",
+            "canonical_policy_units"
+          ],
+          "serving_headroom": {
+            "headroom_before_action": 2,
+            "required_units": 3,
+            "reserved_units": 0,
+            "serving_units": 5,
+            "worst_case_removed": 1
+          }
+        },
+        "evaluated_at": "2026-08-18T00:00:00Z",
+        "evidence_manifest": {
+          "inverse": {
+            "age_seconds": 43200.0,
+            "claim_type": "inverse_verification",
+            "content_sha256": "63b237566c2067aa79593b3992f2d973e3107710accd884e76f45059c20e53cd",
+            "evidence_id": "E-INVERSE-VERIFIED-WORKER",
+            "observed_at": "2026-08-17T12:00:00Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "owner": {
+            "age_seconds": 15.0,
+            "claim_type": "controller_ownership",
+            "content_sha256": "e49f9d117698255879e88d6703bd97e3e7f89fa1a41547a3fc6a70cdb0b26998",
+            "evidence_id": "E-OWNER-WORKER",
+            "observed_at": "2026-08-17T23:59:45Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "reliability": {
+            "age_seconds": 30.0,
+            "claim_type": "canonical_reliability_policy",
+            "content_sha256": "6552cded67bac51c96960e26bbb9512c369d10a4993e7b01ea6e25766b722271",
+            "evidence_id": "E-RELIABILITY-WORKER",
+            "observed_at": "2026-08-17T23:59:30Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          },
+          "serving": {
+            "age_seconds": 10.0,
+            "claim_type": "serving_capacity",
+            "content_sha256": "eb7e3ae3081911372dd47e9098cdbde13c08ee2b2c9e1d8b4c646b3c6298af8f",
+            "evidence_id": "E-SERVING-FRESH",
+            "observed_at": "2026-08-17T23:59:50Z",
+            "source_health": "healthy",
+            "source_status": "available"
+          }
+        },
+        "executor_scope_id": "ch06-executor-scope-1",
+        "executor_scope_version": "1",
+        "idempotent_replay": false,
+        "impact": {
+          "canonical_policy_units": 1,
+          "capacity_units_removed": 1,
+          "failure_domains_affected": 1,
+          "persistent_state_writes": 0,
+          "user_exposure_units": 10
+        },
+        "incident_id": "INC-DEMO",
+        "outcome": "demote",
+        "policy_version": "ch06-policy-1",
+        "proposal_binding_sha256": "da2815a641371b9ba899b7af8d4616be9eaaa1fc9268a4988a651b9b7fdd9d2b",
+        "reason_codes": [
+          "CUMULATIVE_BUDGET_EXCEEDED"
+        ],
+        "request_id": "R-008",
+        "reservation_id": null
+      },
+      "execution": null
+    }
+  ]
+}

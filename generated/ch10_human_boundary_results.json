@@ -1,0 +1,134 @@
+{
+  "decisions": [
+    {
+      "case_id": "bounded-validated-restart",
+      "decision_digest": "df7e152a829c70d433905d25a66aed48abb014d55360a4ac3a46723e22dff459",
+      "human_boundary_reasons": [],
+      "human_owned": false,
+      "policy_note": "Eligibility permits further policy evaluation only; it is not action authorization.",
+      "result": "eligible_for_policy_evaluation",
+      "unattended_path_allowed": true,
+      "veto_reasons": []
+    },
+    {
+      "case_id": "new-controller-and-population",
+      "decision_digest": "c551adee0561c9a959b67ff214d276ab21beb7681a761c2c5bec818f96f29b35",
+      "human_boundary_reasons": [
+        "NOVEL_OR_OUTSIDE_POLICY"
+      ],
+      "human_owned": true,
+      "policy_note": "Eligibility permits further policy evaluation only; it is not action authorization.",
+      "result": "human_owned_unattended_blocked",
+      "unattended_path_allowed": false,
+      "veto_reasons": [
+        "BOUNDS_INCOMPLETE",
+        "INVERSE_NOT_CURRENT_AND_EXERCISED",
+        "NOVEL_OR_OUTSIDE_POLICY",
+        "POPULATION_NOT_VALIDATED"
+      ]
+    },
+    {
+      "case_id": "external-recovery-commitment",
+      "decision_digest": "df368f0dcf54ae1c4926ba81dbd45540ef1f87b4f81e5ceb48dfa4436eba20ef",
+      "human_boundary_reasons": [
+        "COMMITMENT_REQUIRES_HUMAN",
+        "ORGANIZATIONALLY_SENSITIVE"
+      ],
+      "human_owned": true,
+      "policy_note": "Eligibility permits further policy evaluation only; it is not action authorization.",
+      "result": "human_owned",
+      "unattended_path_allowed": false,
+      "veto_reasons": []
+    },
+    {
+      "case_id": "close-with-indeterminate-user-path",
+      "decision_digest": "eb70df6a28b0f1ff7895951fcec21dc034662df923a4b607daf5e896c38f27b1",
+      "human_boundary_reasons": [
+        "COMMITMENT_REQUIRES_HUMAN",
+        "ORGANIZATIONALLY_SENSITIVE"
+      ],
+      "human_owned": true,
+      "policy_note": "Eligibility permits further policy evaluation only; it is not action authorization.",
+      "result": "human_owned_unattended_blocked",
+      "unattended_path_allowed": false,
+      "veto_reasons": [
+        "EVIDENCE_NOT_CURRENT_AUTHORIZED_AND_SCOPED"
+      ]
+    },
+    {
+      "case_id": "staffing-from-operational-traces",
+      "decision_digest": "3dd8e5dea56d2473251b525dba00df2e54d4bb77b3fb4437de45df9e8083e2b5",
+      "human_boundary_reasons": [
+        "COMMITMENT_REQUIRES_HUMAN",
+        "NOVEL_OR_OUTSIDE_POLICY",
+        "ORGANIZATIONALLY_SENSITIVE",
+        "PEOPLE_DECISION_REQUIRES_HUMAN"
+      ],
+      "human_owned": true,
+      "policy_note": "Eligibility permits further policy evaluation only; it is not action authorization.",
+      "result": "human_owned_unattended_blocked",
+      "unattended_path_allowed": false,
+      "veto_reasons": [
+        "ACTION_CLASS_NOT_VALIDATED",
+        "BOUNDS_INCOMPLETE",
+        "EVIDENCE_NOT_CURRENT_AUTHORIZED_AND_SCOPED",
+        "INVERSE_NOT_CURRENT_AND_EXERCISED",
+        "NOVEL_OR_OUTSIDE_POLICY",
+        "POPULATION_NOT_VALIDATED"
+      ]
+    },
+    {
+      "case_id": "destructive-unexercised-restore",
+      "decision_digest": "73ce3b9ea900999bc46b2680fc5e08c8586f93599d9cd472c4acf80a4bb84e88",
+      "human_boundary_reasons": [
+        "NOVEL_OR_OUTSIDE_POLICY"
+      ],
+      "human_owned": true,
+      "policy_note": "Eligibility permits further policy evaluation only; it is not action authorization.",
+      "result": "human_owned_unattended_blocked",
+      "unattended_path_allowed": false,
+      "veto_reasons": [
+        "ACTION_CLASS_NOT_VALIDATED",
+        "BOUNDS_INCOMPLETE",
+        "INVERSE_NOT_CURRENT_AND_EXERCISED",
+        "NOVEL_OR_OUTSIDE_POLICY"
+      ]
+    },
+    {
+      "case_id": "missing-cumulative-impact-dimension",
+      "decision_digest": "a154d4f8ad54d15d9103e74c8db35ed72222cbbec222420ff735e519d3a729b3",
+      "human_boundary_reasons": [],
+      "human_owned": true,
+      "policy_note": "Eligibility permits further policy evaluation only; it is not action authorization.",
+      "result": "human_owned_unattended_blocked",
+      "unattended_path_allowed": false,
+      "veto_reasons": [
+        "BOUNDS_INCOMPLETE"
+      ]
+    }
+  ],
+  "expected_mismatches": [],
+  "limitations": [
+    "Constructed cases explain a boundary and are not production evidence.",
+    "A result never grants authority or proves an action safe.",
+    "Human-owned decisions remain subject to organizational review and accountability."
+  ],
+  "provenance": {
+    "artifact_class": "illustrative_constructed",
+    "fixture_digest": "3266b120ae959d4761dcb1243be4112d53376215d734de0c8fde8b07cd817324",
+    "generator_version": "ch10-human-boundary-generator-1",
+    "input_schema_version": "ch10-human-boundary-1",
+    "policy_version": "human-boundary-policy-1",
+    "source_label": "Constructed tabletop cases; rule explanation, not moral scoring.",
+    "source_sha256": "a74cdf5d4f5a5640e7bd08d5169e689cf9ec6df1327a3813eb880b943f16e52e"
+  },
+  "run_digest": "bee77a3c4f7b33cd40e025392dd630fe70cbafe4f39db2add92996cd56e0053e",
+  "schema_version": "ch10-human-boundary-results-1",
+  "summary": {
+    "case_count": 7,
+    "expected_match_count": 7,
+    "expected_mismatch_count": 0,
+    "human_owned_count": 6,
+    "unattended_path_allowed_count": 1
+  }
+}

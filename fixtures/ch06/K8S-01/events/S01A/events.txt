@@ -1,0 +1,210 @@
+LAST SEEN   TYPE      REASON                         OBJECT                            MESSAGE
+10m         Normal    Scheduled                      pod/loadgen-8d94b64b-c2s7h        Successfully assigned k8s01/loadgen-8d94b64b-c2s7h to k8s01-control-plane
+10m         Normal    Scheduled                      pod/cpu-svc-56f78c7798-wkvc4      Successfully assigned k8s01/cpu-svc-56f78c7798-wkvc4 to k8s01-control-plane
+10m         Normal    Scheduled                      pod/cpu-svc-56f78c7798-8sr5h      Successfully assigned k8s01/cpu-svc-56f78c7798-8sr5h to k8s01-control-plane
+10m         Normal    SuccessfulCreate               replicaset/cpu-svc-56f78c7798     Created pod: cpu-svc-56f78c7798-8sr5h
+10m         Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled up replica set cpu-svc-56f78c7798 from 0 to 3
+10m         Normal    Scheduled                      pod/loadgen-8d94b64b-m6tdg        Successfully assigned k8s01/loadgen-8d94b64b-m6tdg to k8s01-control-plane
+10m         Normal    Scheduled                      pod/cpu-svc-56f78c7798-kbdq7      Successfully assigned k8s01/cpu-svc-56f78c7798-kbdq7 to k8s01-control-plane
+10m         Normal    ScalingReplicaSet              deployment/loadgen                Scaled up replica set loadgen-8d94b64b from 0 to 2
+10m         Normal    SuccessfulCreate               replicaset/cpu-svc-56f78c7798     Created pod: cpu-svc-56f78c7798-wkvc4
+10m         Normal    SuccessfulCreate               replicaset/cpu-svc-56f78c7798     Created pod: cpu-svc-56f78c7798-kbdq7
+10m         Normal    SuccessfulCreate               replicaset/loadgen-8d94b64b       Created pod: loadgen-8d94b64b-m6tdg
+10m         Normal    SuccessfulCreate               replicaset/loadgen-8d94b64b       Created pod: loadgen-8d94b64b-c2s7h
+10m         Normal    Pulling                        pod/cpu-svc-56f78c7798-kbdq7      Pulling image "python:3.11-alpine"
+10m         Normal    Pulling                        pod/loadgen-8d94b64b-c2s7h        Pulling image "williamyeh/hey"
+10m         Normal    Pulling                        pod/cpu-svc-56f78c7798-wkvc4      Pulling image "python:3.11-alpine"
+10m         Normal    Pulling                        pod/loadgen-8d94b64b-m6tdg        Pulling image "williamyeh/hey"
+10m         Normal    Pulling                        pod/cpu-svc-56f78c7798-8sr5h      Pulling image "python:3.11-alpine"
+10m         Normal    Pulled                         pod/cpu-svc-56f78c7798-kbdq7      Successfully pulled image "python:3.11-alpine" in 8.338s (12.393s including waiting). Image size: 20871549 bytes.
+10m         Normal    Created                        pod/cpu-svc-56f78c7798-kbdq7      Container created
+10m         Normal    Started                        pod/cpu-svc-56f78c7798-kbdq7      Container started
+10m         Normal    Started                        pod/cpu-svc-56f78c7798-wkvc4      Container started
+10m         Normal    Created                        pod/cpu-svc-56f78c7798-wkvc4      Container created
+10m         Normal    Pulled                         pod/cpu-svc-56f78c7798-wkvc4      Successfully pulled image "python:3.11-alpine" in 248ms (12.642s including waiting). Image size: 20871549 bytes.
+10m         Normal    Created                        pod/cpu-svc-56f78c7798-8sr5h      Container created
+10m         Normal    Pulled                         pod/cpu-svc-56f78c7798-8sr5h      Successfully pulled image "python:3.11-alpine" in 292ms (12.922s including waiting). Image size: 20871549 bytes.
+10m         Normal    Started                        pod/cpu-svc-56f78c7798-8sr5h      Container started
+10m         Warning   FailedGetResourceMetric        horizontalpodautoscaler/cpu-svc   failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)
+10m         Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/cpu-svc   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)
+10m         Normal    Created                        pod/loadgen-8d94b64b-c2s7h        Container created
+10m         Normal    Pulled                         pod/loadgen-8d94b64b-c2s7h        Successfully pulled image "williamyeh/hey" in 2.031s (14.929s including waiting). Image size: 7853803 bytes.
+10m         Normal    Started                        pod/loadgen-8d94b64b-c2s7h        Container started
+10m         Normal    Created                        pod/loadgen-8d94b64b-m6tdg        Container created
+10m         Normal    Pulled                         pod/loadgen-8d94b64b-m6tdg        Successfully pulled image "williamyeh/hey" in 271ms (15.199s including waiting). Image size: 7853803 bytes.
+10m         Normal    Started                        pod/loadgen-8d94b64b-m6tdg        Container started
+10m         Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/cpu-svc   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+10m         Warning   FailedGetResourceMetric        horizontalpodautoscaler/cpu-svc   failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+8m52s       Normal    Scheduled                      pod/curltest                      Successfully assigned k8s01/curltest to k8s01-control-plane
+8m51s       Normal    Pulling                        pod/curltest                      Pulling image "curlimages/curl"
+8m45s       Normal    Started                        pod/curltest                      Container started
+8m45s       Normal    Created                        pod/curltest                      Container created
+8m45s       Normal    Pulled                         pod/curltest                      Successfully pulled image "curlimages/curl" in 6.635s (6.635s including waiting). Image size: 10874278 bytes.
+7m35s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled up replica set cpu-svc-6fb685486b from 1 to 2
+7m35s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-h6gq2      Successfully assigned k8s01/cpu-svc-6fb685486b-h6gq2 to k8s01-control-plane
+7m35s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-9nlns
+7m35s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-h6gq2
+7m35s       Normal    Scheduled                      pod/cpu-svc-7fb9f9cb78-l8gr4      Successfully assigned k8s01/cpu-svc-7fb9f9cb78-l8gr4 to k8s01-control-plane
+7m35s       Normal    Pulled                         pod/cpu-svc-7fb9f9cb78-l8gr4      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+7m35s       Normal    Created                        pod/cpu-svc-7fb9f9cb78-l8gr4      Container created
+7m35s       Normal    Started                        pod/cpu-svc-7fb9f9cb78-l8gr4      Container started
+7m35s       Normal    Killing                        pod/cpu-svc-7fb9f9cb78-l8gr4      Stopping container burner
+7m35s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-9nlns      Successfully assigned k8s01/cpu-svc-6fb685486b-9nlns to k8s01-control-plane
+7m35s       Normal    Pulled                         pod/cpu-svc-6fb685486b-9nlns      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+7m35s       Normal    Created                        pod/cpu-svc-6fb685486b-9nlns      Container created
+7m35s       Normal    Started                        pod/cpu-svc-6fb685486b-9nlns      Container started
+7m35s       Normal    ScalingReplicaSet              deployment/loadgen                Scaled up replica set loadgen-789c944479 from 0 to 1
+7m35s       Normal    ScalingReplicaSet              deployment/loadgen                Scaled down replica set loadgen-5c6f976bf from 1 to 0
+7m35s       Normal    ScalingReplicaSet              deployment/loadgen                Scaled up replica set loadgen-5c6f976bf from 0 to 1
+7m35s       Normal    Killing                        pod/cpu-svc-56f78c7798-8sr5h      Stopping container burner
+7m35s       Normal    SuccessfulCreate               replicaset/cpu-svc-7fb9f9cb78     Created pod: cpu-svc-7fb9f9cb78-l8gr4
+7m35s       Normal    SuccessfulDelete               replicaset/cpu-svc-7fb9f9cb78     Deleted pod: cpu-svc-7fb9f9cb78-l8gr4
+7m35s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled up replica set cpu-svc-7fb9f9cb78 from 0 to 1
+7m35s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled down replica set cpu-svc-7fb9f9cb78 from 1 to 0
+7m35s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled up replica set cpu-svc-6fb685486b from 0 to 1
+7m35s       Normal    SuccessfulDelete               replicaset/cpu-svc-56f78c7798     Deleted pod: cpu-svc-56f78c7798-8sr5h
+7m35s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled down replica set cpu-svc-56f78c7798 from 3 to 2
+7m35s       Normal    Scheduled                      pod/loadgen-5c6f976bf-gfdhv       Successfully assigned k8s01/loadgen-5c6f976bf-gfdhv to k8s01-control-plane
+7m35s       Normal    SuccessfulCreate               replicaset/loadgen-5c6f976bf      Created pod: loadgen-5c6f976bf-gfdhv
+7m35s       Normal    SuccessfulDelete               replicaset/loadgen-5c6f976bf      Deleted pod: loadgen-5c6f976bf-gfdhv
+7m35s       Normal    Scheduled                      pod/loadgen-789c944479-qnrqc      Successfully assigned k8s01/loadgen-789c944479-qnrqc to k8s01-control-plane
+7m35s       Normal    SuccessfulCreate               replicaset/loadgen-789c944479     Created pod: loadgen-789c944479-qnrqc
+7m35s       Normal    Pulling                        pod/loadgen-789c944479-qnrqc      Pulling image "busybox:1.36"
+7m34s       Normal    SuccessfulDelete               replicaset/cpu-svc-56f78c7798     Deleted pod: cpu-svc-56f78c7798-kbdq7
+7m34s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-8k2l9
+7m34s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled up replica set cpu-svc-6fb685486b from 2 to 3
+7m34s       Normal    Pulled                         pod/cpu-svc-6fb685486b-h6gq2      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+7m34s       Normal    Created                        pod/cpu-svc-6fb685486b-h6gq2      Container created
+7m34s       Normal    Started                        pod/cpu-svc-6fb685486b-h6gq2      Container started
+7m34s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled down replica set cpu-svc-56f78c7798 from 2 to 1
+7m34s       Normal    Started                        pod/cpu-svc-6fb685486b-8k2l9      Container started
+7m34s       Normal    SuccessfulDelete               replicaset/cpu-svc-56f78c7798     Deleted pod: cpu-svc-56f78c7798-wkvc4
+7m34s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-8k2l9      Successfully assigned k8s01/cpu-svc-6fb685486b-8k2l9 to k8s01-control-plane
+7m34s       Normal    Pulled                         pod/cpu-svc-6fb685486b-8k2l9      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+7m34s       Normal    ScalingReplicaSet              deployment/cpu-svc                Scaled down replica set cpu-svc-56f78c7798 from 1 to 0
+7m34s       Normal    Killing                        pod/cpu-svc-56f78c7798-wkvc4      Stopping container burner
+7m34s       Normal    Created                        pod/cpu-svc-6fb685486b-8k2l9      Container created
+7m34s       Normal    Killing                        pod/cpu-svc-56f78c7798-kbdq7      Stopping container burner
+7m33s       Normal    Started                        pod/loadgen-789c944479-qnrqc      Container started
+7m33s       Normal    Scheduled                      pod/loadgen-789c944479-5q7lq      Successfully assigned k8s01/loadgen-789c944479-5q7lq to k8s01-control-plane
+7m33s       Normal    SuccessfulDelete               replicaset/loadgen-8d94b64b       Deleted pod: loadgen-8d94b64b-m6tdg
+7m33s       Normal    Pulled                         pod/loadgen-789c944479-qnrqc      Successfully pulled image "busybox:1.36" in 1.72s (1.72s including waiting). Image size: 1906887 bytes.
+7m33s       Normal    SuccessfulCreate               replicaset/loadgen-789c944479     Created pod: loadgen-789c944479-5q7lq
+7m33s       Normal    ScalingReplicaSet              deployment/loadgen                Scaled down replica set loadgen-8d94b64b from 2 to 1
+7m33s       Normal    Killing                        pod/loadgen-8d94b64b-m6tdg        Stopping container hey
+7m33s       Normal    ScalingReplicaSet              deployment/loadgen                Scaled up replica set loadgen-789c944479 from 1 to 2
+7m33s       Normal    Created                        pod/loadgen-789c944479-qnrqc      Container created
+7m32s       Normal    Created                        pod/loadgen-789c944479-5q7lq      Container created
+7m32s       Normal    Started                        pod/loadgen-789c944479-5q7lq      Container started
+7m32s       Normal    Pulled                         pod/loadgen-789c944479-5q7lq      Container image "busybox:1.36" already present on machine and can be accessed by the pod
+7m32s       Normal    SuccessfulDelete               replicaset/loadgen-8d94b64b       Deleted pod: loadgen-8d94b64b-c2s7h
+7m32s       Normal    ScalingReplicaSet              deployment/loadgen                Scaled down replica set loadgen-8d94b64b from 1 to 0
+7m32s       Normal    Killing                        pod/loadgen-8d94b64b-c2s7h        Stopping container hey
+7m25s       Warning   FailedGetResourceMetric        horizontalpodautoscaler/cpu-svc   failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+7m25s       Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/cpu-svc   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+7m10s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-xxzqr      Successfully assigned k8s01/cpu-svc-6fb685486b-xxzqr to k8s01-control-plane
+7m10s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-j997r      Successfully assigned k8s01/cpu-svc-6fb685486b-j997r to k8s01-control-plane
+7m10s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-vhxkd      Successfully assigned k8s01/cpu-svc-6fb685486b-vhxkd to k8s01-control-plane
+7m10s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-vhxkd
+7m10s       Normal    SuccessfulRescale              horizontalpodautoscaler/cpu-svc   New size: 6; reason: cpu resource utilization (percentage of request) above target
+7m10s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-xxzqr
+7m10s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-j997r
+7m9s        Normal    Pulled                         pod/cpu-svc-6fb685486b-j997r      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+7m9s        Normal    Created                        pod/cpu-svc-6fb685486b-vhxkd      Container created
+7m9s        Normal    Pulled                         pod/cpu-svc-6fb685486b-xxzqr      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+7m9s        Normal    Created                        pod/cpu-svc-6fb685486b-xxzqr      Container created
+7m9s        Normal    Created                        pod/cpu-svc-6fb685486b-j997r      Container created
+7m9s        Normal    Started                        pod/cpu-svc-6fb685486b-j997r      Container started
+7m9s        Normal    Started                        pod/cpu-svc-6fb685486b-vhxkd      Container started
+7m9s        Normal    Pulled                         pod/cpu-svc-6fb685486b-vhxkd      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+7m9s        Normal    Started                        pod/cpu-svc-6fb685486b-xxzqr      Container started
+6m55s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-klqll      Successfully assigned k8s01/cpu-svc-6fb685486b-klqll to k8s01-control-plane
+6m55s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-2s2xr      Successfully assigned k8s01/cpu-svc-6fb685486b-2s2xr to k8s01-control-plane
+6m55s       Normal    SuccessfulRescale              horizontalpodautoscaler/cpu-svc   New size: 10; reason: cpu resource utilization (percentage of request) above target
+6m55s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-6hgk6      Successfully assigned k8s01/cpu-svc-6fb685486b-6hgk6 to k8s01-control-plane
+6m55s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-2s2xr
+6m55s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-jctgz      Successfully assigned k8s01/cpu-svc-6fb685486b-jctgz to k8s01-control-plane
+6m55s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-klqll
+6m55s       Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     Created pod: cpu-svc-6fb685486b-jctgz
+6m54s       Normal    Created                        pod/cpu-svc-6fb685486b-jctgz      Container created
+6m54s       Normal    Started                        pod/cpu-svc-6fb685486b-jctgz      Container started
+6m54s       Normal    Created                        pod/cpu-svc-6fb685486b-6hgk6      Container created
+6m54s       Normal    Pulled                         pod/cpu-svc-6fb685486b-2s2xr      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m54s       Normal    Created                        pod/cpu-svc-6fb685486b-2s2xr      Container created
+6m54s       Normal    Started                        pod/cpu-svc-6fb685486b-2s2xr      Container started
+6m54s       Normal    Pulled                         pod/cpu-svc-6fb685486b-jctgz      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m54s       Normal    Started                        pod/cpu-svc-6fb685486b-6hgk6      Container started
+6m54s       Normal    Pulled                         pod/cpu-svc-6fb685486b-klqll      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m54s       Normal    Pulled                         pod/cpu-svc-6fb685486b-6hgk6      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m54s       Normal    Started                        pod/cpu-svc-6fb685486b-klqll      Container started
+6m54s       Normal    Created                        pod/cpu-svc-6fb685486b-klqll      Container created
+6m40s       Normal    SuccessfulRescale              horizontalpodautoscaler/cpu-svc   New size: 15; reason: cpu resource utilization (percentage of request) above target
+6m40s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-lhvjq      Successfully assigned k8s01/cpu-svc-6fb685486b-lhvjq to k8s01-control-plane
+6m40s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-5sgb9      Successfully assigned k8s01/cpu-svc-6fb685486b-5sgb9 to k8s01-control-plane
+6m40s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-c26tl      Successfully assigned k8s01/cpu-svc-6fb685486b-c26tl to k8s01-control-plane
+6m39s       Normal    Created                        pod/cpu-svc-6fb685486b-5sgb9      Container created
+6m39s       Normal    Started                        pod/cpu-svc-6fb685486b-5sgb9      Container started
+6m39s       Normal    Created                        pod/cpu-svc-6fb685486b-m66r4      Container created
+6m39s       Normal    Pulled                         pod/cpu-svc-6fb685486b-m66r4      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m39s       Normal    Pulled                         pod/cpu-svc-6fb685486b-5sgb9      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m39s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-mk9dg      Successfully assigned k8s01/cpu-svc-6fb685486b-mk9dg to k8s01-control-plane
+6m39s       Normal    Pulled                         pod/cpu-svc-6fb685486b-mk9dg      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m39s       Normal    Created                        pod/cpu-svc-6fb685486b-mk9dg      Container created
+6m39s       Normal    Scheduled                      pod/cpu-svc-6fb685486b-m66r4      Successfully assigned k8s01/cpu-svc-6fb685486b-m66r4 to k8s01-control-plane
+6m39s       Normal    Started                        pod/cpu-svc-6fb685486b-lhvjq      Container started
+6m39s       Normal    Created                        pod/cpu-svc-6fb685486b-lhvjq      Container created
+6m39s       Normal    Pulled                         pod/cpu-svc-6fb685486b-lhvjq      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m39s       Normal    Started                        pod/cpu-svc-6fb685486b-mk9dg      Container started
+6m39s       Normal    Started                        pod/cpu-svc-6fb685486b-m66r4      Container started
+6m39s       Normal    Started                        pod/cpu-svc-6fb685486b-c26tl      Container started
+6m39s       Normal    Pulled                         pod/cpu-svc-6fb685486b-c26tl      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+6m39s       Normal    Created                        pod/cpu-svc-6fb685486b-c26tl      Container created
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-9vbfn      Successfully assigned k8s01/cpu-svc-6fb685486b-9vbfn to k8s01-control-plane
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-l9jzf      Successfully assigned k8s01/cpu-svc-6fb685486b-l9jzf to k8s01-control-plane
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-cswxc      Successfully assigned k8s01/cpu-svc-6fb685486b-cswxc to k8s01-control-plane
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-qmdhd      Successfully assigned k8s01/cpu-svc-6fb685486b-qmdhd to k8s01-control-plane
+5m1s        Normal    SuccessfulCreate               replicaset/cpu-svc-6fb685486b     (combined from similar events): Created pod: cpu-svc-6fb685486b-9vbfn
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-nz67w      Successfully assigned k8s01/cpu-svc-6fb685486b-nz67w to k8s01-control-plane
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-4ph7j      Successfully assigned k8s01/cpu-svc-6fb685486b-4ph7j to k8s01-control-plane
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-fxtpp      Successfully assigned k8s01/cpu-svc-6fb685486b-fxtpp to k8s01-control-plane
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-7scjp      Successfully assigned k8s01/cpu-svc-6fb685486b-7scjp to k8s01-control-plane
+5m1s        Normal    Scheduled                      pod/cpu-svc-6fb685486b-kcgdj      Successfully assigned k8s01/cpu-svc-6fb685486b-kcgdj to k8s01-control-plane
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-kcgdj      Container created
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-fxtpp      Container created
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-nz67w      Container created
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-7scjp      Container created
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-kcgdj      Container started
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-7scjp      Container started
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-kcgdj      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-nz67w      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-nz67w      Container started
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-7scjp      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-4ph7j      Container started
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-9vbfn      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-fxtpp      Container started
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-l9jzf      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-fxtpp      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-9vbfn      Container created
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-4ph7j      Container created
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-4ph7j      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-9vbfn      Container started
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-qmdhd      Container started
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-qmdhd      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-l9jzf      Container started
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-qmdhd      Container created
+5m          Normal    Started                        pod/cpu-svc-6fb685486b-cswxc      Container started
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-cswxc      Container created
+5m          Normal    Pulled                         pod/cpu-svc-6fb685486b-cswxc      Container image "python:3.11-alpine" already present on machine and can be accessed by the pod
+5m          Normal    Created                        pod/cpu-svc-6fb685486b-l9jzf      Container created
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-nz67w      Stopping container burner
+4m54s       Normal    SuccessfulDelete               replicaset/cpu-svc-6fb685486b     Deleted pod: cpu-svc-6fb685486b-kcgdj
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-cswxc      Stopping container burner
+4m54s       Normal    ScalingReplicaSet              deployment/cpu-svc                (combined from similar events): Scaled down replica set cpu-svc-6fb685486b from 24 to 15
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-9vbfn      Stopping container burner
+4m54s       Normal    SuccessfulRescale              horizontalpodautoscaler/cpu-svc   New size: 15; reason: Current number of replicas above Spec.MaxReplicas
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-qmdhd      Stopping container burner
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-fxtpp      Stopping container burner
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-l9jzf      Stopping container burner
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-7scjp      Stopping container burner
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-4ph7j      Stopping container burner
+4m54s       Normal    Killing                        pod/cpu-svc-6fb685486b-kcgdj      Stopping container burner

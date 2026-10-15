@@ -1,0 +1,33 @@
+{
+  "artifact_class": "illustrative_constructed",
+  "command": "make ch05-change-gate",
+  "external_write_performed": false,
+  "inputs": {
+    "companion/diagrams/src/figure-5-1-change-gate-decision-flow.svg": "ea7d4a53cd3ce4bbd8b887521d54bc3ea6b92e80a43d4ec57d1b517eb446fa88",
+    "companion/diagrams/src/figure-5-2-decision-vs-execution-recheck.svg": "f6055c8eb8f262cdff838c1a01b3523e4af16f9cfb2abc3f074e04537688a722",
+    "companion/fixtures/ch05/catalog.json": "1c69230704ca8cae4e34c67933223ba274b7be402a9be1c9d496899109a98cb8",
+    "companion/fixtures/ch05/policy.json": "1ce2dc3bc78cceefcfd7d7a2be106c4d86606ff2e3a4502c49a0652d6d9f21e1",
+    "companion/fixtures/ch05/scenarios.json": "1dd5928bff4902915894f230b00d9bc125918d8915636a6e06d94cb6875830c7",
+    "companion/scripts/ch05_change_gate.py": "637158570a399efe53589653b845c310c4196a8174a96b68a84a3cfd9d562e72",
+    "companion/templates/ch05-freeze-exception-packet.json": "d0e941a98f008042bc9785966dfcebe2447e86ab8f7a04c2b99643dc1735281d"
+  },
+  "limitations": [
+    "constructed fixtures only",
+    "dependency reachability remains a lower bound under stated coverage",
+    "the executor records a simulated effect and performs no external write",
+    "binding and recheck do not prove the proposed change is safe",
+    "no causal change-failure or approval-time effect is estimated"
+  ],
+  "outputs": {
+    "generated/ch05/change_gate_decisions.json": "5bdacf4d77bce171779ac1d1f2dd1f4468ed50d22c512f64bc072c7f542b2cf2",
+    "generated/ch05/declared_live_comparison.csv": "cfaad2fe5c76ffe63e5fc9d272ce17314fed07f354151abee3c4e6eaa179608e",
+    "generated/ch05/freeze_exception_packet.json": "84645a6c7853ef6d617b06ad6bc3d7ae3df567e8d4398ee8e53d79f62c4dc95b",
+    "generated/ch05/freeze_exception_packet.md": "6343cd45119af9f06567386e0f039c2600001dad844008646f02557a5069a94a",
+    "generated/published-figures/figure-5-1-change-gate-decision-flow.svg": "ea7d4a53cd3ce4bbd8b887521d54bc3ea6b92e80a43d4ec57d1b517eb446fa88",
+    "generated/published-figures/figure-5-2-decision-vs-execution-recheck.svg": "f6055c8eb8f262cdff838c1a01b3523e4af16f9cfb2abc3f074e04537688a722"
+  },
+  "production_write_credential": "none",
+  "run_id": "ch05-constructed-run-1",
+  "runtime_contract": "Python 3.11 or newer; standard library only; no network",
+  "transformation_version": "ch05-change-gate-v1.0.0"
+}

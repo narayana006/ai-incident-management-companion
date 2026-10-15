@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-gated adoption roadmap</title>
+  <desc id="desc">Six adoption gates progress from assessment and foundation through read-only context enrichment, shadow evaluation, bounded operation, and scaled operation. Forward movement requires every required gate to be resolved. From every stage the program may narrow, hold, demote, or stop. Calendar time does not grant action authority.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315D7D"/></marker>
+    <style>
+      .title{font:700 32px Arial,Helvetica,sans-serif;fill:#17324D}.subtitle{font:18px Arial,Helvetica,sans-serif;fill:#455A64}
+      .gate{font:700 18px Arial,Helvetica,sans-serif;fill:#315D7D}.head{font:700 25px Arial,Helvetica,sans-serif;fill:#17324D}
+      .body{font:18px Arial,Helvetica,sans-serif;fill:#344B58}.small{font:16px Arial,Helvetica,sans-serif;fill:#455A64}
+      .flow{font:700 15px Arial,Helvetica,sans-serif;fill:#315D7D}.white{font:700 21px Arial,Helvetica,sans-serif;fill:#FFFFFF}
+      .whitebody{font:17px Arial,Helvetica,sans-serif;fill:#F3F7F9}.stop{font:700 18px Arial,Helvetica,sans-serif;fill:#8B3D2E}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1198" height="918" rx="18" fill="#F8FAFB" stroke="#D7DEE3" stroke-width="2"/>
+  <text x="50" y="52" class="title">Adoption advances by evidence, not elapsed time</text>
+  <text x="50" y="82" class="subtitle">Each gate preserves human command and has a normal path to narrow, hold, demote, or stop.</text>
+
+  <rect x="60" y="125" width="480" height="150" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="60" y="125" width="92" height="150" rx="16" fill="#DDEAF1"/>
+  <text x="106" y="167" text-anchor="middle" class="gate">GATE 0</text>
+  <text x="180" y="166" class="head">Assessment</text>
+  <text x="180" y="205" class="body">Population • baseline • ownership</text>
+  <text x="180" y="238" class="body">No-build option • stop criteria</text>
+
+  <path d="M540 200 H650" stroke="#315D7D" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="595" y="183" text-anchor="middle" class="flow">RESOLVE</text>
+
+  <rect x="660" y="125" width="480" height="150" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="660" y="125" width="92" height="150" rx="16" fill="#DDEAF1"/>
+  <text x="706" y="167" text-anchor="middle" class="gate">GATE 1</text>
+  <text x="780" y="166" class="head">Foundation</text>
+  <text x="780" y="205" class="body">Owned • authorized • observable</text>
+  <text x="780" y="238" class="body">Versioned evidence that fails visibly</text>
+
+  <path d="M900 275 V320 H300 V340" fill="none" stroke="#315D7D" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="459" y="297" width="282" height="34" rx="17" fill="#EAF2F7"/>
+  <text x="600" y="319" text-anchor="middle" class="flow">EVERY REQUIRED ROW RESOLVED</text>
+
+  <rect x="60" y="350" width="480" height="150" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="60" y="350" width="92" height="150" rx="16" fill="#D3E7E3"/>
+  <text x="106" y="392" text-anchor="middle" class="gate">GATE 2</text>
+  <text x="180" y="391" class="head">Context enrichment</text>
+  <text x="180" y="430" class="body">Read-only evidence packets</text>
+  <text x="180" y="463" class="body">Coverage • correction • manual path</text>
+
+  <path d="M540 425 H650" stroke="#315D7D" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="595" y="408" text-anchor="middle" class="flow">RESOLVE</text>
+
+  <rect x="660" y="350" width="480" height="150" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="660" y="350" width="92" height="150" rx="16" fill="#D3E7E3"/>
+  <text x="706" y="392" text-anchor="middle" class="gate">GATE 3</text>
+  <text x="780" y="391" class="head">Shadow evaluation</text>
+  <text x="780" y="430" class="body">Recommendations with no authority</text>
+  <text x="780" y="463" class="body">Adjudication • uncertainty • failures</text>
+
+  <path d="M900 500 V545 H300 V565" fill="none" stroke="#315D7D" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="459" y="522" width="282" height="34" rx="17" fill="#EAF2F7"/>
+  <text x="600" y="544" text-anchor="middle" class="flow">CLASS-SPECIFIC EVIDENCE HOLDS</text>
+
+  <rect x="60" y="575" width="480" height="150" rx="16" fill="#FFFFFF" stroke="#7E9DB0" stroke-width="2"/>
+  <rect x="60" y="575" width="92" height="150" rx="16" fill="#F3E6C8"/>
+  <text x="106" y="617" text-anchor="middle" class="gate">GATE 4</text>
+  <text x="180" y="616" class="head">Bounded operation</text>
+  <text x="180" y="655" class="body">Positive acknowledgement first</text>
+  <text x="180" y="688" class="body">Guard • inverse • cumulative bounds</text>
+
+  <path d="M540 650 H650" stroke="#315D7D" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="595" y="633" text-anchor="middle" class="flow">REPEAT PROOF</text>
+
+  <rect x="660" y="575" width="480" height="150" rx="16" fill="#17324D"/>
+  <rect x="660" y="575" width="92" height="150" rx="16" fill="#315D7D"/>
+  <text x="706" y="617" text-anchor="middle" class="white">GATE 5</text>
+  <text x="780" y="616" class="white">Scaled operation</text>
+  <text x="780" y="655" class="whitebody">One class or population at a time</text>
+  <text x="780" y="688" class="whitebody">Own certificate • budget • demotion</text>
+
+  <rect x="60" y="770" width="1080" height="104" rx="16" fill="#FFF3EA" stroke="#D99A71" stroke-width="2"/>
+  <text x="600" y="806" text-anchor="middle" class="stop">FROM EVERY GATE: NARROW  •  HOLD  •  DEMOTE  •  STOP</text>
+  <text x="600" y="838" text-anchor="middle" class="body">The weakest required control decides. Strength elsewhere cannot offset a missing owner, boundary, or stop path.</text>
+  <text x="600" y="863" text-anchor="middle" class="small">Calendar effect on action authority: none.</text>
+</svg>

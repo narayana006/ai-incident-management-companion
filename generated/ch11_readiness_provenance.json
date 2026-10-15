@@ -1,0 +1,26 @@
+{
+  "artifact_class": "illustrative_template",
+  "assessment_as_of": "2026-08-18",
+  "authority_effect": "none",
+  "determinism_note": "The review date is supplied in the input. No wall clock, network service, model call, or production system contributes to this output.",
+  "evidence_validation": "references_and_metadata_only",
+  "generator_sha256": "3c373b445e3a12d995e52f6ea9a38ae3ee0cb94c6b3879990614e4dac71f489f",
+  "generator_version": "ch11-readiness-generator-1",
+  "input_sha256": "4fee35a2e5c6a743bc3341fbba0d327c990c859e45037c7a7e0be13b339a3c3a",
+  "outputs": {
+    "decision": {
+      "bytes": 12590,
+      "sha256": "df8a990db42bf5356bc0e171ef2b5d69a05e8f4736f39f6a2426b173db1818a9"
+    },
+    "gate_ledger": {
+      "bytes": 3688,
+      "sha256": "100820d3bfcad3e7a5309a3076a81050f71b40bf378fb78fbb5904277e56a57d"
+    },
+    "report": {
+      "bytes": 4329,
+      "sha256": "6e75f7154fbdb829b494213653d74c99da9963070640ab020005b03976f6c967"
+    }
+  },
+  "schema_version": "ch11-readiness-1",
+  "source_label": "illustrative_phase_0_gate_ledger"
+}

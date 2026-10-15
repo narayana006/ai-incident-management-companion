@@ -1,0 +1,426 @@
+{
+  "artifact_class": "illustrative_constructed",
+  "authority": {
+    "authorizer_may_execute": false,
+    "catalog_version": "1.0.0",
+    "current_status": "AWAITING_POSITIVE_ACKNOWLEDGEMENT",
+    "execution_time_recheck_required": true,
+    "executor_principal": "change-executor-v1",
+    "expires_at": "2026-02-10T12:05:00Z",
+    "policy_id": "ch05-change-gate-policy",
+    "policy_version": "1.0.0",
+    "positive_acknowledgements": [],
+    "proposer_may_execute": false,
+    "rejected_alternatives": [
+      {
+        "alternative": "automatic exception approval",
+        "reason": "the action is outside the human-approved standard catalog"
+      },
+      {
+        "alternative": "approval by timeout",
+        "reason": "silence carries no authority"
+      }
+    ],
+    "required_signers": [
+      {
+        "eligible_signers": [
+          "reviewer-a"
+        ],
+        "role": "change-authority"
+      }
+    ],
+    "silence_result": "HOLD"
+  },
+  "evidence": {
+    "canonical_reliability_policy_state": {
+      "canonical_policy_input_version": "reliability-input-v3",
+      "change_permitted": true,
+      "state_label": "locally-permitted"
+    },
+    "decision_snapshot_sha256": "sha256:a78a87c2030a222306c3c39e453deab7efbbe0044dcebe9cf3423277c33482bd",
+    "declared_live_comparison": [
+      {
+        "artifact_class": "illustrative_constructed",
+        "comparison": "match",
+        "coverage": "{\"declared\":{\"fields\":[\"route_mode\",\"security_boundary\",\"owner\"],\"subjects\":[\"route-a\"]},\"observed\":{\"fields\":[\"route_mode\",\"security_boundary\",\"owner\"],\"subjects\":[\"route-a\"]}}",
+        "declared_evidence_ref": "sha256:13fd5b36a9c745cbaba5f933304785893cf5cd63d9a05d098f5093740786ea3b",
+        "declared_value": "\"service-a\"",
+        "field": "owner",
+        "observed_evidence_ref": "sha256:986df6ffb4733fa15200949288ec2bc4bbaed801de6ba3b899f174b0601812ff",
+        "observed_value": "\"service-a\"",
+        "phase": "decision",
+        "proposal_id": "P-FREEZE-001",
+        "subject_id": "route-a"
+      },
+      {
+        "artifact_class": "illustrative_constructed",
+        "comparison": "match",
+        "coverage": "{\"declared\":{\"fields\":[\"route_mode\",\"security_boundary\",\"owner\"],\"subjects\":[\"route-a\"]},\"observed\":{\"fields\":[\"route_mode\",\"security_boundary\",\"owner\"],\"subjects\":[\"route-a\"]}}",
+        "declared_evidence_ref": "sha256:13fd5b36a9c745cbaba5f933304785893cf5cd63d9a05d098f5093740786ea3b",
+        "declared_value": "\"shared\"",
+        "field": "route_mode",
+        "observed_evidence_ref": "sha256:986df6ffb4733fa15200949288ec2bc4bbaed801de6ba3b899f174b0601812ff",
+        "observed_value": "\"shared\"",
+        "phase": "decision",
+        "proposal_id": "P-FREEZE-001",
+        "subject_id": "route-a"
+      },
+      {
+        "artifact_class": "illustrative_constructed",
+        "comparison": "match",
+        "coverage": "{\"declared\":{\"fields\":[\"route_mode\",\"security_boundary\",\"owner\"],\"subjects\":[\"route-a\"]},\"observed\":{\"fields\":[\"route_mode\",\"security_boundary\",\"owner\"],\"subjects\":[\"route-a\"]}}",
+        "declared_evidence_ref": "sha256:13fd5b36a9c745cbaba5f933304785893cf5cd63d9a05d098f5093740786ea3b",
+        "declared_value": "\"boundary-a\"",
+        "field": "security_boundary",
+        "observed_evidence_ref": "sha256:986df6ffb4733fa15200949288ec2bc4bbaed801de6ba3b899f174b0601812ff",
+        "observed_value": "\"boundary-a\"",
+        "phase": "decision",
+        "proposal_id": "P-FREEZE-001",
+        "subject_id": "route-a"
+      }
+    ],
+    "dependency_bound_and_blind_spots": {
+      "checked_classes": [
+        "synchronous",
+        "asynchronous",
+        "shared_state",
+        "recovery"
+      ],
+      "coverage_status": "bounded_complete_for_policy",
+      "excluded_classes": [],
+      "interpretation": "lower_bound_with_stated_coverage",
+      "parent_evidence_ids": [
+        "constructed-dependency-source-1"
+      ],
+      "reachable_subjects": [
+        "service-b"
+      ],
+      "transformation_version": "dependency-bound-v1"
+    },
+    "in_flight_changes": [],
+    "prior_cases_with_applicability_limits": [],
+    "source_statuses": {
+      "canonical_reliability_state": {
+        "authorization_result": "allowed",
+        "candidate_evidence_ids": [
+          "E-RELIABILITY-DECISION-GO"
+        ],
+        "candidate_immutable_refs": [
+          "sha256:428cf297ece5e7b7580396f83bdb5a4f286b743dccff33d1ec80c09195da9725"
+        ],
+        "claim": "canonical_reliability_state",
+        "computed_freshness": {
+          "age_seconds": 15,
+          "max_age_seconds": 60,
+          "status": "within_policy"
+        },
+        "freshness_policy": {
+          "max_age_seconds": 60,
+          "policy_id": "ch05-change-gate-policy",
+          "policy_version": "1.0.0",
+          "timestamp_field": "source_update_time"
+        },
+        "query_scope": {
+          "policy_input": "canonical-change-eligibility",
+          "subjects": [
+            "route-a"
+          ]
+        },
+        "reason_codes": [],
+        "required_source_state_class": "live_state_observation",
+        "retrieval_time": "2026-02-10T11:59:47Z",
+        "scope": "route-a",
+        "selected_content_sha256": "sha256:53917a57b9d0491e8f775e1ceae2568e3469c6ae4e68b45d6f51f2ea635ff096",
+        "selected_evidence_id": "E-RELIABILITY-DECISION-GO",
+        "selected_immutable_ref": "sha256:428cf297ece5e7b7580396f83bdb5a4f286b743dccff33d1ec80c09195da9725",
+        "source_health": "healthy",
+        "source_status": "available",
+        "source_update_time": "2026-02-10T11:59:45Z",
+        "state": "usable",
+        "subject": "route-a",
+        "valid_time": "2026-02-10T11:59:43Z"
+      },
+      "current_configuration": {
+        "authorization_result": "allowed",
+        "candidate_evidence_ids": [
+          "E-LIVE-DECISION-OK"
+        ],
+        "candidate_immutable_refs": [
+          "sha256:986df6ffb4733fa15200949288ec2bc4bbaed801de6ba3b899f174b0601812ff"
+        ],
+        "claim": "current_configuration",
+        "computed_freshness": {
+          "age_seconds": 30,
+          "max_age_seconds": 120,
+          "status": "within_policy"
+        },
+        "freshness_policy": {
+          "max_age_seconds": 120,
+          "policy_id": "ch05-change-gate-policy",
+          "policy_version": "1.0.0",
+          "timestamp_field": "source_update_time"
+        },
+        "query_scope": {
+          "fields": [
+            "route_mode",
+            "security_boundary",
+            "owner"
+          ],
+          "subjects": [
+            "route-a"
+          ]
+        },
+        "reason_codes": [],
+        "required_source_state_class": "live_state_observation",
+        "retrieval_time": "2026-02-10T11:59:32Z",
+        "scope": "route-a",
+        "selected_content_sha256": "sha256:b091aa365efa5c1bb7f146adf00e6f98d999c47ce134e792ddb8c6c5e9a7d637",
+        "selected_evidence_id": "E-LIVE-DECISION-OK",
+        "selected_immutable_ref": "sha256:986df6ffb4733fa15200949288ec2bc4bbaed801de6ba3b899f174b0601812ff",
+        "source_health": "healthy",
+        "source_status": "available",
+        "source_update_time": "2026-02-10T11:59:30Z",
+        "state": "usable",
+        "subject": "route-a",
+        "valid_time": "2026-02-10T11:59:28Z"
+      },
+      "declared_configuration": {
+        "authorization_result": "allowed",
+        "candidate_evidence_ids": [
+          "E-DECLARED-OK"
+        ],
+        "candidate_immutable_refs": [
+          "sha256:13fd5b36a9c745cbaba5f933304785893cf5cd63d9a05d098f5093740786ea3b"
+        ],
+        "claim": "declared_configuration",
+        "computed_freshness": {
+          "age_seconds": 820800,
+          "max_age_seconds": 2592000,
+          "status": "within_policy"
+        },
+        "freshness_policy": {
+          "max_age_seconds": 2592000,
+          "policy_id": "ch05-change-gate-policy",
+          "policy_version": "1.0.0",
+          "timestamp_field": "source_update_time"
+        },
+        "query_scope": {
+          "fields": [
+            "route_mode",
+            "security_boundary",
+            "owner"
+          ],
+          "subjects": [
+            "route-a"
+          ]
+        },
+        "reason_codes": [],
+        "required_source_state_class": "recorded_intent",
+        "retrieval_time": "2026-02-10T11:59:20Z",
+        "scope": "route-a",
+        "selected_content_sha256": "sha256:b091aa365efa5c1bb7f146adf00e6f98d999c47ce134e792ddb8c6c5e9a7d637",
+        "selected_evidence_id": "E-DECLARED-OK",
+        "selected_immutable_ref": "sha256:13fd5b36a9c745cbaba5f933304785893cf5cd63d9a05d098f5093740786ea3b",
+        "source_health": "healthy",
+        "source_status": "available",
+        "source_update_time": "2026-02-01T00:00:00Z",
+        "state": "usable",
+        "subject": "route-a",
+        "valid_time": "2026-02-01T00:00:00Z"
+      },
+      "dependency_coverage": {
+        "authorization_result": "allowed",
+        "candidate_evidence_ids": [
+          "E-DEPENDENCY-DECISION-OK"
+        ],
+        "candidate_immutable_refs": [
+          "sha256:3f9c86f10ddd05ee74d492ac9633f65efc83f850d1dcaf78db71ea14e840c8a8"
+        ],
+        "claim": "dependency_coverage",
+        "computed_freshness": {
+          "age_seconds": 120,
+          "max_age_seconds": 300,
+          "status": "within_policy"
+        },
+        "freshness_policy": {
+          "max_age_seconds": 300,
+          "policy_id": "ch05-change-gate-policy",
+          "policy_version": "1.0.0",
+          "timestamp_field": "source_update_time"
+        },
+        "query_scope": {
+          "subjects": [
+            "route-a"
+          ],
+          "window": "constructed-dependency-window-a"
+        },
+        "reason_codes": [],
+        "required_source_state_class": "derived_claim",
+        "retrieval_time": "2026-02-10T11:58:05Z",
+        "scope": "route-a",
+        "selected_content_sha256": "sha256:d4ab8477e527a836f04f9bb13979b4b09011430692e28d4c25193a29f056631b",
+        "selected_evidence_id": "E-DEPENDENCY-DECISION-OK",
+        "selected_immutable_ref": "sha256:3f9c86f10ddd05ee74d492ac9633f65efc83f850d1dcaf78db71ea14e840c8a8",
+        "source_health": "healthy",
+        "source_status": "available",
+        "source_update_time": "2026-02-10T11:58:00Z",
+        "state": "usable",
+        "subject": "route-a",
+        "valid_time": "2026-02-10T11:57:58Z"
+      },
+      "in_flight_changes": {
+        "authorization_result": "allowed",
+        "candidate_evidence_ids": [
+          "E-INFLIGHT-DECISION-NONE"
+        ],
+        "candidate_immutable_refs": [
+          "sha256:64dc6e9366850397ce4c7806f54c7c7ec11cdeefb550966da30aced3fb9c8aa0"
+        ],
+        "claim": "in_flight_changes",
+        "computed_freshness": {
+          "age_seconds": 20,
+          "max_age_seconds": 60,
+          "status": "within_policy"
+        },
+        "freshness_policy": {
+          "max_age_seconds": 60,
+          "policy_id": "ch05-change-gate-policy",
+          "policy_version": "1.0.0",
+          "timestamp_field": "source_update_time"
+        },
+        "query_scope": {
+          "status": "active",
+          "subjects": [
+            "route-a"
+          ]
+        },
+        "reason_codes": [],
+        "required_source_state_class": "live_state_observation",
+        "retrieval_time": "2026-02-10T11:59:42Z",
+        "scope": "route-a",
+        "selected_content_sha256": "sha256:670e46bbec0e85ed0a964a97c8e1690242380b2cb1ee7a1c121e54afbc976a92",
+        "selected_evidence_id": "E-INFLIGHT-DECISION-NONE",
+        "selected_immutable_ref": "sha256:64dc6e9366850397ce4c7806f54c7c7ec11cdeefb550966da30aced3fb9c8aa0",
+        "source_health": "healthy",
+        "source_status": "available",
+        "source_update_time": "2026-02-10T11:59:40Z",
+        "state": "usable",
+        "subject": "route-a",
+        "valid_time": "2026-02-10T11:59:38Z"
+      },
+      "signer_authority": {
+        "authorization_result": "allowed",
+        "candidate_evidence_ids": [
+          "E-AUTHORITY-OK"
+        ],
+        "candidate_immutable_refs": [
+          "sha256:36341e11299128c0fd802f414d4210a6275dc930dcf44a4ff9537402f40dec4c"
+        ],
+        "claim": "signer_authority",
+        "computed_freshness": {
+          "age_seconds": 43200,
+          "max_age_seconds": 86400,
+          "status": "within_policy"
+        },
+        "freshness_policy": {
+          "max_age_seconds": 86400,
+          "policy_id": "ch05-change-gate-policy",
+          "policy_version": "1.0.0",
+          "timestamp_field": "source_update_time"
+        },
+        "query_scope": {
+          "action_class": "security_path_update",
+          "role": "change-authority"
+        },
+        "reason_codes": [],
+        "required_source_state_class": "recorded_intent",
+        "retrieval_time": "2026-02-10T11:59:50Z",
+        "scope": "security_path_update",
+        "selected_content_sha256": "sha256:d1515527435654689289e5055b1631437b2ff88976cd3e23e73538ea40a8c92a",
+        "selected_evidence_id": "E-AUTHORITY-OK",
+        "selected_immutable_ref": "sha256:36341e11299128c0fd802f414d4210a6275dc930dcf44a4ff9537402f40dec4c",
+        "source_health": "healthy",
+        "source_status": "available",
+        "source_update_time": "2026-02-10T00:00:00Z",
+        "state": "usable",
+        "subject": "route-a",
+        "valid_time": "2026-02-10T00:00:00Z"
+      }
+    }
+  },
+  "packet_type": "freeze_exception_decision_support",
+  "proposal": {
+    "artifact": {
+      "desired_state": {
+        "owner": "service-a",
+        "route_mode": "isolated",
+        "security_boundary": "boundary-a"
+      },
+      "kind": "configuration_patch",
+      "operation": "replace_scoped_state",
+      "schema_version": "1.0.0",
+      "target": {
+        "kind": "route",
+        "subject_id": "route-a"
+      }
+    },
+    "artifact_sha256": "sha256:ef7c37009538f2f6ecd36c665ff375282a1c83a6839b6ef2bacfcc2beb5b57a1",
+    "assertions_with_owner": [
+      {
+        "assertion": "A bounded exception is requested before an external deadline.",
+        "owner": "request-owner"
+      },
+      {
+        "assertion": "constructed-window-a",
+        "owner": "request-owner"
+      }
+    ],
+    "proposal_binding_sha256": "sha256:e12d83b9fc7e9162d37f350358cef0a871a6b283746db54b9c263fff22218d0f",
+    "proposal_id": "P-FREEZE-001",
+    "requested_authority_path": "named_positive_acknowledgement",
+    "resolved_targets": [
+      "route-a"
+    ]
+  },
+  "provenance": {
+    "generated_from_case": "freeze-named-review-ready",
+    "input_refs": {
+      "catalog": "sha256:1c69230704ca8cae4e34c67933223ba274b7be402a9be1c9d496899109a98cb8",
+      "policy": "sha256:1ce2dc3bc78cceefcfd7d7a2be106c4d86606ff2e3a4502c49a0652d6d9f21e1",
+      "scenarios": "sha256:1dd5928bff4902915894f230b00d9bc125918d8915636a6e06d94cb6875830c7",
+      "template": "sha256:d0e941a98f008042bc9785966dfcebe2447e86ab8f7a04c2b99643dc1735281d"
+    },
+    "packet_payload_sha256": "sha256:dcc1cee2fdbc50a3a703ab84bf99533b897fd6035d2c01b9ea6548a82eaddb15",
+    "transformation_version": "ch05-change-gate-v1.0.0"
+  },
+  "safety_and_recovery": {
+    "conditions_for_re_review": [
+      "artifact hash changes",
+      "target scope changes",
+      "approval expires",
+      "volatile evidence changes or becomes unusable",
+      "signer authority changes"
+    ],
+    "preconditions": [
+      "all required evidence is usable under claim-specific policy",
+      "declared and scoped live configuration match on the touched subject",
+      "no interacting change is reported in the stated scope",
+      "the canonical reliability policy permits the change"
+    ],
+    "reversal_contract": {
+      "artifact_ref": "constructed-rollback-artifact-1",
+      "last_exercise_ref": "constructed-reversal-exercise-1",
+      "operation": "restore-reviewed-snapshot"
+    },
+    "stop_conditions": [
+      "target-state-mismatch",
+      "canonical-reliability-policy-block",
+      "verification-source-unavailable"
+    ],
+    "verification_contract": {
+      "accountable_verifier": "change-verifier-v1",
+      "method": "exact-target-state"
+    }
+  },
+  "supported_boundary": "Constructed decision-support packet. It does not approve the exception, prove safety, or establish complete dependency coverage."
+}

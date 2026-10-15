@@ -1,0 +1,286 @@
+{
+  "schema_version": "ch08-incident-replay-1",
+  "artifact_class": "illustrative_constructed",
+  "source_label": "Constructed fixture; demonstrates record behavior, not production performance.",
+  "incident_id": "incident-constructed-08",
+  "record_version": "record-v1",
+  "evidence_cutoff": "sequence-08",
+  "sources": [
+    {
+      "source_id": "signal-primary-path",
+      "health": "healthy",
+      "coverage": "declared_primary_path",
+      "freshness": "current_for_cutoff",
+      "audiences": ["technical_responder", "communication_owner"]
+    },
+    {
+      "source_id": "dependency-observation",
+      "health": "healthy",
+      "coverage": "declared_dependency_scope",
+      "freshness": "current_for_cutoff",
+      "audiences": ["technical_responder"]
+    },
+    {
+      "source_id": "deferred-work-observation",
+      "health": "missing",
+      "coverage": "unobserved",
+      "freshness": "unknown",
+      "audiences": ["technical_responder"]
+    },
+    {
+      "source_id": "restricted-diagnostic",
+      "health": "denied",
+      "coverage": "not_disclosable",
+      "freshness": "unknown",
+      "audiences": []
+    }
+  ],
+  "role_assignments": [
+    {
+      "role": "incident_command",
+      "actor": "human://fixture/incident-commander",
+      "authority": ["set_priority", "delegate_roles", "accept_recovery", "close", "reopen"]
+    },
+    {
+      "role": "technical_response",
+      "actor": "human://fixture/technical-responder",
+      "authority": ["investigate", "propose_action", "verify_technical_state"]
+    },
+    {
+      "role": "communication",
+      "actor": "human://fixture/communication-owner",
+      "authority": ["approve_audience_bounded_release", "correct_release"]
+    },
+    {
+      "role": "incident_record",
+      "actor": "human://fixture/record-owner",
+      "authority": ["adjudicate_correction", "accept_record"]
+    }
+  ],
+  "hypothesis_records": [
+    {
+      "hypothesis_id": "hypothesis-01",
+      "state": "supported",
+      "statement": "The declared dependency observation is relevant to the primary-path symptom.",
+      "supporting_evidence_refs": ["dependency-observation"],
+      "contradicting_evidence_refs": [],
+      "cutoff": "sequence-03",
+      "owner": "human://fixture/technical-responder"
+    }
+  ],
+  "decision_records": [
+    {
+      "decision_id": "decision-01",
+      "decision_type": "bounded_simulated_mitigation",
+      "state": "acknowledged",
+      "owner": "human://fixture/incident-commander",
+      "evidence_refs": ["signal-primary-path", "dependency-observation"],
+      "valid_time": "sequence-05"
+    },
+    {
+      "decision_id": "decision-02",
+      "decision_type": "close_with_residual_risk",
+      "state": "accepted",
+      "owner": "human://fixture/incident-commander",
+      "evidence_refs": ["signal-primary-path", "dependency-observation"],
+      "residual_risk": "deferred_work_unobserved",
+      "residual_risk_owner": "human://fixture/technical-responder",
+      "reopen_condition": "primary_path_recurrence",
+      "valid_time": "sequence-08"
+    }
+  ],
+  "action_record": {
+    "action_id": "action-01",
+    "action_class": "bounded_simulated_setpoint",
+    "target": "fixture://isolated/generic-target",
+    "bounded_scope": {"environment": "isolated_fixture", "maximum_units": 1},
+    "inverse_ref": "fixture://isolated/restore-prior-setpoint",
+    "acknowledgement": {
+      "state": "acknowledged",
+      "actor": "human://fixture/incident-commander",
+      "decision_ref": "decision-01"
+    },
+    "state_events": [
+      {"state": "proposed", "valid_time": "sequence-04"},
+      {"state": "authorized", "valid_time": "sequence-05"},
+      {"state": "reserved", "valid_time": "sequence-05"},
+      {"state": "executing", "valid_time": "sequence-05"},
+      {"state": "observing", "valid_time": "sequence-06"},
+      {"state": "verified", "valid_time": "sequence-07"}
+    ],
+    "execution_result": "complete",
+    "observation_result": "verified",
+    "observation_evidence_refs": ["signal-primary-path", "dependency-observation"]
+  },
+  "communication_records": [
+    {
+      "communication_id": "communication-01",
+      "audience": "internal_response",
+      "state": "approved",
+      "approved_by": "human://fixture/communication-owner",
+      "evidence_cutoff": "sequence-08",
+      "evidence_refs": ["signal-primary-path"]
+    },
+    {
+      "communication_id": "communication-negative-silence",
+      "audience": "external",
+      "state": "draft",
+      "approved_by": null,
+      "evidence_cutoff": "sequence-08",
+      "evidence_refs": ["signal-primary-path"]
+    }
+  ],
+  "transitions": [
+    {
+      "from": null,
+      "to": "detected",
+      "authority_type": "governed_signal",
+      "authority": "detection_policy",
+      "evidence_refs": ["signal-primary-path"],
+      "valid_time": "sequence-01",
+      "unresolved": ["scope_unconfirmed"],
+      "provenance_ref": "event-01"
+    },
+    {
+      "from": "detected",
+      "to": "acknowledged",
+      "authority_type": "human",
+      "authority": "assessment_owner",
+      "evidence_refs": ["signal-primary-path"],
+      "valid_time": "sequence-02",
+      "unresolved": ["cause_unknown"],
+      "provenance_ref": "event-02"
+    },
+    {
+      "from": "acknowledged",
+      "to": "assessed",
+      "authority_type": "human",
+      "authority": "assessment_owner",
+      "evidence_refs": ["signal-primary-path", "dependency-observation"],
+      "valid_time": "sequence-03",
+      "unresolved": ["deferred_work_unobserved"],
+      "provenance_ref": "event-03"
+    },
+    {
+      "from": "assessed",
+      "to": "coordinated",
+      "authority_type": "human",
+      "authority": "incident_commander",
+      "evidence_refs": ["signal-primary-path"],
+      "valid_time": "sequence-04",
+      "unresolved": ["deferred_work_unobserved"],
+      "provenance_ref": "event-04"
+    },
+    {
+      "from": "coordinated",
+      "to": "mitigating",
+      "authority_type": "human",
+      "authority": "incident_commander",
+      "evidence_refs": ["signal-primary-path", "dependency-observation"],
+      "valid_time": "sequence-05",
+      "unresolved": ["action_outcome_pending"],
+      "provenance_ref": "event-05"
+    },
+    {
+      "from": "mitigating",
+      "to": "verifying_recovery",
+      "authority_type": "human",
+      "authority": "incident_commander",
+      "evidence_refs": ["signal-primary-path"],
+      "valid_time": "sequence-06",
+      "unresolved": ["deferred_work_unobserved"],
+      "provenance_ref": "event-06"
+    },
+    {
+      "from": "verifying_recovery",
+      "to": "monitoring",
+      "authority_type": "human",
+      "authority": "incident_commander",
+      "evidence_refs": ["signal-primary-path", "dependency-observation"],
+      "valid_time": "sequence-07",
+      "unresolved": ["deferred_work_unobserved"],
+      "provenance_ref": "event-07"
+    },
+    {
+      "from": "monitoring",
+      "to": "closed",
+      "authority_type": "human",
+      "authority": "incident_commander",
+      "evidence_refs": ["signal-primary-path", "dependency-observation"],
+      "valid_time": "sequence-08",
+      "unresolved": ["accepted_residual_risk:deferred_work_unobserved"],
+      "provenance_ref": "event-08"
+    },
+    {
+      "from": "closed",
+      "to": "reopened",
+      "authority_type": "human",
+      "authority": "incident_commander",
+      "evidence_refs": ["signal-primary-path"],
+      "valid_time": "sequence-09",
+      "unresolved": ["prior_recovery_assumption_invalidated"],
+      "provenance_ref": "event-09"
+    }
+  ],
+  "brief_claims": [
+    {
+      "claim_id": "claim-current-state",
+      "text": "The constructed incident record is at the declared cutoff.",
+      "evidence_refs": ["signal-primary-path"],
+      "audiences": ["technical_responder", "communication_owner"],
+      "claim_state": "observed"
+    },
+    {
+      "claim_id": "claim-dependency",
+      "text": "A declared dependency observation is available for technical review.",
+      "evidence_refs": ["dependency-observation"],
+      "audiences": ["technical_responder"],
+      "claim_state": "observed"
+    },
+    {
+      "claim_id": "claim-deferred-work-gap",
+      "text": "Deferred-work recovery is unobserved because its required source is missing.",
+      "evidence_refs": ["deferred-work-observation"],
+      "audiences": ["technical_responder"],
+      "claim_state": "unknown"
+    }
+  ],
+  "brief_requests": [
+    {
+      "role": "technical_responder",
+      "requested_contribution": "Review the unresolved recovery evidence.",
+      "approved_by": "incident_commander"
+    },
+    {
+      "role": "communication_owner",
+      "requested_contribution": "Prepare a bounded internal status draft.",
+      "approved_by": "incident_commander"
+    }
+  ],
+  "sentinel_cases": [
+    {
+      "case_id": "all-required-criteria-pass",
+      "expected": "recovery_supported",
+      "criteria": [
+        {"criterion_id": "user-path", "observation": "passed", "source_health": "healthy", "coverage": "complete_for_declared_scope", "window_complete": true},
+        {"criterion_id": "dependency", "observation": "passed", "source_health": "healthy", "coverage": "complete_for_declared_scope", "window_complete": true}
+      ]
+    },
+    {
+      "case_id": "required-criterion-fails",
+      "expected": "recovery_not_supported",
+      "criteria": [
+        {"criterion_id": "user-path", "observation": "passed", "source_health": "healthy", "coverage": "complete_for_declared_scope", "window_complete": true},
+        {"criterion_id": "dependency", "observation": "failed", "source_health": "healthy", "coverage": "complete_for_declared_scope", "window_complete": true}
+      ]
+    },
+    {
+      "case_id": "required-source-missing",
+      "expected": "indeterminate",
+      "criteria": [
+        {"criterion_id": "user-path", "observation": "passed", "source_health": "healthy", "coverage": "complete_for_declared_scope", "window_complete": true},
+        {"criterion_id": "deferred-work", "observation": "unknown", "source_health": "missing", "coverage": "unobserved", "window_complete": false}
+      ]
+    }
+  ]
+}

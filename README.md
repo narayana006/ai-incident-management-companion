@@ -3,6 +3,18 @@
 Companion code for the book *AI-Driven Incident Management*: reproducible
 fixtures, calculations, figures, and labs for every chapter that cites a companion target.
 
+## The book
+
+*AI-Driven Incident Management: The Complete Framework for Intelligent Detection,
+Autonomous Response, and Organizational Learning at Scale*. SGSH Publications, 2026.
+ISBN 978-93-6631-370-2 (paperback). 380 pages.
+
+| Edition | Where |
+|---|---|
+| Paperback | [Amazon.com](https://www.amazon.com/dp/9366313701) · [Amazon.in](https://www.amazon.in/dp/9366313701) |
+| Kindle | [Amazon.in](https://www.amazon.in/dp/B0HR95KJ2P) (ASIN B0HR95KJ2P; also listed on other Amazon marketplaces) |
+| Ebook | [Google Play Books](https://play.google.com/store/books/details?id=et4rEgAAQBAJ) |
+
 No file under `fixtures/`, `generated/`, or `data/generated/` is production incident data.
 Every dataset, generated output, and figure carries an in-file label such as
 `illustrative_constructed` or `proposed_design`, and the chapter text says the same.

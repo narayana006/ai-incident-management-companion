@@ -5,15 +5,23 @@ fixtures, calculations, figures, and labs for every chapter that cites a compani
 
 ## The book
 
+<img src="docs/images/cover.jpg" alt="Book cover" width="220" align="right">
+
 *AI-Driven Incident Management: The Complete Framework for Intelligent Detection,
-Autonomous Response, and Organizational Learning at Scale*. SGSH Publications, 2026.
+Autonomous Response, and Organizational Learning at Scale*
+by **Narayana R. Vemburaj**. SGSH Publications, 2026.
 ISBN 978-93-6631-370-2 (paperback). 380 pages.
 
 | Edition | Where |
 |---|---|
-| Paperback | [Amazon.com](https://www.amazon.com/dp/9366313701) · [Amazon.in](https://www.amazon.in/dp/9366313701) |
-| Kindle | [Amazon.in](https://www.amazon.in/dp/B0HR95KJ2P) (ASIN B0HR95KJ2P; also listed on other Amazon marketplaces) |
+| Paperback | [Amazon.com](https://www.amazon.com/dp/9366313701) · [Amazon.in](https://amzn.in/d/0hMmWn3a) · [UK](https://amzn.eu/d/06JEdYG6) · [Canada](https://a.co/d/02FfNlmO) · [Australia](https://amzn.asia/d/040hm9Q4) · [Japan](https://amzn.asia/d/02ZWolrS) |
+| | [Germany](https://amzn.eu/d/07JHwnI4) · [France](https://amzn.eu/d/0cIlSC4q) · [Spain](https://amzn.eu/d/06AALRzN) · [Italy](https://amzn.eu/d/08mC1IhG) · [Netherlands](https://amzn.eu/d/0dS2Aaik) · [Poland](https://amzn.eu/d/0f6r4hF6) · [Sweden](https://amzn.eu/d/0b6OwJ4c) · [Belgium](https://amzn.eu/d/0c5ASCcf) · [Ireland](https://amzn.eu/d/03qNc2Se) |
+| Kindle | [Amazon.in](https://amzn.in/d/04jwcBtM) (ASIN B0HR95KJ2P; also on the other Amazon marketplaces above) |
 | Ebook | [Google Play Books](https://play.google.com/store/books/details?id=et4rEgAAQBAJ) |
+
+To cite the book or this code, use the **Cite this repository** button on GitHub or see [CITATION.cff](CITATION.cff).
+
+<br clear="all">
 
 No file under `fixtures/`, `generated/`, or `data/generated/` is production incident data.
 Every dataset, generated output, and figure carries an in-file label such as

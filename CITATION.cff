@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code or the framework it implements, please cite the book."
+title: "AI-Driven Incident Management Companion"
+type: software
+authors:
+  - family-names: Vemburaj
+    given-names: Narayana Rajasekhar
+repository-code: "https://github.com/narayana006/ai-incident-management-companion"
+license: MIT
+version: 1.0.1
+preferred-citation:
+  type: book
+  title: "AI-Driven Incident Management: The Complete Framework for Intelligent Detection, Autonomous Response, and Organizational Learning at Scale"
+  authors:
+    - family-names: Vemburaj
+      given-names: Narayana Rajasekhar
+  publisher:
+    name: "SGSH Publications"
+  year: 2026
+  isbn: "978-93-6631-370-2"
+  url: "https://www.amazon.com/dp/9366313701"

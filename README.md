@@ -10,7 +10,7 @@ fixtures, calculations, figures, and labs for every chapter that cites a compani
 *AI-Driven Incident Management: The Complete Framework for Intelligent Detection,
 Autonomous Response, and Organizational Learning at Scale*
 by **Narayana R. Vemburaj**. SGSH Publications, 2026.
-ISBN 978-93-6631-370-2 (paperback).
+ISBN 978-93-6631-370-2 (paperback). 299 pages. Published 11 November 2026.
 
 | Edition | Where |
 |---|---|

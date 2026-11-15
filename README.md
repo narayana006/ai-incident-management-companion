@@ -5,7 +5,7 @@ fixtures, calculations, figures, and labs for every chapter that cites a compani
 
 ## The book
 
-<img src="docs/images/cover.jpg" alt="Book cover" width="220" align="right">
+<img src="docs/images/book-cover-published.jpg" alt="Book cover" width="220" align="right">
 
 *AI-Driven Incident Management: The Complete Framework for Intelligent Detection,
 Autonomous Response, and Organizational Learning at Scale*

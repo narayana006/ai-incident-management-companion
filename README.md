@@ -10,13 +10,13 @@ fixtures, calculations, figures, and labs for every chapter that cites a compani
 *AI-Driven Incident Management: The Complete Framework for Intelligent Detection,
 Autonomous Response, and Organizational Learning at Scale*
 by **Narayana R. Vemburaj**. SGSH Publications, 2026.
-ISBN 978-93-6631-370-2 (paperback). 380 pages.
+ISBN 978-93-6631-370-2 (paperback).
 
 | Edition | Where |
 |---|---|
-| Paperback | [Amazon.com](https://www.amazon.com/dp/9366313701) · [Amazon.in](https://amzn.in/d/0hMmWn3a) · [UK](https://amzn.eu/d/06JEdYG6) · [Canada](https://a.co/d/02FfNlmO) · [Australia](https://amzn.asia/d/040hm9Q4) · [Japan](https://amzn.asia/d/02ZWolrS) |
-| | [Germany](https://amzn.eu/d/07JHwnI4) · [France](https://amzn.eu/d/0cIlSC4q) · [Spain](https://amzn.eu/d/06AALRzN) · [Italy](https://amzn.eu/d/08mC1IhG) · [Netherlands](https://amzn.eu/d/0dS2Aaik) · [Poland](https://amzn.eu/d/0f6r4hF6) · [Sweden](https://amzn.eu/d/0b6OwJ4c) · [Belgium](https://amzn.eu/d/0c5ASCcf) · [Ireland](https://amzn.eu/d/03qNc2Se) |
-| Kindle | [Amazon.in](https://amzn.in/d/04jwcBtM) (ASIN B0HR95KJ2P; also on the other Amazon marketplaces above) |
+| Paperback | [Amazon.com](https://www.amazon.com/dp/9366313701) · [Amazon.in](https://www.amazon.in/dp/9366313701) · [UK](https://www.amazon.co.uk/dp/9366313701) · [Canada](https://www.amazon.ca/dp/9366313701) · [Australia](https://www.amazon.com.au/dp/9366313701) · [Japan](https://www.amazon.co.jp/dp/9366313701) |
+| | [Germany](https://www.amazon.de/dp/9366313701) · [France](https://www.amazon.fr/dp/9366313701) · [Spain](https://www.amazon.es/dp/9366313701) · [Italy](https://www.amazon.it/dp/9366313701) · [Netherlands](https://www.amazon.nl/dp/9366313701) · [Poland](https://www.amazon.pl/dp/9366313701) · [Sweden](https://www.amazon.se/dp/9366313701) · [Belgium](https://www.amazon.com.be/dp/9366313701) · [Ireland](https://www.amazon.ie/dp/9366313701) |
+| Kindle | [Amazon.in](https://www.amazon.in/dp/B0HR95KJ2P) (ASIN B0HR95KJ2P; also on the other Amazon marketplaces above) |
 | Ebook | [Google Play Books](https://play.google.com/store/books/details?id=et4rEgAAQBAJ) |
 
 To cite the book or this code, use the **Cite this repository** button on GitHub or see [CITATION.cff](CITATION.cff).
